@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   AppBar: {
     paddingHorizontal: 10,
     width: '100%',
-    height: 50,
+    height: 40,
     backgroundColor: 'black',
     position: 'absolute',
     alignItems: 'flex-start',

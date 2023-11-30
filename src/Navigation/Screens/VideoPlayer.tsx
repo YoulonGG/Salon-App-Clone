@@ -20,7 +20,7 @@ const VideoPlayer = () => {
       <View
         style={{
           width: 'auto',
-          height: 60,
+          height: 40,
           backgroundColor: '#16247d',
           flexDirection: 'row',
           alignItems: 'center',

@@ -21,7 +21,7 @@ const Profile = () => {
       <View
         style={{
           width: '100%',
-          height: 60,
+          height: 40,
           backgroundColor: '#16247d',
           flexDirection: 'row',
           alignItems: 'center',
@@ -223,7 +223,7 @@ const Profile = () => {
           backgroundColor: 'white',
           flexDirection: 'row',
           width: '90%',
-          height: 50,
+          height: 40,
           alignItems: 'center',
           borderRadius: 5,
           justifyContent: 'space-between',

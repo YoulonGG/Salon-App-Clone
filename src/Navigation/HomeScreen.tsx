@@ -166,15 +166,16 @@ const HomeScreen = () => {
 
   const renderInner = () => {
     return (
-      <View style={{backgroundColor: '#F4F5FA'}}>
-        <View style={{paddingHorizontal: 10, marginBottom: height * 0.1}}>
+      <View style={{backgroundColor: 'white', flex: 1}}>
+        <View style={{paddingHorizontal: 10, marginBottom: height * 0.075}}>
           <Text
             style={{
               color: '#16247d',
-              fontSize: 16,
+              fontSize: 17,
               fontWeight: 'bold',
               textAlign: 'center',
-              paddingBottom: 15,
+              marginBottom: 10,
+              marginTop: 0,
             }}>
             Explore
           </Text>
@@ -183,7 +184,7 @@ const HomeScreen = () => {
               width: '95%',
               height: 200,
               marginTop: 0,
-              backgroundColor: 'white',
+              backgroundColor: '#F4F5FA',
               alignSelf: 'center',
               borderRadius: 5,
             }}>
@@ -484,7 +485,7 @@ const HomeScreen = () => {
                   }}
                   style={{
                     width: 190,
-                    height: 210,
+                    height: 200,
                     marginLeft: 10,
                     backgroundColor: 'white',
                     borderRadius: 5,
@@ -509,10 +510,11 @@ const HomeScreen = () => {
                     <View style={{flexDirection: 'row'}}>
                       <FontAwesome6
                         name="location-dot"
-                        size={12}
+                        size={11}
                         color={'#16247d'}
                         style={{
                           marginLeft: 5,
+                          marginTop: 3,
                         }}
                       />
                       <Text
@@ -615,12 +617,12 @@ const HomeScreen = () => {
               backgroundColor: '#eef1f6',
               marginVertical: 15,
               borderRadius: 8,
-              paddingLeft: '2%',
+              marginLeft: '2%',
             }}>
             <Image
               style={{
-                height: width * 0.37,
-                width: width * 0.4,
+                height: '100%',
+                width: '100%',
                 borderRadius: 8,
               }}
               source={require('../assets/image/haircut2.png')}
@@ -632,13 +634,12 @@ const HomeScreen = () => {
               fontSize: 16,
               fontWeight: 'bold',
               paddingLeft: '2%',
-              marginTop: 10,
             }}>
             Top Rating Salons
           </Text>
           <FlatList
             data={PopularSalonsData}
-            style={{width: width, paddingTop: 10}}
+            style={{width: width, marginTop: 15}}
             showsHorizontalScrollIndicator={false}
             horizontal={true}
             keyExtractor={item => item.id}
@@ -651,7 +652,7 @@ const HomeScreen = () => {
                   }}
                   style={{
                     width: 190,
-                    height: 210,
+                    height: 200,
                     marginLeft: 10,
                     backgroundColor: 'white',
                     borderRadius: 5,
@@ -676,10 +677,11 @@ const HomeScreen = () => {
                     <View style={{flexDirection: 'row'}}>
                       <FontAwesome6
                         name="location-dot"
-                        size={12}
+                        size={11}
                         color={'#16247d'}
                         style={{
                           marginLeft: 5,
+                          marginTop: 3,
                         }}
                       />
                       <Text
@@ -825,8 +827,20 @@ const HomeScreen = () => {
                       0 Credit / 0 Review
                     </Text>
                     <View style={{flexDirection: 'row', marginTop: 5}}>
-                      <Entypo size={14} color={'blue'} name="location-pin" />
-                      <Text style={{fontSize: 12, color: 'blue'}}>None</Text>
+                      <Entypo
+                        size={14}
+                        color={'#16247d'}
+                        name="location-pin"
+                        style={{marginTop: 2.5, fontWeight: 'bold'}}
+                      />
+                      <Text
+                        style={{
+                          fontSize: 13,
+                          color: '#16247d',
+                          fontWeight: 'bold',
+                        }}>
+                        None
+                      </Text>
                     </View>
                   </View>
                   <View style={{marginTop: 10}}></View>
@@ -861,7 +875,7 @@ const HomeScreen = () => {
                   }}
                   style={{
                     width: 190,
-                    height: 210,
+                    height: 200,
                     marginTop: 10,
                     marginLeft: 8,
                     backgroundColor: 'white',
@@ -885,10 +899,11 @@ const HomeScreen = () => {
                     }}>
                     <FontAwesome6
                       name="location-dot"
-                      size={12}
+                      size={11}
                       color={'#16247d'}
                       style={{
                         marginLeft: 5,
+                        marginTop: 3,
                       }}
                     />
                     <Text
@@ -934,7 +949,7 @@ const HomeScreen = () => {
                       justifyContent: 'center',
                       alignItems: 'center',
                       borderRadius: 5,
-                      marginTop: '20%',
+                      marginTop: '17%',
                     }}>
                     <Text
                       style={{
@@ -955,7 +970,7 @@ const HomeScreen = () => {
   };
 
   return (
-    <View style={{flex: 1, backgroundColor: '16247d'}}>
+    <View style={{flex: 1, backgroundColor: '#16247d'}}>
       <GoogleMap />
       {/* <BottomSheett /> */}
       <View style={styles.searchSection}>
@@ -964,7 +979,7 @@ const HomeScreen = () => {
             navigation.openDrawer();
           }}
           name="bars"
-          size={24}
+          size={20}
           style={{
             color: 'black',
             paddingRight: 10,
@@ -984,28 +999,28 @@ const HomeScreen = () => {
         </TouchableOpacity>
         <Feather
           name="search"
-          size={24}
+          size={20}
           style={{
             color: 'black',
-            marginRight: 10,
+            marginRight: 15,
           }}
         />
         <TouchableOpacity activeOpacity={1} onPress={toggleSwitch}>
           <View
             style={{
-              width: 25,
+              width: 18,
               borderRadius: 50,
-              height: 25,
-              marginRight: 10,
+              height: 18,
+              marginRight: 15,
             }}>
             {isEnabled ? (
               <Image
-                style={{flex: 1, width: 25, height: 25, borderRadius: 50}}
+                style={{flex: 1, width: 18, height: 18, borderRadius: 50}}
                 source={require('../assets/image/cambodia.png')}
               />
             ) : (
               <Image
-                style={{flex: 1, width: 25, height: 25, borderRadius: 50}}
+                style={{flex: 1, width: 18, height: 18, borderRadius: 50}}
                 source={require('../assets/image/england.png')}
               />
             )}
@@ -1014,7 +1029,7 @@ const HomeScreen = () => {
         <Ionicons
           name="notifications-outline"
           color="black"
-          size={24}
+          size={20}
           style={{
             color: 'black',
             marginRight: 10,
@@ -1061,7 +1076,7 @@ const HomeScreen = () => {
               zIndex: 1000,
               justifyContent: 'center',
             }}>
-            <Text style={{color: 'black', fontSize: 15, textAlign: 'center'}}>
+            <Text style={{color: '#16247d', fontSize: 15, textAlign: 'center'}}>
               Mobile Services
             </Text>
           </TouchableOpacity>
@@ -1183,16 +1198,17 @@ const styles = StyleSheet.create({
   },
   searchSection: {
     marginTop: 8,
-    width: '90%',
+    width: '95%',
     alignSelf: 'center',
-    marginBottom: 8,
+    marginBottom: 0,
     flexDirection: 'row',
     borderWidth: 0.5,
-    borderColor: 'grey',
+    borderColor: ' #D3D3D3',
     borderRadius: 5,
     alignItems: 'center',
     backgroundColor: 'white',
     elevation: 10,
+    height: 47,
     zIndex: 1000,
   },
   input: {
@@ -1251,7 +1267,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     width: 100,
     height: 100,
-    // backgroundColor: 'red'
+    // backgroundColor: 'red',
   },
   contentContainer: {
     // flex: 1,

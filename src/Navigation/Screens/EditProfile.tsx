@@ -151,7 +151,7 @@ export default EditProfile;
 const styles = StyleSheet.create({
   Appbar: {
     width: '100%',
-    height: 60,
+    height: 40,
     backgroundColor: '#16247d',
     flexDirection: 'row',
     textAlign: 'center',

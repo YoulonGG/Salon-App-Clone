@@ -48,7 +48,7 @@ export const MakeBookingView = () => {
           <AntDesign
             name="arrowleft"
             color={'white'}
-            size={28}
+            size={25}
             style={{
               paddingLeft: '5%',
             }}></AntDesign>
@@ -278,7 +278,7 @@ export const MakeBookingView = () => {
 const styles = StyleSheet.create({
   AppBar: {
     width: '100%',
-    height: 60,
+    height: 40,
     backgroundColor: '#16247d',
     alignItems: 'center',
     // paddingTop: '4.5%',
@@ -291,6 +291,6 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     textAlign: 'center',
-    paddingLeft: '22%',
+    paddingLeft: '23%',
   },
 });

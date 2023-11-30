@@ -459,7 +459,7 @@ export const SubService = () => {
       <View
         style={{
           width: '100%',
-          height: 60,
+          height: 40,
           backgroundColor: '#16247d',
           flexDirection: 'row',
           alignItems: 'center',
@@ -474,7 +474,7 @@ export const SubService = () => {
           <AntDesign
             name="arrowleft"
             color={'white'}
-            size={28}
+            size={24}
             style={
               {
                 // paddingLeft: '5%',
@@ -493,7 +493,7 @@ export const SubService = () => {
         </Text>
         <AntDesign
           name="hearto"
-          size={24}
+          size={22}
           color={'white'}
           style={
             {

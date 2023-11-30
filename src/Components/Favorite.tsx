@@ -231,7 +231,7 @@ const Favorite = () => {
       <View
         style={{
           width: '100%',
-          height: 60,
+          height: 40,
           backgroundColor: '#16247d',
           flexDirection: 'row',
           alignItems: 'center',

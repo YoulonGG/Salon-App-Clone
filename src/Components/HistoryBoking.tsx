@@ -310,8 +310,8 @@ const HistoryBooking = () => {
     <SafeAreaView>
       <View
         style={{
-          width: 'auto',
-          height: 60,
+          width: '100%',
+          height: 40,
           backgroundColor: '#16247d',
           flexDirection: 'row',
           alignItems: 'center',

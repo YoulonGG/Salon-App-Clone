@@ -178,7 +178,7 @@ export const PromotionScreen = () => {
       <View
         style={{
           width: '100%',
-          height: 60,
+          height: 40,
           backgroundColor: '#16247d',
           flexDirection: 'row',
           alignItems: 'center',
@@ -188,7 +188,7 @@ export const PromotionScreen = () => {
             navigationn.openDrawer();
           }}
           name="menu"
-          size={24}
+          size={22}
           style={{
             color: 'white',
             paddingLeft: '5%',

@@ -146,7 +146,7 @@ const MEMBERSHIP = () => {
       </View>
       <View
         style={{
-          height: 50,
+          height: 40,
           width: '90%',
           alignSelf: 'center',
           backgroundColor: 'white',

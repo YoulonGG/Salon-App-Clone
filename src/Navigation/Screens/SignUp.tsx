@@ -136,7 +136,8 @@ const SignUp = () => {
       <View
         style={{
           flexDirection: 'row',
-          marginLeft: 20,
+          width: '100%',
+          paddingLeft: '5%',
           marginTop: 30,
         }}>
         <Text style={{fontWeight: 'bold', color: '#16247d', fontSize: 13}}>

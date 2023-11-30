@@ -8,8 +8,10 @@ import {
   Image,
   ScrollView,
   TouchableOpacity,
+  StatusBar,
+  StatusBarStyle,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import Feather from 'react-native-vector-icons/Feather';
 import {useNavigation} from '@react-navigation/native';
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
@@ -102,18 +104,56 @@ const RecommendSalons = [
   },
 ];
 
+const STYLES = ['default', 'dark-content', 'light-content'] as const;
+const TRANSITIONS = ['fade', 'slide', 'none'] as const;
+
 const ShopScreen = () => {
+  const [hidden, setHidden] = useState(false);
+  const [statusBarStyle, setStatusBarStyle] = useState<StatusBarStyle>(
+    STYLES[0],
+  );
+  const [statusBarTransition, setStatusBarTransition] = useState<
+    'fade' | 'slide' | 'none'
+  >(TRANSITIONS[0]);
+
+  const changeStatusBarVisibility = () => setHidden(!hidden);
+
+  const changeStatusBarStyle = () => {
+    const styleId = STYLES.indexOf(statusBarStyle) + 1;
+    if (styleId === STYLES.length) {
+      setStatusBarStyle(STYLES[0]);
+    } else {
+      setStatusBarStyle(STYLES[styleId]);
+    }
+  };
+
+  const changeStatusBarTransition = () => {
+    const transition = TRANSITIONS.indexOf(statusBarTransition) + 1;
+    if (transition === TRANSITIONS.length) {
+      setStatusBarTransition(TRANSITIONS[0]);
+    } else {
+      setStatusBarTransition(TRANSITIONS[transition]);
+    }
+  };
   const navigation: any = useNavigation();
   return (
     <SafeAreaView style={{}}>
       <ScrollView showsVerticalScrollIndicator={false}>
+        <StatusBar
+          animated={true}
+          backgroundColor="#16247d"
+          barStyle={statusBarStyle}
+          showHideTransition={statusBarTransition}
+          hidden={hidden}
+        />
+
         <View style={styles.Appbar}>
           <Feather
             onPress={() => {
               navigation.openDrawer();
             }}
             name="menu"
-            size={24}
+            size={22}
             style={{
               color: 'white',
               paddingLeft: '5%',
@@ -124,7 +164,7 @@ const ShopScreen = () => {
         <View style={styles.searchSection}>
           <Feather
             name="search"
-            size={30}
+            size={20}
             color="grey"
             style={{
               margin: 10,
@@ -145,7 +185,7 @@ const ShopScreen = () => {
         </View>
         <View
           style={{
-            width: 'auto',
+            width: '100%',
             height: 0,
             backgroundColor: '#ebebec',
             borderWidth: 0.2,
@@ -171,8 +211,8 @@ const ShopScreen = () => {
                     navigation.push('ShopInformation');
                   }}
                   style={{
-                    width: 180,
-                    height: 190,
+                    width: 165,
+                    height: 160,
                     marginLeft: 10,
                     backgroundColor: 'white',
                     borderRadius: 5,
@@ -185,32 +225,39 @@ const ShopScreen = () => {
                       height: '30%',
                       backgroundColor: 'grey',
                       borderRadius: 5,
-                      marginBottom: 10,
                     }}></Image>
-                  <View style={{flexDirection: 'row'}}>
-                    <FontAwesome6
-                      name="location-dot"
-                      size={13}
-                      color={'#16247d'}
-                      style={{
-                        marginLeft: 5,
-                      }}
-                    />
-                    <Text
-                      style={{
-                        fontSize: 12,
-                        color: '#16247d',
-                        fontWeight: 'bold',
-                        marginLeft: 5,
-                      }}>
-                      None
-                    </Text>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      width: '100%',
+                      justifyContent: 'space-between',
+                      paddingHorizontal: '2.5%',
+                      marginTop: 5,
+                    }}>
+                    <View style={{flexDirection: 'row'}}>
+                      <FontAwesome6
+                        name="location-dot"
+                        size={11}
+                        color={'#16247d'}
+                        style={{
+                          marginTop: 3,
+                        }}
+                      />
+                      <Text
+                        style={{
+                          fontSize: 12,
+                          color: '#16247d',
+                          fontWeight: 'bold',
+                          marginLeft: 5,
+                        }}>
+                        None
+                      </Text>
+                    </View>
                     <Text
                       style={{
                         fontSize: 12,
                         color: 'grey',
                         fontWeight: 'bold',
-                        marginLeft: 50,
                       }}>
                       {e.customer}
                     </Text>
@@ -225,8 +272,7 @@ const ShopScreen = () => {
                     }}>
                     {e.name}
                   </Text>
-                  <Text
-                    style={{marginBottom: 15, marginLeft: 5, color: 'grey'}}>
+                  <Text style={{marginLeft: 5, color: 'grey', marginTop: 5}}>
                     ⭐⭐⭐⭐⭐ (3)
                   </Text>
                   <TouchableOpacity
@@ -236,14 +282,14 @@ const ShopScreen = () => {
                     }}
                     style={{
                       height: 30,
-                      marginLeft: 5,
-                      marginRight: 5,
+                      marginHorizontal: '3%',
                       backgroundColor: 'white',
                       borderColor: '#16247d',
                       borderWidth: 2,
                       justifyContent: 'center',
                       alignItems: 'center',
                       borderRadius: 5,
+                      marginTop: 3,
                     }}>
                     <Text
                       style={{
@@ -278,7 +324,7 @@ const ShopScreen = () => {
               }}
               style={{
                 height: 130,
-                width: '90%',
+                width: '95%',
                 alignSelf: 'center',
                 alignItems: 'center',
                 marginTop: 10,
@@ -348,19 +394,27 @@ const ShopScreen = () => {
                 <Text style={{fontSize: 13, color: 'black'}}>
                   {e.description}
                 </Text>
-                <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                  <View
-                    style={{
-                      flexDirection: 'row',
-                      alignItems: 'center',
-                      marginBottom: 5,
-                    }}>
-                    <Entypo name="location-pin" size={13} color="#144389" />
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    marginTop: 5,
+                  }}>
+                  <View style={{flexDirection: 'row'}}>
+                    <FontAwesome6
+                      name="location-dot"
+                      size={1}
+                      color={'#16247d'}
+                      style={{
+                        marginTop: 2.5,
+                      }}
+                    />
                     <Text
                       style={{
                         fontSize: 12,
-                        color: '#144389',
+                        color: '#16247d',
                         fontWeight: 'bold',
+                        marginLeft: 5,
                       }}>
                       None
                     </Text>
@@ -368,24 +422,22 @@ const ShopScreen = () => {
                   <View
                     style={{
                       flexDirection: 'row',
-                      alignItems: 'center',
-                      marginBottom: 5,
-                      padding: 4,
                     }}>
                     <Ionicons
                       name="time-outline"
                       size={14}
                       color={'#16247d'}
                       style={{
-                        marginTop: 2,
+                        marginTop: 1,
                         marginLeft: 20,
                       }}
                     />
                     <Text
                       style={{
                         fontSize: 12,
-                        color: '#144389',
+                        color: '#16247d',
                         fontWeight: 'bold',
+                        marginLeft: 5,
                       }}>
                       Openning
                     </Text>
@@ -410,7 +462,7 @@ export default ShopScreen;
 const styles = StyleSheet.create({
   Appbar: {
     width: '100%',
-    height: 60,
+    height: 40,
     backgroundColor: '#16247d',
     flexDirection: 'row',
     alignItems: 'center',
@@ -424,7 +476,8 @@ const styles = StyleSheet.create({
   },
   searchSection: {
     marginTop: 8,
-    width: '90%',
+    width: '95%',
+    height: 47,
     alignSelf: 'center',
     marginBottom: 8,
     flexDirection: 'row',
@@ -432,7 +485,7 @@ const styles = StyleSheet.create({
     borderColor: 'grey',
     borderRadius: 5,
     alignItems: 'center',
-    color: 'grey',
+    color: 'D3D3D3',
     backgroundColor: 'white',
     elevation: 10,
     zIndex: 1000,

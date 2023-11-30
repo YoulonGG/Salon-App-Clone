@@ -21,7 +21,7 @@ const VideoScreen = () => {
             navigation.openDrawer();
           }}
           name="menu"
-          size={24}
+          size={22}
           style={{
             color: 'white',
             paddingLeft: '5%',
@@ -32,7 +32,7 @@ const VideoScreen = () => {
       <View style={styles.searchSection}>
         <Feather
           name="search"
-          size={30}
+          size={22}
           color="grey"
           style={{
             margin: 10,
@@ -45,7 +45,7 @@ const VideoScreen = () => {
       </View>
       <View
         style={{
-          width: 'auto',
+          width: '100%',
           height: 0,
           backgroundColor: '#ebebec',
           borderWidth: 0.2,
@@ -222,7 +222,7 @@ export default VideoScreen;
 const styles = StyleSheet.create({
   Appbar: {
     width: '100%',
-    height: 60,
+    height: 40,
     backgroundColor: '#16247d',
     flexDirection: 'row',
     alignItems: 'center',
@@ -240,7 +240,7 @@ const styles = StyleSheet.create({
   },
   searchSection: {
     marginTop: 8,
-    width: '90%',
+    width: '95%',
     alignSelf: 'center',
     marginBottom: 8,
     borderWidth: 0.5,
@@ -250,6 +250,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'white',
     elevation: 10,
+    height: 47,
     zIndex: 1000,
   },
   card: {

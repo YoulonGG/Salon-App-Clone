@@ -31,7 +31,7 @@ export const GalleryView = () => {
         </TouchableOpacity>
         <Text style={styles.SubText}>Gallery</Text>
       </View>
-      <View style={{flexDirection: 'row', marginTop: '16%'}}>
+      <View style={{flexDirection: 'row', marginTop: '11%'}}>
         <TouchableOpacity
           activeOpacity={1}
           onPress={() => {
@@ -97,7 +97,7 @@ export const GalleryView = () => {
 const styles = StyleSheet.create({
   AppBar: {
     width: '100%',
-    height: 60,
+    height: 40,
     backgroundColor: '#16247d',
     position: 'absolute',
     alignItems: 'center',
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     textAlign: 'center',
-    paddingLeft: '30%',
+    paddingLeft: '33%',
   },
   gridItem: {
     flex: 1,

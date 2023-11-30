@@ -39,7 +39,7 @@ const EditPhoneNumber = () => {
             fontSize: 17,
             color: 'white',
             textAlign: 'center',
-            marginLeft: '25%',
+            marginLeft: '24%',
           }}>
           Edit Phone Number
         </Text>
@@ -48,7 +48,7 @@ const EditPhoneNumber = () => {
         style={{
           fontWeight: 'bold',
           fontSize: 16,
-          marginTop: 20,
+          marginTop: 30,
           color: '#16247d',
           textAlign: 'center',
         }}>
@@ -75,7 +75,13 @@ const EditPhoneNumber = () => {
           +855 |
         </Text>
         <TextInput
-          style={styles.input}
+          style={{
+            flex: 1,
+            borderRadius: 5,
+            fontSize: 15,
+            color: 'black',
+            marginLeft: 5,
+          }}
           placeholder="Phone Number"
           onChangeText={onChangeNumber}
           value={number}
@@ -111,8 +117,14 @@ const EditPhoneNumber = () => {
           backgroundColor: 'white',
         }}>
         <TextInput
-          style={styles.input}
-          placeholder=" Code"
+          style={{
+            flex: 1,
+            borderRadius: 5,
+            fontSize: 15,
+            color: 'black',
+            marginLeft: 5,
+          }}
+          placeholder="Code"
           keyboardType="numeric"
         />
       </View>
@@ -142,18 +154,12 @@ export default EditPhoneNumber;
 
 const styles = StyleSheet.create({
   Appbar: {
-    width: 'auto',
-    height: 60,
+    width: '100%',
+    height: 40,
     backgroundColor: '#16247d',
     flexDirection: 'row',
     textAlign: 'center',
     alignItems: 'center',
     paddingHorizontal: 17,
-  },
-  input: {
-    flex: 1,
-    borderRadius: 5,
-    fontSize: 15,
-    color: '#000',
   },
 });
