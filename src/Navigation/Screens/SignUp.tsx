@@ -34,12 +34,12 @@ const SignUp = () => {
         style={{
           justifyContent: 'center',
           alignItems: 'center',
-          marginTop: 80,
+          marginTop: 50,
         }}>
         <Image
-          source={require('../../assets/image/hair-salon.png')}
+          source={require('../../assets/image/unisalon11.png')}
           style={{
-            width: 100,
+            width: 130,
             height: 100,
           }}
         />
@@ -63,33 +63,53 @@ const SignUp = () => {
           borderRadius: 5,
           alignItems: 'center',
           backgroundColor: 'white',
+          justifyContent: 'space-between',
         }}>
-        <Text
+        <View
           style={{
-            fontSize: 15,
-            color: 'black',
-            marginLeft: 15,
+            flexDirection: 'row',
+            width: '80%',
+            alignItems: 'center',
+            height: '100%',
           }}>
-          +855 |
-        </Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Phone Number"
-          onChangeText={onChangeNumber}
-          value={number}
-          keyboardType="numeric"
-        />
+          <Text
+            style={{
+              fontSize: 16,
+              color: 'black',
+              marginLeft: 15,
+            }}>
+            +855 |
+          </Text>
+          <TextInput
+            style={{
+              flex: 1,
+              borderRadius: 5,
+              fontSize: 16,
+              color: 'black',
+              marginLeft: '2%',
+            }}
+            placeholder="Phone Number"
+            onChangeText={onChangeNumber}
+            value={number}
+            keyboardType="numeric"
+          />
+        </View>
         <TouchableOpacity
           style={{
             backgroundColor: '#16247d',
             borderBottomEndRadius: 5,
             borderTopEndRadius: 5,
+            width: '20%',
+            height: '100%',
+            // justifyContent: 'center',
           }}>
           <Text
             style={{
               color: 'white',
               padding: 15,
               fontWeight: 'bold',
+              fontSize: 15,
+              textAlign: 'center',
             }}>
             Send
           </Text>
@@ -166,7 +186,8 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     borderRadius: 5,
-    fontSize: 15,
+    fontSize: 16,
     color: 'black',
+    marginLeft: '3%',
   },
 });

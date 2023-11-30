@@ -105,7 +105,7 @@ const RecommendSalons = [
 const ShopScreen = () => {
   const navigation: any = useNavigation();
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{}}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.Appbar}>
           <Feather

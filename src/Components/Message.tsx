@@ -46,88 +46,86 @@ const Message = () => {
     ]);
   return (
     <SafeAreaView>
-      <ScrollView>
-        <View
-          style={{
-            width: '100%',
-            height: 60,
-            backgroundColor: '#16247d',
-            flexDirection: 'row',
-            alignItems: 'center',
+      <View
+        style={{
+          width: '100%',
+          height: 60,
+          backgroundColor: '#16247d',
+          flexDirection: 'row',
+          alignItems: 'center',
+        }}>
+        <TouchableOpacity
+          activeOpacity={1}
+          onPress={() => {
+            navigation.goBack();
           }}>
+          <AntDesign
+            name="arrowleft"
+            size={25}
+            style={{
+              color: 'white',
+              paddingLeft: '5%',
+            }}
+          />
+        </TouchableOpacity>
+        <Text
+          style={{
+            fontWeight: 'bold',
+            fontSize: 17,
+            color: 'white',
+            textAlign: 'center',
+            paddingLeft: '30%',
+          }}>
+          Message
+        </Text>
+      </View>
+      {Data.map((e, index) => {
+        return (
           <TouchableOpacity
-            activeOpacity={1}
-            onPress={() => {
-              navigation.goBack();
+            key={index}
+            style={{
+              width: '100%',
+              height: 80,
+              backgroundColor: 'white',
+              flexDirection: 'row',
+              alignItems: 'center',
+              borderBottomWidth: 0.3,
+              justifyContent: 'space-between',
+              paddingHorizontal: '5%',
             }}>
-            <AntDesign
-              name="arrowleft"
-              size={25}
-              style={{
-                color: 'white',
-                paddingLeft: '5%',
-              }}
+            <View style={{flexDirection: 'row'}}>
+              <Image
+                style={{
+                  width: 60,
+                  height: 60,
+                  borderRadius: 50,
+                }}
+                source={e.image}
+              />
+              <View style={{marginLeft: '5%'}}>
+                <Text
+                  style={{color: 'black', fontSize: 15, fontWeight: 'bold'}}>
+                  {e.name}
+                </Text>
+                <View style={{flexDirection: 'row'}}>
+                  <Text style={{color: 'black', fontSize: 14}}>You:</Text>
+                  <Text
+                    style={{color: 'black', paddingLeft: '2%', fontSize: 14}}>
+                    {e.Usermessage}
+                  </Text>
+                </View>
+                <Text style={{color: 'grey', fontSize: 14}}>{e.date}</Text>
+              </View>
+            </View>
+            <SimpleLineIcons
+              name="options-vertical"
+              size={20}
+              color={'black'}
+              onPress={createTwoButtonAlert}
             />
           </TouchableOpacity>
-          <Text
-            style={{
-              fontWeight: 'bold',
-              fontSize: 17,
-              color: 'white',
-              textAlign: 'center',
-              paddingLeft: '30%',
-            }}>
-            Message
-          </Text>
-        </View>
-        {Data.map((e, index) => {
-          return (
-            <TouchableOpacity
-              key={index}
-              style={{
-                width: '100%',
-                height: 80,
-                backgroundColor: 'white',
-                flexDirection: 'row',
-                alignItems: 'center',
-                borderBottomWidth: 0.3,
-                justifyContent: 'space-between',
-                paddingHorizontal: '5%',
-              }}>
-              <View style={{flexDirection: 'row'}}>
-                <Image
-                  style={{
-                    width: 60,
-                    height: 60,
-                    borderRadius: 50,
-                  }}
-                  source={e.image}
-                />
-                <View style={{marginLeft: '5%'}}>
-                  <Text
-                    style={{color: 'black', fontSize: 15, fontWeight: 'bold'}}>
-                    {e.name}
-                  </Text>
-                  <View style={{flexDirection: 'row'}}>
-                    <Text style={{color: 'black', fontSize: 14}}>You:</Text>
-                    <Text
-                      style={{color: 'black', paddingLeft: '2%', fontSize: 14}}>
-                      {e.Usermessage}
-                    </Text>
-                  </View>
-                  <Text style={{color: 'grey', fontSize: 14}}>{e.date}</Text>
-                </View>
-              </View>
-              <SimpleLineIcons
-                name="options-vertical"
-                size={20}
-                color={'black'}
-                onPress={createTwoButtonAlert}
-              />
-            </TouchableOpacity>
-          );
-        })}
-      </ScrollView>
+        );
+      })}
     </SafeAreaView>
   );
 };

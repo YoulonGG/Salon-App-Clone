@@ -17,12 +17,11 @@ const Payment = () => {
     <SafeAreaView>
       <View
         style={{
-          width: 'auto',
+          width: '100%',
           height: 60,
           backgroundColor: '#16247d',
           flexDirection: 'row',
           alignItems: 'center',
-          paddingHorizontal: 17,
         }}>
         <TouchableOpacity
           activeOpacity={1}
@@ -34,6 +33,7 @@ const Payment = () => {
             size={25}
             style={{
               color: 'white',
+              paddingLeft: '5%',
             }}
           />
         </TouchableOpacity>
@@ -43,7 +43,7 @@ const Payment = () => {
             fontSize: 17,
             color: 'white',
             textAlign: 'center',
-            marginLeft: 130,
+            paddingLeft: '30%',
           }}>
           Payment
         </Text>
@@ -67,6 +67,14 @@ const Payment = () => {
         </Text>
       </View>
     </SafeAreaView>
+    // <View
+    //   style={{
+    //     flex: 1,
+    //     width: 'auto',
+    //     backgroundColor: '#16247d',
+    //     alignItems: 'center',
+    //     paddingHorizontal: 17,
+    //   }}></View>
   );
 };
 

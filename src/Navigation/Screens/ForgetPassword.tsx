@@ -17,8 +17,8 @@ const ForgetPassword = () => {
     <SafeAreaView>
       <View
         style={{
-          marginLeft: 15,
-          marginTop: 20,
+          width: '100%',
+          margin: '5%',
         }}>
         <TouchableOpacity
           activeOpacity={1}
@@ -29,7 +29,7 @@ const ForgetPassword = () => {
         </TouchableOpacity>
       </View>
       <View style={{alignItems: 'center'}}>
-        <Text style={{marginTop: 75, fontSize: 20, color: 'black'}}>
+        <Text style={{marginTop: 15, fontSize: 20, color: 'black'}}>
           Forget Password
         </Text>
         <Text style={{marginTop: 20, color: 'grey', fontSize: 15}}>
@@ -47,27 +47,45 @@ const ForgetPassword = () => {
           borderRadius: 5,
           alignItems: 'center',
           backgroundColor: 'white',
+          justifyContent: 'space-between',
         }}>
-        <Text
+        <View
           style={{
-            fontSize: 15,
-            color: 'black',
-            marginLeft: 15,
+            flexDirection: 'row',
+            width: '80%',
+            alignItems: 'center',
+            height: '100%',
           }}>
-          +855 |
-        </Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Phone Number"
-          onChangeText={onChangeNumber}
-          value={number}
-          keyboardType="numeric"
-        />
+          <Text
+            style={{
+              fontSize: 16,
+              color: 'black',
+              marginLeft: 15,
+            }}>
+            +855 |
+          </Text>
+          <TextInput
+            style={{
+              flex: 1,
+              borderRadius: 5,
+              fontSize: 16,
+              color: 'black',
+              marginLeft: '2%',
+            }}
+            placeholder="Phone Number"
+            onChangeText={onChangeNumber}
+            value={number}
+            keyboardType="numeric"
+          />
+        </View>
         <TouchableOpacity
           style={{
             backgroundColor: '#16247d',
             borderBottomEndRadius: 5,
             borderTopEndRadius: 5,
+            width: '20%',
+            height: '100%',
+            // justifyContent: 'center',
           }}>
           <Text
             style={{
@@ -75,6 +93,7 @@ const ForgetPassword = () => {
               padding: 15,
               fontWeight: 'bold',
               fontSize: 15,
+              textAlign: 'center',
             }}>
             Send
           </Text>
@@ -93,7 +112,13 @@ const ForgetPassword = () => {
           backgroundColor: 'white',
         }}>
         <TextInput
-          style={styles.input}
+          style={{
+            flex: 1,
+            borderRadius: 5,
+            fontSize: 16,
+            color: 'black',
+            marginLeft: '3%',
+          }}
           placeholder="Code"
           keyboardType="numeric"
         />
@@ -127,11 +152,4 @@ const ForgetPassword = () => {
 
 export default ForgetPassword;
 
-const styles = StyleSheet.create({
-  input: {
-    flex: 1,
-    borderRadius: 5,
-    fontSize: 15,
-    color: 'black',
-  },
-});
+const styles = StyleSheet.create({});

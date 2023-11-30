@@ -15,6 +15,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 const Login = () => {
   const [text, onChangeText] = React.useState('');
   const [number, onChangeNumber] = React.useState('');
+  const [number2, onChangeNumber2] = React.useState('');
   const navigation = useNavigation();
   const navigationn: any = useNavigation();
   const navigationnn: any = useNavigation();
@@ -38,12 +39,12 @@ const Login = () => {
         style={{
           justifyContent: 'center',
           alignItems: 'center',
-          marginTop: 80,
+          marginTop: 50,
         }}>
         <Image
           source={require('../../assets/image/unisalon11.png')}
           style={{
-            width: 150,
+            width: 130,
             height: 100,
           }}
         />
@@ -69,9 +70,15 @@ const Login = () => {
           +855 |
         </Text>
         <TextInput
-          style={styles.input}
+          style={{
+            flex: 1,
+            borderRadius: 5,
+            fontSize: 15,
+            paddingLeft: '3%',
+            color: '#000',
+          }}
           placeholder="Phone Number"
-          onChangeText={onChangeText}
+          onChangeText={onChangeNumber}
           value={number}
         />
       </View>
@@ -88,10 +95,16 @@ const Login = () => {
           backgroundColor: 'white',
         }}>
         <TextInput
-          style={styles.input}
+          style={{
+            flex: 1,
+            borderRadius: 5,
+            fontSize: 15,
+            paddingLeft: '3%',
+            color: '#000',
+          }}
           placeholder="Password"
-          onChangeText={onChangeNumber}
-          value={number}
+          onChangeText={onChangeNumber2}
+          value={number2}
         />
         <Ionicons
           name="eye"
@@ -140,36 +153,50 @@ const Login = () => {
             Forget Password
           </Text>
         </TouchableOpacity>
-        <View>
-          <Text
+        <View
+          style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+            marginTop: 20,
+            paddingHorizontal: '10%',
+            width: '100%',
+          }}>
+          <View
             style={{
-              fontWeight: 'bold',
-              textAlign: 'center',
-              marginTop: 20,
-              fontSize: 14,
-              color: 'grey',
-            }}>
-            or
-          </Text>
+              flex: 1,
+              height: 1,
+              backgroundColor: 'grey',
+            }}
+          />
+          <Text> or </Text>
+          <View
+            style={{
+              flex: 1,
+              height: 1,
+              backgroundColor: 'grey',
+            }}
+          />
         </View>
       </View>
       <View
         style={{
           flexDirection: 'row',
+          justifyContent: 'space-between',
+          marginTop: 20,
+          paddingHorizontal: '12%',
         }}>
         <TouchableOpacity
           style={{
             backgroundColor: 'white',
-            width: 80,
-            height: 80,
+            width: 60,
+            height: 60,
             alignItems: 'center',
             justifyContent: 'center',
-            marginLeft: 40,
-            marginTop: 25,
+
             borderRadius: 50,
           }}>
           <Image
-            source={require('../../assets/image/facebook.png')}
+            source={require('../../assets/image/facebook3.png')}
             style={{
               width: '50%',
               height: '50%',
@@ -180,19 +207,18 @@ const Login = () => {
         <TouchableOpacity
           style={{
             backgroundColor: 'white',
-            width: 80,
-            height: 80,
+            width: 60,
+            height: 60,
             alignItems: 'center',
             justifyContent: 'center',
-            marginLeft: 50,
-            marginTop: 25,
+
             borderRadius: 50,
           }}>
           <Image
             source={require('../../assets/image/googlelogo.png')}
             style={{
-              width: 50,
-              height: 50,
+              width: '60%',
+              height: '60%',
               alignItems: 'center',
             }}
           />
@@ -200,19 +226,18 @@ const Login = () => {
         <TouchableOpacity
           style={{
             backgroundColor: 'white',
-            width: 80,
-            height: 80,
+            width: 60,
+            height: 60,
             alignItems: 'center',
             justifyContent: 'center',
-            marginLeft: 40,
-            marginTop: 25,
+
             borderRadius: 50,
           }}>
           <Image
             source={require('../../assets/image/applelogo.png')}
             style={{
-              width: 50,
-              height: 50,
+              width: '50%',
+              height: '50%',
               alignItems: 'center',
             }}
           />
@@ -242,10 +267,5 @@ const Login = () => {
 export default Login;
 
 const styles = StyleSheet.create({
-  input: {
-    flex: 1,
-    borderRadius: 5,
-    fontSize: 15,
-    color: '#000',
-  },
+  input: {},
 });

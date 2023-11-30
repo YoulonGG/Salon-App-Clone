@@ -955,7 +955,7 @@ const HomeScreen = () => {
   };
 
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <View style={{flex: 1, backgroundColor: '16247d'}}>
       <GoogleMap />
       {/* <BottomSheett /> */}
       <View style={styles.searchSection}>
@@ -1136,6 +1136,7 @@ const HomeScreen = () => {
             justifyContent: 'center',
             width: 40,
             height: 40,
+
             backgroundColor: 'white',
             borderRadius: 20,
             elevation: 10,
@@ -1159,7 +1160,7 @@ const HomeScreen = () => {
       </View>
       <BottomSheet
         ref={bottomSheetRef}
-        index={1}
+        index={0}
         snapPoints={snapPoints}
         handleIndicatorStyle={styles.inditorBottomSheet}
         onChange={handleSheetChanges}>
@@ -1169,7 +1170,7 @@ const HomeScreen = () => {
           contentContainerStyle={{}}
         />
       </BottomSheet>
-    </SafeAreaView>
+    </View>
   );
 };
 
