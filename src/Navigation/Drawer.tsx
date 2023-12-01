@@ -21,7 +21,6 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import DrawerContent from '../Components/DrawerContent';
 import Login from './Screens/Login';
 import SignUp from './Screens/SignUp';
 import Entypo from 'react-native-vector-icons/Entypo';

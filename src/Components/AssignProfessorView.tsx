@@ -6,6 +6,8 @@ import {
   TouchableOpacity,
   ScrollView,
   Image,
+  Dimensions,
+  FlatList,
 } from 'react-native';
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
@@ -304,34 +306,36 @@ export const AssignProfessorView = () => {
             </Text>
           </View>
         </View>
+        <View style={{marginTop: 70}}></View>
         <View
           style={{
-            marginTop: 10,
+            height: 60,
+            width: '100%',
+            alignSelf: 'center',
+            justifyContent: 'center',
+            position: 'absolute',
+            bottom: 0,
             backgroundColor: 'white',
+            borderTopWidth: 0.5,
           }}>
           <TouchableOpacity
-            activeOpacity={1}
             onPress={() => {
               navigation.push('ChooseService');
             }}
             style={{
               backgroundColor: '#16247d',
-              height: 45,
-              marginTop: 10,
-              width: '90%',
-              alignSelf: 'center',
               justifyContent: 'center',
               alignItems: 'center',
-              borderRadius: 8,
-              borderTopColor: 'grey',
-              borderWidth: 1,
+              padding: 11,
+              borderRadius: 5,
+              width: '90%',
+              alignSelf: 'center',
             }}>
             <Text style={{color: 'white', fontSize: 16, fontWeight: 'bold'}}>
               Skip
             </Text>
           </TouchableOpacity>
         </View>
-        <View style={{marginTop: 10}}></View>
       </ScrollView>
     </SafeAreaView>
   );

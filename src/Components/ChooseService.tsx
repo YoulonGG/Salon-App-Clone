@@ -6,50 +6,148 @@ import {
   TouchableOpacity,
   ScrollView,
   Image,
+  Dimensions,
+  FlatList,
+  ImageBackground,
 } from 'react-native';
 import React from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {useNavigation} from '@react-navigation/native';
+const {width, height} = Dimensions.get('window');
+
+const DATA = [
+  {
+    id: '1',
+    price: '$ 10.00 Up',
+    points: '2 pts',
+    image: require('../assets/image/salon1.jpg'),
+    name: 'កាត់សក់នារី',
+  },
+  {
+    id: '2',
+    price: '$ 5.00 Up',
+    points: '2 pts',
+    image: require('../assets/image/salon2.jpg'),
+    name: 'កាត់សក់បែបCEO',
+  },
+  {
+    id: '3',
+    price: '$ 2.50 Up',
+    points: '1 pts',
+    image: require('../assets/image/salon3.jpg'),
+    name: 'កោពុកម៉ាត់បុរស',
+  },
+  {
+    id: '4',
+    price: '$ 10.00 Up',
+    points: '1 pts',
+    image: require('../assets/image/salon2.jpg'),
+    name: 'កាត់ក្រចកដៃនិងក្រចកជើងបុរស',
+  },
+  {
+    id: '5',
+    price: '$ 5.00 Up',
+    points: '1 pts',
+    image: require('../assets/image/salon3.jpg'),
+    name: 'Haircut for kids',
+  },
+  {
+    id: '6',
+    price: '$ 5.00 Up',
+    points: '1 pts',
+    image: require('../assets/image/salon1.jpg'),
+    name: 'Haircut for kids',
+  },
+  {
+    id: '7',
+    price: '$ 90.00 Up',
+    points: '1 pts',
+    image: require('../assets/image/salon2.jpg'),
+    name: 'ចាក់សាក់(Tattoo)',
+  },
+  {
+    id: '8',
+    price: '$ 25.00 Up',
+    points: '1 pts',
+    image: require('../assets/image/salon3.jpg'),
+    name: 'អ៊ុតសក់ត្រង់បុរស',
+  },
+  {
+    id: '9',
+    price: '$ 30.00 Up',
+    points: '1 pts',
+    image: require('../assets/image/salon2.jpg'),
+    name: 'លាប់ពណ៏សក់ Blich',
+  },
+  {
+    id: '10',
+    price: '$ 80.00 Up',
+    points: '1 pts',
+    image: require('../assets/image/salon1.jpg'),
+    name: 'មានលុបរូបសាក់និងចោះក្រវិល',
+  },
+  {
+    id: '11',
+    price: '$ 10.00 Up',
+    points: '1 pts',
+    image: require('../assets/image/salon2.jpg'),
+    name: 'Massage Face',
+  },
+  {
+    id: '12',
+    price: '$ 18.00 Up',
+    points: '1 pts',
+    image: require('../assets/image/salon2.jpg'),
+    name: 'លាបពណ៏សក់បុរសខ្លាំង',
+  },
+  {
+    id: '13',
+    price: '$ 5.00 Up',
+    points: '1 pts',
+    image: require('../assets/image/salon2.jpg'),
+    name: 'មានលុបរូបសាក់និងចោះក្រវិល',
+  },
+  {
+    id: '14',
+    price: '$ 5.00 Up',
+    points: '1 pts',
+    image: require('../assets/image/salon1.jpg'),
+
+    name: 'Haircut for kids',
+  },
+  {
+    id: '15',
+    price: '$ 5.00 Up',
+    points: '1 pts',
+    image: require('../assets/image/salon1.jpg'),
+    name: 'Haircut for kids',
+  },
+  {
+    id: '16',
+    price: '$ 5.00 Up',
+    points: '1 pts',
+    image: require('../assets/image/salon1.jpg'),
+    name: 'Haircut for kids',
+  },
+  {
+    id: '17',
+    price: '$ 5.00 Up',
+    points: '1 pts',
+    image: require('../assets/image/salon1.jpg'),
+    name: 'Mid Fad Haircut',
+  },
+  {
+    id: '18',
+    price: '$ 5.00 Up',
+    points: '1 pts',
+    image: require('../assets/image/salon1.jpg'),
+    name: 'កាត់សក់កូនក្មេង',
+  },
+];
 
 const ChooseService = () => {
   const navigation: any = useNavigation();
-  const Data = [
-    {
-      title: 'កាត់សក់នារី',
-      price: '10.00$',
-      img: require('../assets/image/woman.png'),
-    },
-    {
-      title: 'កាត់បុរស',
-      price: '6.00$',
-      img: require('../assets/image/man.png'),
-    },
-    {
-      title: 'កាត់សក់យុវវ័យ',
-      price: '15.00$',
-      img: require('../assets/image/man1.png'),
-    },
-    {
-      title: 'កាត់សក់កូនក្មេង',
-      price: '10.00$',
-      img: require('../assets/image/girl.png'),
-    },
-    {
-      title: 'កាត់សក់នារី',
-      price: '10.00$',
-      img: require('../assets/image/woman.png'),
-    },
-    {
-      title: 'កាត់បុរស',
-      price: '6.00$',
-      img: require('../assets/image/man.png'),
-    },
-    {
-      title: 'កាត់សក់យុវវ័យ',
-      price: '15.00$',
-      img: require('../assets/image/man1.png'),
-    },
-  ];
+
   return (
     <SafeAreaView>
       <ScrollView showsHorizontalScrollIndicator={false}>
@@ -104,146 +202,105 @@ const ChooseService = () => {
             Select Services
           </Text>
         </View>
-        {Data.map((e, index) => {
-          return (
-            <View
-              style={{
-                marginTop: 10,
-                flexDirection: 'row',
-              }}>
+        <FlatList
+          data={DATA}
+          numColumns={3}
+          renderItem={({item}) => {
+            return (
               <View
                 style={{
-                  width: 125,
-                  height: 175,
-                  marginLeft: 10,
-                  borderRadius: 6,
+                  width: width * 0.31,
+                  height: height * 0.19,
+                  marginHorizontal: 5,
+                  marginVertical: 10,
                 }}>
                 <View
                   style={{
-                    width: 125,
-                    backgroundColor: 'white',
-                    height: 120,
-                    borderRadius: 6,
-                    alignItems: 'center',
-                    justifyContent: 'center',
+                    width: '100%',
+                    height: '75%',
                   }}>
-                  <View
+                  <ImageBackground
+                    source={item.image}
                     style={{
-                      backgroundColor: 'skyblue',
-                      padding: 2,
-                      borderRadius: 2,
-                      marginLeft: -55,
+                      width: '100%',
+                      height: '100%',
+                      borderRadius: 5,
                     }}>
-                    <Text style={{color: 'white', fontWeight: 'bold'}}>
-                      {e.price}
-                    </Text>
-                  </View>
-                  <Image
-                    source={e.img}
-                    style={{
-                      width: 70,
-                      height: 70,
-                    }}></Image>
+                    <View
+                      style={{
+                        backgroundColor: 'skyblue',
+                        width: '50%',
+                        padding: '2%',
+                        borderBottomEndRadius: 5,
+                        borderTopStartRadius: 5,
+                      }}>
+                      <Text style={{color: 'white', fontSize: 12}}>
+                        {item.price}
+                      </Text>
+                    </View>
+                    <View
+                      style={{
+                        backgroundColor: 'skyblue',
+                        width: '30%',
+                        padding: '2%',
+                        borderBottomEndRadius: 5,
+                        marginTop: 2,
+                        alignItems: 'center',
+                      }}>
+                      <Text style={{color: 'white', fontSize: 12}}>
+                        {item.points}
+                      </Text>
+                    </View>
+                  </ImageBackground>
                 </View>
-                <Text
-                  style={{
-                    fontSize: 15,
-                    fontWeight: 'bold',
-                    color: '#16247d',
-                  }}>
-                  {e.title}
-                </Text>
-              </View>
-              <View
-                style={{
-                  width: 125,
-                  height: 175,
-                  marginLeft: 10,
-                  borderRadius: 6,
-                }}>
                 <View
                   style={{
-                    width: 125,
-                    backgroundColor: 'white',
-                    height: 120,
-                    borderRadius: 6,
-                    alignItems: 'center',
-                    justifyContent: 'center',
+                    width: '100%',
+                    height: '25%',
+                    flex: 1,
                   }}>
-                  <View
+                  <Text
                     style={{
-                      backgroundColor: 'skyblue',
-                      padding: 2,
-                      borderRadius: 2,
-                      marginLeft: -65,
+                      fontSize: 13,
+                      fontWeight: 'bold',
+                      color: '#16247d',
                     }}>
-                    <Text style={{color: 'white', fontWeight: 'bold'}}>
-                      {e.price}
-                    </Text>
-                  </View>
-                  <Image
-                    source={e.img}
-                    style={{
-                      width: 70,
-                      height: 70,
-                    }}></Image>
+                    {item.name}
+                  </Text>
                 </View>
-                <Text
-                  style={{
-                    fontSize: 15,
-                    fontWeight: 'bold',
-                    color: '#16247d',
-                  }}>
-                  {e.title}
-                </Text>
               </View>
-              <View
-                style={{
-                  width: 125,
-                  height: 175,
-                  marginLeft: 10,
-                  borderRadius: 6,
-                }}>
-                <View
-                  style={{
-                    width: 125,
-                    backgroundColor: 'white',
-                    height: 120,
-                    borderRadius: 6,
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                  }}>
-                  <View
-                    style={{
-                      backgroundColor: 'skyblue',
-                      padding: 2,
-                      borderRadius: 2,
-                      marginLeft: -55,
-                    }}>
-                    <Text style={{color: 'white', fontWeight: 'bold'}}>
-                      {e.price}
-                    </Text>
-                  </View>
-                  <Image
-                    source={e.img}
-                    style={{
-                      width: 70,
-                      height: 70,
-                    }}></Image>
-                </View>
-                <Text
-                  style={{
-                    fontSize: 15,
-                    fontWeight: 'bold',
-                    color: '#16247d',
-                  }}>
-                  {e.title}
-                </Text>
-              </View>
-            </View>
-          );
-        })}
+            );
+          }}
+          keyExtractor={item => item.id}
+        />
+        <View style={{marginTop: 40}}></View>
       </ScrollView>
+
+      <View
+        style={{
+          height: 60,
+          width: '100%',
+          alignSelf: 'center',
+          justifyContent: 'center',
+          position: 'absolute',
+          bottom: 0,
+          backgroundColor: 'white',
+        }}>
+        <TouchableOpacity
+          style={{
+            backgroundColor: '#16247d',
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: 11,
+            borderRadius: 5,
+            width: '90%',
+            alignSelf: 'center',
+          }}>
+          <Text style={{color: 'white', fontSize: 16, fontWeight: 'bold'}}>
+            Next
+          </Text>
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   );
 };

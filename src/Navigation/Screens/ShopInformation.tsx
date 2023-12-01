@@ -133,7 +133,8 @@ const ShopInformation = () => {
             color: 'black',
             fontSize: 16,
             fontWeight: 'bold',
-            margin: 15,
+            marginLeft: 20,
+            marginTop: 15,
           }}>
           Account
         </Text>
@@ -362,7 +363,7 @@ const ShopInformation = () => {
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
             <Image
               source={require('../../assets/image/loudspeaker.png')}
-              style={{}}></Image>
+              style={{width: 25, height: 25}}></Image>
             <Text
               style={{
                 fontSize: 15,
@@ -394,7 +395,7 @@ const ShopInformation = () => {
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
             <Image
               source={require('../../assets/image/customer-service.png')}
-              style={{}}></Image>
+              style={{width: 25, height: 25}}></Image>
             <Text
               style={{
                 fontSize: 15,
@@ -426,7 +427,7 @@ const ShopInformation = () => {
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
             <Image
               source={require('../../assets/image/member-card.png')}
-              style={{}}></Image>
+              style={{width: 25, height: 25}}></Image>
             <Text
               style={{
                 fontSize: 15,
@@ -464,7 +465,7 @@ const ShopInformation = () => {
               style={{
                 backgroundColor: 'white',
                 width: 110,
-                height: 150,
+                height: 140,
                 marginLeft: 20,
                 borderRadius: 5,
                 alignItems: 'center',
@@ -504,7 +505,7 @@ const ShopInformation = () => {
               style={{
                 backgroundColor: 'white',
                 width: 110,
-                height: 150,
+                height: 140,
                 marginLeft: 10,
                 borderRadius: 5,
                 alignItems: 'center',
@@ -544,7 +545,7 @@ const ShopInformation = () => {
               style={{
                 backgroundColor: 'white',
                 width: 110,
-                height: 150,
+                height: 140,
                 marginLeft: 10,
                 borderRadius: 5,
                 alignItems: 'center',
@@ -584,7 +585,7 @@ const ShopInformation = () => {
               style={{
                 backgroundColor: 'white',
                 width: 110,
-                height: 150,
+                height: 140,
                 marginLeft: 10,
                 borderRadius: 5,
                 alignItems: 'center',
@@ -639,7 +640,11 @@ const ShopInformation = () => {
           }}>
           Mobile Services
         </Text>
-        <View style={{flexDirection: 'row', marginTop: 10}}>
+        <View
+          style={{
+            flexDirection: 'row',
+            marginTop: 10,
+          }}>
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             <View
               style={{
@@ -649,24 +654,26 @@ const ShopInformation = () => {
                 marginLeft: 20,
                 borderRadius: 5,
                 alignItems: 'center',
+                justifyContent: 'space-between',
+                paddingVertical: '1.5%',
               }}>
-              <Image
-                source={require('../../assets/image/makeup-pouch.png')}
-                style={{
-                  marginTop: 5,
-                }}></Image>
-              <Text
-                style={{
-                  fontWeight: 'bold',
-                  color: 'black',
-                  fontSize: 12,
-                  marginTop: 5,
-                }}>
-                Nails
-              </Text>
-              <Text style={{color: 'red', fontSize: 12, marginTop: 5}}>
-                $10.00 Up
-              </Text>
+              <View style={{alignItems: 'center'}}>
+                <Image
+                  source={require('../../assets/image/makeup-pouch.png')}
+                  style={{width: 60, height: 60}}></Image>
+                <Text
+                  style={{
+                    fontWeight: 'bold',
+                    color: 'black',
+                    fontSize: 12,
+                    marginTop: 5,
+                  }}>
+                  Nails
+                </Text>
+                <Text style={{color: 'red', fontSize: 12, marginTop: 5}}>
+                  $10.00 Up
+                </Text>
+              </View>
               <TouchableOpacity
                 activeOpacity={1}
                 onPress={() => {
@@ -691,33 +698,35 @@ const ShopInformation = () => {
                 backgroundColor: 'white',
                 width: 110,
                 height: 180,
-                marginLeft: 20,
+                marginLeft: 15,
                 borderRadius: 5,
                 alignItems: 'center',
+                justifyContent: 'space-between',
+                paddingVertical: '1.5%',
               }}>
-              <Image
-                source={require('../../assets/image/makeup.png')}
-                style={{
-                  marginTop: 5,
-                }}></Image>
-              <Text
-                style={{
-                  fontWeight: 'bold',
-                  color: 'black',
-                  textAlign: 'center',
-                  fontSize: 12,
-                  marginTop: 5,
-                }}>
-                Make-up for Wedding
-              </Text>
-              <Text
-                style={{
-                  color: 'red',
-                  fontSize: 12,
-                  marginTop: 5,
-                }}>
-                $15.00 Up
-              </Text>
+              <View style={{alignItems: 'center'}}>
+                <Image
+                  source={require('../../assets/image/makeup.png')}
+                  style={{width: 60, height: 60}}></Image>
+                <Text
+                  style={{
+                    fontWeight: 'bold',
+                    color: 'black',
+                    textAlign: 'center',
+                    fontSize: 12,
+                    marginTop: 5,
+                  }}>
+                  Make-up for Wedding
+                </Text>
+                <Text
+                  style={{
+                    color: 'red',
+                    fontSize: 12,
+                    marginTop: 5,
+                  }}>
+                  $15.00 Up
+                </Text>
+              </View>
               <TouchableOpacity
                 activeOpacity={1}
                 onPress={() => {
@@ -742,27 +751,30 @@ const ShopInformation = () => {
                 backgroundColor: 'white',
                 width: 110,
                 height: 180,
-                marginLeft: 20,
+                marginLeft: 15,
                 borderRadius: 5,
                 alignItems: 'center',
+                justifyContent: 'space-between',
+                paddingVertical: '1.5%',
               }}>
-              <Image
-                source={require('../../assets/image/make-up.png')}
-                style={{
-                  marginTop: 5,
-                }}></Image>
-              <Text
-                style={{
-                  fontWeight: 'bold',
-                  color: 'black',
-                  textAlign: 'center',
-                  fontSize: 12,
-                }}>
-                Haircut for men
-              </Text>
-              <Text style={{color: 'red', fontSize: 12, marginTop: 5}}>
-                $10.00 Up
-              </Text>
+              <View style={{alignItems: 'center'}}>
+                <Image
+                  source={require('../../assets/image/make-up.png')}
+                  style={{width: 60, height: 60}}></Image>
+                <Text
+                  style={{
+                    fontWeight: 'bold',
+                    color: 'black',
+                    textAlign: 'center',
+                    fontSize: 12,
+                    marginTop: 5,
+                  }}>
+                  Haircut for men
+                </Text>
+                <Text style={{color: 'red', fontSize: 12, marginTop: 5}}>
+                  $10.00 Up
+                </Text>
+              </View>
               <TouchableOpacity
                 activeOpacity={1}
                 onPress={() => {
@@ -787,27 +799,32 @@ const ShopInformation = () => {
                 backgroundColor: 'white',
                 width: 110,
                 height: 180,
-                marginLeft: 20,
+                marginLeft: 15,
                 borderRadius: 5,
                 alignItems: 'center',
+                justifyContent: 'space-between',
+                paddingVertical: '1.5%',
               }}>
-              <Image
-                source={require('../../assets/image/foundation.png')}
-                style={{
-                  marginTop: 5,
-                }}></Image>
-              <Text
-                style={{
-                  fontWeight: 'bold',
-                  color: 'black',
-                  fontSize: 12,
-                  marginTop: 5,
-                }}>
-                Haircut for kids
-              </Text>
-              <Text style={{color: 'red', fontSize: 12, marginTop: 5}}>
-                $5.00 Up
-              </Text>
+              <View style={{alignItems: 'center'}}>
+                <Image
+                  source={require('../../assets/image/foundation.png')}
+                  style={{
+                    width: 60,
+                    height: 60,
+                  }}></Image>
+                <Text
+                  style={{
+                    fontWeight: 'bold',
+                    color: 'black',
+                    fontSize: 12,
+                    marginTop: 5,
+                  }}>
+                  Haircut for kids
+                </Text>
+                <Text style={{color: 'red', fontSize: 12, marginTop: 5}}>
+                  $5.00 Up
+                </Text>
+              </View>
               <TouchableOpacity
                 activeOpacity={1}
                 onPress={() => {
@@ -840,65 +857,65 @@ const ShopInformation = () => {
           Member Types
         </Text>
         <View style={styles.formMember}>
-          <Ionicons
-            name="ribbon-outline"
-            size={20}
-            color={'black'}
-            style={{
-              marginLeft: '3%',
-            }}
-          />
-          <Text
-            style={{
-              marginLeft: '3%',
-              fontSize: 15,
-              color: 'black',
-            }}>
-            Silver
-          </Text>
-          <Text style={{fontSize: 15, color: '#16247d', marginLeft: '32%'}}>
+          <View style={{flexDirection: 'row'}}>
+            <Ionicons
+              name="ribbon-outline"
+              size={20}
+              color={'black'}
+              style={{}}
+            />
+            <Text
+              style={{
+                fontSize: 15,
+                color: 'black',
+                marginLeft: 10,
+              }}>
+              Silver
+            </Text>
+          </View>
+          <Text style={{fontSize: 15, color: '#16247d'}}>
             200 pts (Dis. 10%)
           </Text>
         </View>
         <View style={styles.formMember}>
-          <Ionicons
-            name="ribbon-outline"
-            size={20}
-            color={'black'}
-            style={{
-              marginLeft: '3%',
-            }}
-          />
-          <Text
-            style={{
-              marginLeft: '3%',
-              fontSize: 15,
-              color: 'black',
-            }}>
-            Gold
-          </Text>
-          <Text style={{fontSize: 15, color: '#16247d', marginLeft: '33%'}}>
+          <View style={{flexDirection: 'row'}}>
+            <Ionicons
+              name="ribbon-outline"
+              size={20}
+              color={'black'}
+              style={{}}
+            />
+            <Text
+              style={{
+                fontSize: 15,
+                color: 'black',
+                marginLeft: 10,
+              }}>
+              Gold
+            </Text>
+          </View>
+          <Text style={{fontSize: 15, color: '#16247d'}}>
             400 pts (Dis. 15%)
           </Text>
         </View>
         <View style={styles.formMember}>
-          <Ionicons
-            name="ribbon-outline"
-            size={20}
-            color={'black'}
-            style={{
-              marginLeft: '3%',
-            }}
-          />
-          <Text
-            style={{
-              marginLeft: '3%',
-              fontSize: 15,
-              color: 'black',
-            }}>
-            Platinum
-          </Text>
-          <Text style={{fontSize: 15, color: '#16247d', marginLeft: '25%'}}>
+          <View style={{flexDirection: 'row'}}>
+            <Ionicons
+              name="ribbon-outline"
+              size={20}
+              color={'black'}
+              style={{}}
+            />
+            <Text
+              style={{
+                fontSize: 15,
+                color: 'black',
+                marginLeft: 10,
+              }}>
+              Platinum
+            </Text>
+          </View>
+          <Text style={{fontSize: 15, color: '#16247d'}}>
             600 pts (Dis. 20%)
           </Text>
         </View>
@@ -907,7 +924,7 @@ const ShopInformation = () => {
       <View
         style={{
           width: '100%',
-          height: 65,
+          height: 60,
           bottom: 0,
           flexDirection: 'row',
           backgroundColor: 'white',
@@ -921,10 +938,10 @@ const ShopInformation = () => {
         <View style={{flexDirection: 'row', width: '40%'}}>
           <Image
             source={require('../../assets/image/gmail.png')}
-            style={{}}></Image>
+            style={{width: 30, height: 30}}></Image>
           <Image
             source={require('../../assets/image/telephone.png')}
-            style={{marginLeft: 20}}></Image>
+            style={{marginLeft: 20, width: 30, height: 30}}></Image>
         </View>
         <TouchableOpacity
           activeOpacity={1}
@@ -933,8 +950,8 @@ const ShopInformation = () => {
           }}
           style={{
             backgroundColor: '#16247d',
-            paddingHorizontal: 35,
-            paddingVertical: 12,
+            paddingHorizontal: 25,
+            paddingVertical: 8,
             borderRadius: 6,
             width: '55%',
           }}>
@@ -942,7 +959,7 @@ const ShopInformation = () => {
             style={{
               color: 'white',
               fontWeight: 'bold',
-              fontSize: 15,
+              fontSize: 14,
               alignSelf: 'center',
             }}>
             Make a BOOKING
@@ -967,13 +984,15 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   formMember: {
+    justifyContent: 'space-between',
     flexDirection: 'row',
-    height: 50,
+    height: 40,
     width: '90%',
     marginTop: 10,
     alignSelf: 'center',
     alignItems: 'center',
     borderRadius: 8,
     backgroundColor: 'white',
+    paddingHorizontal: '3%',
   },
 });
