@@ -20,7 +20,7 @@ const Settings = () => {
       <View
         style={{
           width: '100%',
-          height: 60,
+          height: 40,
           backgroundColor: '#16247d',
           flexDirection: 'row',
           alignItems: 'center',
@@ -45,9 +45,9 @@ const Settings = () => {
             fontSize: 17,
             color: 'white',
             textAlign: 'center',
-            paddingLeft: '24%',
+            paddingLeft: '32%',
           }}>
-          Help & Feedback
+          Settings
         </Text>
       </View>
       <View
@@ -62,7 +62,7 @@ const Settings = () => {
         }}>
         <View style={{flexDirection: 'row'}}>
           <Fontisto name="bell" size={20} color={'#16247d'} style={{}} />
-          <Text style={{color: 'black', fontSize: 15, paddingLeft: '5%'}}>
+          <Text style={{color: 'black', fontSize: 15, marginLeft: 15}}>
             Allow Notification
           </Text>
         </View>
@@ -78,7 +78,7 @@ const Settings = () => {
       <TouchableOpacity
         style={{
           width: '100%',
-          height: 50,
+          height: 40,
           borderWidth: 0.5,
           alignItems: 'center',
           flexDirection: 'row',
@@ -87,7 +87,7 @@ const Settings = () => {
         }}>
         <View style={{flexDirection: 'row'}}>
           <FontAwesome name="star-o" size={22} color={'gold'} style={{}} />
-          <Text style={{color: 'black', fontSize: 15, paddingLeft: '5%'}}>
+          <Text style={{color: 'black', fontSize: 15, marginLeft: 15}}>
             Rate Us
           </Text>
         </View>
@@ -101,7 +101,7 @@ const Settings = () => {
       <TouchableOpacity
         style={{
           width: '100%',
-          height: 50,
+          height: 40,
           borderWidth: 0.5,
           alignItems: 'center',
           flexDirection: 'row',
@@ -110,7 +110,7 @@ const Settings = () => {
         }}>
         <View style={{flexDirection: 'row'}}>
           <AntDesign name="question" size={22} color={'#16247d'} style={{}} />
-          <Text style={{color: 'black', fontSize: 15, paddingLeft: '5%'}}>
+          <Text style={{color: 'black', fontSize: 15, marginLeft: 15}}>
             About App
           </Text>
         </View>

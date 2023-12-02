@@ -14,6 +14,7 @@ import Feather from 'react-native-vector-icons/Feather';
 
 const Data = [
   {
+    id: '1',
     name: 'មែន​ ស្តាយ',
     phoneNumber: '093383965',
     date: 'Sat, 18 Nov 2023 09:27 AM',
@@ -23,6 +24,7 @@ const Data = [
     Service: 'ចាក់សាក់(Tattoo)',
   },
   {
+    id: '2',
     name: 'Ya Ya',
     phoneNumber: '089217145',
     date: 'Sat, 18 Nov 2023 11:18 AM',
@@ -32,6 +34,7 @@ const Data = [
     Service: 'ម៉ាស់សាមុខ',
   },
   {
+    id: '3',
     name: 'មែន​ ស្តាយ',
     phoneNumber: '093383965',
     date: 'Sat, 18 Nov 2023 11:10 AM',
@@ -41,6 +44,7 @@ const Data = [
     Service: 'កាត់សក់បែបCEO',
   },
   {
+    id: '4',
     name: 'ABC007',
     phoneNumber: '093383965',
     date: 'Sat, 18 Nov 2023 02:52 AM',
@@ -50,6 +54,7 @@ const Data = [
     Service: 'ម៉ាស្សាមុខ',
   },
   {
+    id: '5',
     name: 'មែន​ ស្តាយ',
     phoneNumber: '093383965',
     date: 'Sat, 18 Nov 2023 09:27 AM',
@@ -213,6 +218,8 @@ const BookingAndOrder = () => {
                       source={require('../assets/image/man2.png')}
                       style={{
                         marginRight: 10,
+                        width: 25,
+                        height: 25,
                       }}></Image>
                   </TouchableOpacity>
                   <TouchableOpacity
@@ -221,11 +228,11 @@ const BookingAndOrder = () => {
                     }}>
                     <Image
                       source={require('../assets/image/gmail.png')}
-                      style={{marginRight: 10}}></Image>
+                      style={{marginRight: 10, width: 25, height: 25}}></Image>
                   </TouchableOpacity>
                   <Image
                     source={require('../assets/image/telephone.png')}
-                    style={{}}></Image>
+                    style={{width: 25, height: 25}}></Image>
                 </View>
               </View>
             </View>

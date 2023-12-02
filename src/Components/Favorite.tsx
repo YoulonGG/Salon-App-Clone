@@ -33,7 +33,7 @@ const Salons = () => (
         <TouchableOpacity
           style={{
             height: 130,
-            width: '90%',
+            width: '95%',
             alignSelf: 'center',
             alignItems: 'center',
             marginTop: 10,

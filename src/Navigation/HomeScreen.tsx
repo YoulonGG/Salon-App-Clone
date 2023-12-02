@@ -479,10 +479,10 @@ const HomeScreen = () => {
                   style={{
                     width: 190,
                     height: 200,
-                    marginLeft: 10,
+                    margin: 5,
                     backgroundColor: 'white',
                     borderRadius: 5,
-                    elevation: 3,
+                    elevation: 5,
                     flex: 1,
                   }}>
                   <Image
@@ -645,8 +645,9 @@ const HomeScreen = () => {
                   }}
                   style={{
                     width: 190,
-                    height: 200,
-                    marginLeft: 10,
+                    height: 205,
+                    marginHorizontal: 5,
+                    marginVertical: 10,
                     backgroundColor: 'white',
                     borderRadius: 5,
                     elevation: 3,
@@ -869,8 +870,8 @@ const HomeScreen = () => {
                   style={{
                     width: 190,
                     height: 200,
-                    marginTop: 10,
-                    marginLeft: 8,
+                    marginVertical: 10,
+                    marginHorizontal: 5,
                     backgroundColor: 'white',
                     borderRadius: 5,
                     elevation: 5,
