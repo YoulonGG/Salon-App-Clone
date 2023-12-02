@@ -44,7 +44,7 @@ const Bleaching = () => {
       <View
         style={{
           width: '100%',
-          height: 60,
+          height: 40,
           backgroundColor: '#16247d',
           flexDirection: 'row',
           alignItems: 'center',
@@ -81,7 +81,7 @@ const Bleaching = () => {
             <TouchableOpacity
               style={{
                 height: 130,
-                width: '90%',
+                width: '95%',
                 alignSelf: 'center',
                 alignItems: 'center',
                 marginTop: 10,

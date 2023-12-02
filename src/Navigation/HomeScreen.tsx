@@ -29,13 +29,6 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 
 const {width, height} = Dimensions.get('window');
 
-const ScamData = [
-  {
-    id: '1',
-    item: '',
-  },
-];
-
 const PopularSalonsData = [
   {
     id: '1',
@@ -970,7 +963,7 @@ const HomeScreen = () => {
   };
 
   return (
-    <View style={{flex: 1, backgroundColor: '#16247d'}}>
+    <View style={{flex: 1}}>
       <GoogleMap />
       {/* <BottomSheett /> */}
       <View style={styles.searchSection}>

@@ -275,7 +275,6 @@ const ChooseService = () => {
         />
         <View style={{marginTop: 40}}></View>
       </ScrollView>
-
       <View
         style={{
           height: 60,
