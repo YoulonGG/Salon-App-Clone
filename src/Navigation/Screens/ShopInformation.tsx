@@ -378,7 +378,7 @@ const ShopInformation = () => {
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
-            navigation.push('Promotionn');
+            navigation.push('Service');
           }}
           style={{
             flexDirection: 'row',
@@ -410,7 +410,7 @@ const ShopInformation = () => {
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
-            navigation.push('Promotionn');
+            navigation.push('Membership');
           }}
           style={{
             flexDirection: 'row',

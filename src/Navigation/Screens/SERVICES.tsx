@@ -126,7 +126,7 @@ const SERVICES = () => {
                   height: 130,
                   backgroundColor: 'white',
                   alignSelf: 'center',
-                  marginTop: 10,
+                  marginVertical: 5,
                   borderRadius: 5,
                   justifyContent: 'space-between',
                   flexDirection: 'row',
@@ -258,7 +258,7 @@ const SERVICES = () => {
           }}
           keyExtractor={item => item.id}
         />
-        <View style={{borderWidth: 0.5, marginTop: 70}}></View>
+        <View style={{borderWidth: 0.5, marginTop: 45}}></View>
       </ScrollView>
     </SafeAreaView>
   );
