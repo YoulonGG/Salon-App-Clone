@@ -1095,10 +1095,10 @@ const HomeScreen = () => {
               size={17}
               style={{
                 marginRight: 10,
-                color: '#16247d',
+                color: '#66023C',
               }}
             />
-            <Text style={{color: 'black', fontSize: 15}}>Shops</Text>
+            <Text style={{color: '#66023C', fontSize: 15}}>Shops</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={{
