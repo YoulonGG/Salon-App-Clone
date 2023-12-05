@@ -104,49 +104,11 @@ const RecommendSalons = [
   },
 ];
 
-const STYLES = ['default', 'dark-content', 'light-content'] as const;
-const TRANSITIONS = ['fade', 'slide', 'none'] as const;
-
 const ShopScreen = () => {
-  const [hidden, setHidden] = useState(false);
-  const [statusBarStyle, setStatusBarStyle] = useState<StatusBarStyle>(
-    STYLES[0],
-  );
-  const [statusBarTransition, setStatusBarTransition] = useState<
-    'fade' | 'slide' | 'none'
-  >(TRANSITIONS[0]);
-
-  const changeStatusBarVisibility = () => setHidden(!hidden);
-
-  const changeStatusBarStyle = () => {
-    const styleId = STYLES.indexOf(statusBarStyle) + 1;
-    if (styleId === STYLES.length) {
-      setStatusBarStyle(STYLES[0]);
-    } else {
-      setStatusBarStyle(STYLES[styleId]);
-    }
-  };
-
-  const changeStatusBarTransition = () => {
-    const transition = TRANSITIONS.indexOf(statusBarTransition) + 1;
-    if (transition === TRANSITIONS.length) {
-      setStatusBarTransition(TRANSITIONS[0]);
-    } else {
-      setStatusBarTransition(TRANSITIONS[transition]);
-    }
-  };
   const navigation: any = useNavigation();
   return (
     <SafeAreaView style={{}}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <StatusBar
-          animated={true}
-          backgroundColor="#16247d"
-          barStyle={statusBarStyle}
-          showHideTransition={statusBarTransition}
-          hidden={hidden}
-        />
-
         <View style={styles.Appbar}>
           <Feather
             onPress={() => {

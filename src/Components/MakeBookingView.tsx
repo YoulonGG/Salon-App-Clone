@@ -38,7 +38,7 @@ export const MakeBookingView = () => {
 
   const navigation: any = useNavigation();
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{backgroundColor: 'white'}}>
       <View style={styles.AppBar}>
         <TouchableOpacity
           activeOpacity={1}
@@ -62,7 +62,7 @@ export const MakeBookingView = () => {
       <View
         style={{
           flexDirection: 'row',
-          backgroundColor: 'white',
+          backgroundColor: '#F5F5F5',
           height: 50,
           width: '90%',
           alignSelf: 'center',
@@ -91,7 +91,7 @@ export const MakeBookingView = () => {
       <View
         style={{
           flexDirection: 'row',
-          backgroundColor: 'white',
+          backgroundColor: '#F5F5F5',
           height: 50,
           width: '90%',
           alignSelf: 'center',
@@ -119,7 +119,7 @@ export const MakeBookingView = () => {
       <View
         style={{
           flexDirection: 'row',
-          backgroundColor: 'white',
+          backgroundColor: '#F5F5F5',
           alignSelf: 'center',
           marginTop: 10,
           height: 50,
@@ -157,7 +157,7 @@ export const MakeBookingView = () => {
         <TouchableOpacity
           onPress={() => setOpen(true)}
           style={{
-            backgroundColor: 'white',
+            backgroundColor: '#F5F5F5',
             borderRadius: 6,
             width: '60%',
             height: 50,
@@ -200,7 +200,7 @@ export const MakeBookingView = () => {
         <TouchableOpacity
           onPress={() => setOpen(true)}
           style={{
-            backgroundColor: 'white',
+            backgroundColor: '#F5F5F5',
             borderRadius: 6,
             marginLeft: '2%',
             width: '38%',
@@ -229,7 +229,7 @@ export const MakeBookingView = () => {
       <View
         style={{
           height: 100,
-          backgroundColor: 'white',
+          backgroundColor: '#F5F5F5',
           marginTop: 10,
           width: '90%',
           alignSelf: 'center',

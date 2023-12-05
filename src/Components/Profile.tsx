@@ -17,7 +17,7 @@ const Profile = () => {
   const navigation: any = useNavigation();
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{}}>
       <View
         style={{
           width: '100%',
@@ -59,7 +59,7 @@ const Profile = () => {
             width: '100%',
             height: '100%',
           }}></Image>
-        <Entypo name="camera" size={24} color={'black'}></Entypo>
+        <Entypo name="camera" size={24} color={'black'} style={{}}></Entypo>
       </View>
       <Image
         source={require('../assets/image/me.jpg')}

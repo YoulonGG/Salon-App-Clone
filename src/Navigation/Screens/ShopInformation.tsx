@@ -20,7 +20,7 @@ const ShopInformation = () => {
   const [text, onChangeText] = React.useState('');
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{backgroundColor: 'white'}}>
       <ScrollView>
         <View
           style={{
@@ -177,7 +177,7 @@ const ShopInformation = () => {
         <View
           style={{
             marginTop: 15,
-            backgroundColor: 'white',
+            backgroundColor: '#F5F5F5',
             flexDirection: 'row',
             width: '90%',
             alignSelf: 'center',
@@ -350,7 +350,7 @@ const ShopInformation = () => {
           }}
           style={{
             flexDirection: 'row',
-            backgroundColor: 'white',
+            backgroundColor: '#F5F5F5',
             height: 50,
             width: '90%',
             alignSelf: 'center',
@@ -382,7 +382,7 @@ const ShopInformation = () => {
           }}
           style={{
             flexDirection: 'row',
-            backgroundColor: 'white',
+            backgroundColor: '#F5F5F5',
             height: 50,
             width: '90%',
             alignSelf: 'center',
@@ -414,7 +414,7 @@ const ShopInformation = () => {
           }}
           style={{
             flexDirection: 'row',
-            backgroundColor: 'white',
+            backgroundColor: '#F5F5F5',
             height: 50,
             width: '90%',
             alignSelf: 'center',
@@ -463,7 +463,7 @@ const ShopInformation = () => {
                 navigation.push('ProfessorDetail');
               }}
               style={{
-                backgroundColor: 'white',
+                backgroundColor: '#F5F5F5',
                 width: 110,
                 height: 140,
                 marginLeft: 20,
@@ -503,7 +503,7 @@ const ShopInformation = () => {
                 navigation.push('ProfessorDetail');
               }}
               style={{
-                backgroundColor: 'white',
+                backgroundColor: '#F5F5F5',
                 width: 110,
                 height: 140,
                 marginLeft: 10,
@@ -543,7 +543,7 @@ const ShopInformation = () => {
                 navigation.push('ProfessorDetail');
               }}
               style={{
-                backgroundColor: 'white',
+                backgroundColor: '#F5F5F5',
                 width: 110,
                 height: 140,
                 marginLeft: 10,
@@ -583,7 +583,7 @@ const ShopInformation = () => {
                 navigation.push('ProfessorDetail');
               }}
               style={{
-                backgroundColor: 'white',
+                backgroundColor: '#F5F5F5',
                 width: 110,
                 height: 140,
                 marginLeft: 10,
@@ -648,7 +648,7 @@ const ShopInformation = () => {
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             <View
               style={{
-                backgroundColor: 'white',
+                backgroundColor: '#F5F5F5',
                 width: 110,
                 height: 180,
                 marginLeft: 20,
@@ -695,7 +695,7 @@ const ShopInformation = () => {
             </View>
             <View
               style={{
-                backgroundColor: 'white',
+                backgroundColor: '#F5F5F5',
                 width: 110,
                 height: 180,
                 marginLeft: 15,
@@ -748,7 +748,7 @@ const ShopInformation = () => {
             </View>
             <View
               style={{
-                backgroundColor: 'white',
+                backgroundColor: '#F5F5F5',
                 width: 110,
                 height: 180,
                 marginLeft: 15,
@@ -796,7 +796,7 @@ const ShopInformation = () => {
             </View>
             <View
               style={{
-                backgroundColor: 'white',
+                backgroundColor: '#F5F5F5',
                 width: 110,
                 height: 180,
                 marginLeft: 15,
@@ -981,7 +981,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     alignItems: 'center',
     borderRadius: 8,
-    backgroundColor: 'white',
+    backgroundColor: '#F5F5F5',
   },
   formMember: {
     justifyContent: 'space-between',
@@ -992,7 +992,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     alignItems: 'center',
     borderRadius: 8,
-    backgroundColor: 'white',
+    backgroundColor: '#F5F5F5',
     paddingHorizontal: '3%',
   },
 });

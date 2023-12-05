@@ -455,7 +455,7 @@ export const SubService = () => {
   const naviation: any = useNavigation();
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{}}>
       <View
         style={{
           width: '100%',
@@ -670,11 +670,9 @@ export const SubService = () => {
           renderScene={renderScene}
           onIndexChange={setIndex}
           initialLayout={{width: layout.width}}
-          style={
-            {
-              // backgroundColor: 'white',
-            }
-          }
+          style={{
+            backgroundColor: 'white',
+          }}
           renderTabBar={renderTabBar}></TabView>
       </View>
     </SafeAreaView>
@@ -690,7 +688,6 @@ const styles = StyleSheet.create({
     borderColor: '#eef2fa',
     marginHorizontal: 15,
     borderRadius: 10,
-    paddingRight: 10,
   },
   RowBodyI: {
     width: '100%',
