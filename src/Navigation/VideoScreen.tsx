@@ -5,14 +5,23 @@ import {
   SafeAreaView,
   TextInput,
   Image,
+  RefreshControl,
 } from 'react-native';
 import React from 'react';
 import Feather from 'react-native-vector-icons/Feather';
 import {useNavigation} from '@react-navigation/native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 
 const VideoScreen = () => {
   const navigation: any = useNavigation();
+  const [refreshing, setRefreshing] = React.useState(false);
+
+  const onRefresh = React.useCallback(() => {
+    setRefreshing(true);
+    setTimeout(() => {
+      setRefreshing(false);
+    }, 1000);
+  }, []);
   return (
     <SafeAreaView>
       <View style={styles.Appbar}>
@@ -50,169 +59,174 @@ const VideoScreen = () => {
           backgroundColor: '#ebebec',
           borderWidth: 0.2,
         }}></View>
-      <TouchableOpacity
-        onPress={() => {
-          navigation.push('VideoPlayer');
-        }}
-        style={{
-          height: 100,
-          width: '100%',
-          backgroundColor: 'white',
-          marginTop: 15,
-          flexDirection: 'row',
-          alignItems: 'center',
-          elevation: 3,
-          zIndex: 1000,
-        }}>
-        <Image
-          source={require('../assets/image/haircut.jpg')}
+      <ScrollView
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.push('VideoPlayer');
+          }}
           style={{
-            width: '25%',
-            height: '80%',
-            borderRadius: 5,
-            marginLeft: '3%',
-          }}></Image>
-        <View
-          style={{
-            marginLeft: 10,
-            width: '75%',
-            height: '80%',
-            flex: 1,
+            height: 100,
+            width: '100%',
+            backgroundColor: 'white',
+            marginTop: 15,
+            flexDirection: 'row',
+            alignItems: 'center',
+            elevation: 3,
+            zIndex: 1000,
           }}>
-          <Text
+          <Image
+            source={require('../assets/image/haircut.jpg')}
             style={{
-              fontSize: 15,
-              color: 'black',
-              fontWeight: 'bold',
-            }}>
-            ធ្វើការកក់ទុកជាមុននៅរាល់ជាងនិងសេវាកម្ម
-          </Text>
-          <Text
+              width: '25%',
+              height: '80%',
+              borderRadius: 5,
+              marginLeft: '3%',
+            }}></Image>
+          <View
             style={{
-              fontSize: 15,
-              color: 'black',
-              fontWeight: 'bold',
+              marginLeft: 10,
+              width: '75%',
+              height: '80%',
+              flex: 1,
             }}>
-            ដែលបងប្អូន
-          </Text>
-          <Text
-            style={{
-              color: 'grey',
-              fontSize: 12,
-              marginTop: 15,
-            }}>
-            17 Dec 2021 At 11:59 AM
-          </Text>
-        </View>
-      </TouchableOpacity>
-      <TouchableOpacity
-        onPress={() => {
-          navigation.push('VideoPlayer');
-        }}
-        style={{
-          height: 100,
-          backgroundColor: 'white',
-          marginTop: 10,
-          flexDirection: 'row',
-          alignItems: 'center',
-          elevation: 3,
-          zIndex: 1000,
-        }}>
-        <Image
-          source={require('../assets/image/haircut2.png')}
+            <Text
+              style={{
+                fontSize: 15,
+                color: 'black',
+                fontWeight: 'bold',
+              }}>
+              ធ្វើការកក់ទុកជាមុននៅរាល់ជាងនិងសេវាកម្ម
+            </Text>
+            <Text
+              style={{
+                fontSize: 15,
+                color: 'black',
+                fontWeight: 'bold',
+              }}>
+              ដែលបងប្អូន
+            </Text>
+            <Text
+              style={{
+                color: 'grey',
+                fontSize: 12,
+                marginTop: 15,
+              }}>
+              17 Dec 2021 At 11:59 AM
+            </Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.push('VideoPlayer');
+          }}
           style={{
-            width: '25%',
-            height: '80%',
-            borderRadius: 5,
-            marginLeft: '3%',
-          }}></Image>
-        <View
-          style={{
-            marginLeft: 10,
-            width: '75%',
-            height: '80%',
-            flex: 1,
+            height: 100,
+            backgroundColor: 'white',
+            marginTop: 10,
+            flexDirection: 'row',
+            alignItems: 'center',
+            elevation: 3,
+            zIndex: 1000,
           }}>
-          <Text
+          <Image
+            source={require('../assets/image/haircut2.png')}
             style={{
-              fontSize: 15,
-              color: 'black',
-              fontWeight: 'bold',
-            }}>
-            តោះស្វែងយល់ពីរបៀបចុះឈ្មោះក្នុងការ
-          </Text>
-          <Text
+              width: '25%',
+              height: '80%',
+              borderRadius: 5,
+              marginLeft: '3%',
+            }}></Image>
+          <View
             style={{
-              fontSize: 15,
-              color: 'black',
-              fontWeight: 'bold',
+              marginLeft: 10,
+              width: '75%',
+              height: '80%',
+              flex: 1,
             }}>
-            ប្រើប្រាស់ App Unisalon
-          </Text>
-          <Text
-            style={{
-              color: 'grey',
-              fontSize: 12,
-              marginTop: 15,
-            }}>
-            17 Dec 2021 At 11:59 AM
-          </Text>
-        </View>
-      </TouchableOpacity>
-      <TouchableOpacity
-        onPress={() => {
-          navigation.push('VideoPlayer');
-        }}
-        style={{
-          height: 100,
-          backgroundColor: 'white',
-          marginTop: 10,
-          flexDirection: 'row',
-          alignItems: 'center',
-          elevation: 3,
-          zIndex: 1000,
-        }}>
-        <Image
-          source={require('../assets/image/may.jpg')}
+            <Text
+              style={{
+                fontSize: 15,
+                color: 'black',
+                fontWeight: 'bold',
+              }}>
+              តោះស្វែងយល់ពីរបៀបចុះឈ្មោះក្នុងការ
+            </Text>
+            <Text
+              style={{
+                fontSize: 15,
+                color: 'black',
+                fontWeight: 'bold',
+              }}>
+              ប្រើប្រាស់ App Unisalon
+            </Text>
+            <Text
+              style={{
+                color: 'grey',
+                fontSize: 12,
+                marginTop: 15,
+              }}>
+              17 Dec 2021 At 11:59 AM
+            </Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.push('VideoPlayer');
+          }}
           style={{
-            width: '25%',
-            height: '80%',
-            borderRadius: 5,
-            marginLeft: '3%',
-          }}></Image>
-        <View
-          style={{
-            marginLeft: 10,
-            width: '75%',
-            height: '80%',
-            flex: 1,
+            height: 100,
+            backgroundColor: 'white',
+            marginTop: 10,
+            flexDirection: 'row',
+            alignItems: 'center',
+            elevation: 3,
+            zIndex: 1000,
           }}>
-          <Text
+          <Image
+            source={require('../assets/image/may.jpg')}
             style={{
-              fontSize: 15,
-              color: 'black',
-              fontWeight: 'bold',
-            }}>
-            អរគុណប្អូន Sophorn Phou បានប្រើប្រាស់
-          </Text>
-          <Text
+              width: '25%',
+              height: '80%',
+              borderRadius: 5,
+              marginLeft: '3%',
+            }}></Image>
+          <View
             style={{
-              fontSize: 15,
-              color: 'black',
-              fontWeight: 'bold',
+              marginLeft: 10,
+              width: '75%',
+              height: '80%',
+              flex: 1,
             }}>
-            សេវាកម្មនៅហាង Men_Style
-          </Text>
-          <Text
-            style={{
-              color: 'grey',
-              fontSize: 12,
-              marginTop: 15,
-            }}>
-            17 Dec 2021 At 11:59 AM
-          </Text>
-        </View>
-      </TouchableOpacity>
+            <Text
+              style={{
+                fontSize: 15,
+                color: 'black',
+                fontWeight: 'bold',
+              }}>
+              អរគុណប្អូន Sophorn Phou បានប្រើប្រាស់
+            </Text>
+            <Text
+              style={{
+                fontSize: 15,
+                color: 'black',
+                fontWeight: 'bold',
+              }}>
+              សេវាកម្មនៅហាង Men_Style
+            </Text>
+            <Text
+              style={{
+                color: 'grey',
+                fontSize: 12,
+                marginTop: 15,
+              }}>
+              17 Dec 2021 At 11:59 AM
+            </Text>
+          </View>
+        </TouchableOpacity>
+      </ScrollView>
     </SafeAreaView>
   );
 };
