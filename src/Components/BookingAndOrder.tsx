@@ -6,11 +6,12 @@ import {
   TouchableOpacity,
   Image,
   ScrollView,
+  Alert,
 } from 'react-native';
 import React from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {useNavigation} from '@react-navigation/native';
-import Feather from 'react-native-vector-icons/Feather';
+import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 
 const Data = [
   {
@@ -67,6 +68,15 @@ const Data = [
 
 const BookingAndOrder = () => {
   const navigation: any = useNavigation();
+  const BtnAlert = () =>
+    Alert.alert('Options', 'Cancel Booking', [
+      {
+        text: 'Cancel',
+        onPress: () => console.log('Cancel Pressed'),
+        style: 'cancel',
+      },
+      {text: 'OK', onPress: () => console.log('OK Pressed')},
+    ]);
   return (
     <SafeAreaView>
       <ScrollView>
@@ -148,17 +158,42 @@ const BookingAndOrder = () => {
                         marginLeft: '10%',
                       }}></Image>
                   </View>
-                  <View style={{width: '75%'}}>
-                    <Text
+                  <View style={{width: '75%', paddingRight: '5%'}}>
+                    <View
                       style={{
-                        fontSize: 16,
-                        color: '#16247d',
-                        fontWeight: 'bold',
+                        flexDirection: 'row',
+                        justifyContent: 'space-between',
                         paddingTop: 10,
                       }}>
-                      {e.name}
-                    </Text>
-                    <Text style={{fontSize: 14, color: 'black', paddingTop: 5}}>
+                      <Text
+                        style={{
+                          fontSize: 16,
+                          color: '#16247d',
+                          fontWeight: 'bold',
+                        }}>
+                        {e.name}
+                      </Text>
+                      <TouchableOpacity
+                        onPress={BtnAlert}
+                        style={{
+                          width: 30,
+                          height: 30,
+                          borderRadius: 50,
+                          backgroundColor: '#F5F5F5',
+                          justifyContent: 'center',
+                          alignContent: 'center',
+                        }}>
+                        <SimpleLineIcons
+                          name="options-vertical"
+                          size={15}
+                          color={'black'}
+                          style={{
+                            alignSelf: 'center',
+                          }}
+                        />
+                      </TouchableOpacity>
+                    </View>
+                    <Text style={{fontSize: 14, color: 'black', paddingTop: 0}}>
                       {e.phoneNumber}
                     </Text>
                     <Text style={{paddingTop: 5, fontSize: 14, color: 'red'}}>
@@ -169,7 +204,7 @@ const BookingAndOrder = () => {
                 <View style={{flexDirection: 'row'}}>
                   <TouchableOpacity
                     style={{
-                      backgroundColor: '#DCDCDC',
+                      backgroundColor: '#F5F5F5',
                       marginTop: '5%',
                       paddingVertical: 5,
                       paddingHorizontal: 10,

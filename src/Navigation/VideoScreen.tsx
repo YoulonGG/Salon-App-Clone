@@ -249,7 +249,7 @@ const styles = StyleSheet.create({
   },
   input: {
     borderRadius: 5,
-    fontSize: 16,
+    fontSize: 15,
     color: 'black',
   },
   searchSection: {

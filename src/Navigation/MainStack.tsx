@@ -54,6 +54,8 @@ import FaceMessage from '../Explore/FaceMessage';
 import FrencchTip from '../Explore/FrencchTip';
 import Gel from '../Explore/Gel';
 import More from '../Explore/More';
+import OrderDetail2 from './Screens/OrderDetail2';
+import Receipt from './Screens/Receipt';
 
 const MainStack = () => {
   const Stack = createNativeStackNavigator();
@@ -115,6 +117,8 @@ const MainStack = () => {
       <Stack.Screen component={FrencchTip} name="FrenchTip" />
       <Stack.Screen component={Gel} name="Gel" />
       <Stack.Screen component={More} name="More" />
+      <Stack.Screen component={OrderDetail2} name="OrderDetail2" />
+      <Stack.Screen component={Receipt} name="Receipt" />
       <Stack.Screen
         component={AssignProfessorView}
         name="AssignProfessorView"

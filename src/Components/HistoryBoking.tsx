@@ -66,14 +66,14 @@ const Data = [
 const Approved = () => {
   const navigation: any = useNavigation();
   return (
-    <SafeAreaView style={{backgroundColor: '#f2f2f2'}}>
+    <SafeAreaView style={{backgroundColor: '#F5F5F5'}}>
       <ScrollView showsVerticalScrollIndicator={false}>
         {Data.map((e, index) => {
           return (
             <View
               style={{
                 backgroundColor: 'white',
-                width: '95%',
+                width: '92%',
                 height: 200,
                 alignSelf: 'center',
                 marginTop: 10,
@@ -134,7 +134,7 @@ const Approved = () => {
                 <View style={{flexDirection: 'row'}}>
                   <TouchableOpacity
                     style={{
-                      backgroundColor: '#DCDCDC',
+                      backgroundColor: '#F5F5F5',
                       marginTop: '5%',
                       paddingVertical: 5,
                       paddingHorizontal: 10,
@@ -156,7 +156,7 @@ const Approved = () => {
                   alignItems: 'center',
                   borderTopWidth: 0.3,
                   justifyContent: 'space-between',
-                  paddingHorizontal: '3%',
+                  paddingHorizontal: '4%',
                 }}>
                 <View style={{flexDirection: 'row'}}>
                   <Text style={{color: 'red', fontSize: 16}}>{e.price}</Text>
@@ -179,19 +179,21 @@ const Approved = () => {
                     source={require('../assets/image/man2.png')}
                     style={{
                       marginRight: 10,
+                      width: 25,
+                      height: 25,
                     }}></Image>
                   <Image
                     source={require('../assets/image/gmail.png')}
-                    style={{marginRight: 10}}></Image>
+                    style={{marginRight: 10, width: 25, height: 25}}></Image>
                   <Image
                     source={require('../assets/image/telephone.png')}
-                    style={{}}></Image>
+                    style={{width: 25, height: 25}}></Image>
                 </View>
               </View>
             </View>
           );
         })}
-        <View style={{marginTop: 125, borderWidth: 2}}></View>
+        <View style={{marginTop: 100, borderWidth: 2}}></View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -298,7 +300,7 @@ const HistoryBooking = () => {
           style={{
             color: focused ? '#16247d' : 'black',
             margin: 4,
-            fontSize: 12,
+            fontSize: 14,
             fontWeight: 'bold',
           }}>
           {route.title}

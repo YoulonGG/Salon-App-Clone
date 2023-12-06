@@ -91,7 +91,7 @@ const Salons = () => (
                   style={{
                     color: '#144389',
                     textAlign: 'center',
-                    fontSize: 16,
+                    fontSize: 14,
                     fontWeight: 'bold',
                   }}>
                   Booking
@@ -130,8 +130,13 @@ const Salons = () => (
                   }}
                 />
                 <Text
-                  style={{fontSize: 12, color: '#144389', fontWeight: 'bold'}}>
-                  Openning
+                  style={{
+                    fontSize: 12,
+                    color: '#144389',
+                    fontWeight: 'bold',
+                    marginTop: 5,
+                  }}>
+                  Opening
                 </Text>
               </View>
             </View>

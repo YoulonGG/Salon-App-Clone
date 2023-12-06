@@ -89,7 +89,8 @@ const Message = () => {
               backgroundColor: 'white',
               flexDirection: 'row',
               alignItems: 'center',
-              borderBottomWidth: 0.3,
+              borderWidth: 0.5,
+              borderColor: '#D3D3D3',
               justifyContent: 'space-between',
               paddingHorizontal: '5%',
             }}>

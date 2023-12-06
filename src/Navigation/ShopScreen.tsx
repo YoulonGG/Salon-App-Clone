@@ -126,7 +126,7 @@ const ShopScreen = () => {
         <View style={styles.searchSection}>
           <Feather
             name="search"
-            size={20}
+            size={22}
             color="grey"
             style={{
               margin: 10,

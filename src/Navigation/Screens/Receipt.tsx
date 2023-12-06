@@ -1,16 +1,10 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  SafeAreaView,
-  TouchableOpacity,
-} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {useNavigation} from '@react-navigation/native';
-import Feather from 'react-native-vector-icons/Feather';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
-const TodayBooking = () => {
+const Receipt = () => {
   const navigation: any = useNavigation();
 
   return (
@@ -43,33 +37,15 @@ const TodayBooking = () => {
             fontSize: 17,
             color: 'white',
             textAlign: 'center',
-            paddingLeft: '19%',
+            marginLeft: '27%',
           }}>
-          Today Booking & Order
-        </Text>
-      </View>
-      <View
-        style={{
-          marginTop: 40,
-          justifyContent: 'center',
-          alignContent: 'center',
-          alignItems: 'center',
-        }}>
-        <Feather name="folder" size={40} color={'grey'}></Feather>
-        <Text
-          style={{
-            fontSize: 15,
-            fontWeight: 'bold',
-            color: 'grey',
-            paddingTop: '2%',
-          }}>
-          No Data
+          Receipt Detail
         </Text>
       </View>
     </SafeAreaView>
   );
 };
 
-export default TodayBooking;
+export default Receipt;
 
 const styles = StyleSheet.create({});

@@ -97,10 +97,10 @@ const Membership = () => {
       <View
         style={{
           backgroundColor: 'white',
-          width: '90%',
+          width: '95%',
           alignSelf: 'center',
           borderRadius: 5,
-          height: 50,
+          height: 47,
           flexDirection: 'row',
           marginTop: 10,
           alignContent: 'center',
@@ -108,7 +108,7 @@ const Membership = () => {
         }}>
         <AntDesign
           name="search1"
-          size={25}
+          size={22}
           color={'grey'}
           style={{
             marginTop: 13,
@@ -120,7 +120,7 @@ const Membership = () => {
           value={text}
           placeholder="Search Salons..."
           style={{
-            fontSize: 17,
+            fontSize: 15,
             marginLeft: 8,
           }}
         />
@@ -128,7 +128,8 @@ const Membership = () => {
       <View
         style={{
           marginTop: 10,
-          borderBottomWidth: 0.3,
+          borderBottomWidth: 0.7,
+          borderColor: '#D3D3D3',
         }}></View>
       <View
         style={{
