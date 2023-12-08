@@ -1,5 +1,6 @@
 import {
   Alert,
+  FlatList,
   Image,
   StyleSheet,
   Text,
@@ -11,6 +12,42 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import {useNavigation} from '@react-navigation/native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Feather from 'react-native-vector-icons/Feather';
+import {ScrollView} from 'react-native-gesture-handler';
+
+const DATA = [
+  {
+    num: '1',
+    id: '1',
+    title: 'Nails',
+    code: 'Code: B63 (Men)',
+    point: 'Point: 2pt',
+    price: '$ 10.00',
+  },
+  {
+    num: '2',
+    id: '2',
+    title: 'Make-up for wedding',
+    code: 'Code: BC2',
+    point: 'Point: 2pt',
+    price: '$ 15.00',
+  },
+  {
+    num: '3',
+    id: '3',
+    title: 'Haircut for men',
+    code: 'Code: BD1',
+    point: 'Point: 1pt',
+    price: '$ 10.00',
+  },
+  {
+    num: '4',
+    id: '4',
+    title: 'Haircut for kids',
+    code: 'Code: BE3',
+    point: 'Point: 1pt',
+    price: '$ 5.00',
+  },
+];
 
 const Receipt = () => {
   const navigation: any = useNavigation();
@@ -62,6 +99,7 @@ const Receipt = () => {
           <Feather name="download" size={25} color={'white'} />
         </TouchableOpacity>
       </View>
+
       <View
         style={{
           width: '100%',
@@ -135,6 +173,133 @@ const Receipt = () => {
           width: '90%',
           alignSelf: 'center',
         }}></View>
+      <View>
+        <FlatList
+          data={DATA}
+          style={{}}
+          renderItem={({item}) => {
+            return (
+              <View
+                style={{
+                  justifyContent: 'space-between',
+                  flexDirection: 'row',
+                  height: 65,
+                  width: '100%',
+                  marginVertical: 10,
+                  paddingHorizontal: 16,
+                  alignItems: 'center',
+                }}>
+                <View style={{flexDirection: 'row'}}>
+                  <Text
+                    style={{fontSize: 14, color: 'black', fontWeight: 'bold'}}>
+                    {item.num}
+                  </Text>
+                  <View style={{marginLeft: 10}}>
+                    <Text
+                      style={{
+                        fontSize: 14,
+                        color: '#16247d',
+                        fontWeight: 'bold',
+                      }}>
+                      {item.title}
+                    </Text>
+                    <Text style={{fontSize: 13, color: 'black', marginTop: 3}}>
+                      {item.code}
+                    </Text>
+                    <Text style={{fontSize: 13, color: 'black', marginTop: 3}}>
+                      {item.point}
+                    </Text>
+                  </View>
+                </View>
+                <View style={{flexDirection: 'row'}}>
+                  <Text
+                    style={{fontSize: 14, fontWeight: 'bold', color: 'black'}}>
+                    {item.price}
+                  </Text>
+                  <Text style={{marginLeft: 5, fontSize: 13, color: 'grey'}}>
+                    (1)
+                  </Text>
+                </View>
+              </View>
+            );
+          }}
+          keyExtractor={item => item.id}
+        />
+      </View>
+      <View
+        style={{
+          borderWidth: 0.7,
+          borderColor: '#DCDCDC',
+          width: '90%',
+          alignSelf: 'center',
+        }}></View>
+      <View
+        style={{
+          width: '100%',
+          height: 110,
+          marginTop: 10,
+          flexDirection: 'row',
+          paddingHorizontal: 16,
+        }}>
+        <View
+          style={{
+            width: '40%',
+            height: '100%',
+          }}></View>
+        <View
+          style={{
+            width: '60%',
+            height: '100%',
+            flexDirection: 'row',
+          }}>
+          <View
+            style={{
+              width: '50%',
+              height: '100%',
+              alignItems: 'flex-end',
+              justifyContent: 'center',
+            }}>
+            <Text style={{fontSize: 14, color: 'black', fontWeight: 'bold'}}>
+              Total Amount:
+            </Text>
+            <Text style={{fontSize: 14, color: 'black', fontWeight: 'bold'}}>
+              Discount:
+            </Text>
+            <Text style={{fontSize: 14, color: 'black', fontWeight: 'bold'}}>
+              Grand Total:
+            </Text>
+            <Text style={{fontSize: 14, color: 'black', fontWeight: 'bold'}}>
+              Status:
+            </Text>
+            <Text style={{fontSize: 14, color: 'black', fontWeight: 'bold'}}>
+              Payment Type:
+            </Text>
+          </View>
+          <View
+            style={{
+              width: '50%',
+              height: '100%',
+              justifyContent: 'center',
+              alignItems: 'flex-end',
+            }}>
+            <Text style={{fontSize: 14, color: 'black', fontWeight: 'bold'}}>
+              $ 59.00
+            </Text>
+            <Text style={{fontSize: 14, color: 'black', fontWeight: 'bold'}}>
+              $ 0.00
+            </Text>
+            <Text style={{fontSize: 14, color: 'red', fontWeight: 'bold'}}>
+              $ 59.00
+            </Text>
+            <Text style={{fontSize: 14, color: 'black', fontWeight: 'bold'}}>
+              Paid
+            </Text>
+            <Text style={{fontSize: 14, color: 'black', fontWeight: 'bold'}}>
+              Cast
+            </Text>
+          </View>
+        </View>
+      </View>
     </SafeAreaView>
   );
 };
