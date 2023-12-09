@@ -26,7 +26,7 @@ const Promotion = () => {
     <View style={{width: 'auto', height: '94%', backgroundColor: '#f1f1f1'}}>
       <TouchableOpacity
         activeOpacity={1}
-        style={{width: 'auto', height: '94%'}}
+        style={{width: 'auto', height: '94%', alignSelf: 'center'}}
         onPress={() => {
           navigation.push('DetailPromotion');
         }}>
@@ -37,6 +37,7 @@ const Promotion = () => {
               height: '90%',
               backgroundColor: '#ebebec',
               borderRadius: 5,
+
               marginTop: '2%',
             }}>
             {/* <View
@@ -76,7 +77,7 @@ const Promotion = () => {
               មែន​ ស្តាយ
             </Text>
             <Text style={{fontSize: 13, marginTop: 2}}>⭐⭐⭐⭐⭐ (3)</Text>
-            <Text style={{fontWeight: 'bold', marginTop: 2, fontSize: 14}}>
+            <Text style={{marginTop: 2, fontSize: 14}}>
               កាត់សក់បុរស free កក់សក់ជូន
             </Text>
             <View style={{flexDirection: 'row', marginTop: '4%'}}>

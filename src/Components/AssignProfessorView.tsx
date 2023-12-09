@@ -4,341 +4,319 @@ import {
   View,
   SafeAreaView,
   TouchableOpacity,
-  ScrollView,
   Image,
-  Dimensions,
+  ScrollView,
   FlatList,
+  Dimensions,
 } from 'react-native';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+
+const {width, height} = Dimensions.get('window');
+
+const data = [
+  {
+    id: 1,
+    title: 'Professor Sythan',
+  },
+  {
+    id: 2,
+    title: 'ជាង គង់(070933033)',
+  },
+  {
+    id: 3,
+    title: '(ជាង សុផា)',
+  },
+  {
+    id: 4,
+    title: 'Phan Phorn',
+  },
+  {
+    id: 5,
+    title: 'មាស សុមាវត្តី',
+  },
+  {
+    id: 6,
+    title: 'Malinda',
+  },
+  {
+    id: 7,
+    title: 'Professor Sythan',
+  },
+  {
+    id: 8,
+    title: 'ជាង គង់(070933033)',
+  },
+  {
+    id: 9,
+    title: '(ជាង សុផា)',
+  },
+  {
+    id: 10,
+    title: 'Phan Phorn',
+  },
+  {
+    id: 1,
+    title: 'មាស សុមាវត្តី',
+  },
+  {
+    id: 12,
+    title: 'Malinda',
+  },
+];
 
 export const AssignProfessorView = () => {
   const navigation: any = useNavigation();
+  const [isStateTrue, setIsStateTrue] = useState(false);
+  const [icons, setIcons] = useState<any>(null);
+  const [idPro, setIdPro] = useState<any>(null);
+  const toggleState = () => {
+    setIsStateTrue(!isStateTrue);
+  };
+
+  const [Index, SetIndex] = useState<any>(null);
+
+  const txtBtn: String = '';
+
+  useEffect(() => {
+    if (icons !== null) {
+      SetIndex(null);
+    }
+  });
   return (
-    <SafeAreaView>
-      <ScrollView>
-        <View
+    <SafeAreaView
+      style={{
+        flex: 1,
+      }}>
+      <View style={styles.Appbar}>
+        <AntDesign
+          onPress={() => {
+            console.log('Back');
+            navigation.goBack();
+          }}
+          name="arrowleft"
+          color={'white'}
+          size={22}
+          style={{position: 'absolute', left: 15, top: 15}}></AntDesign>
+        <Text style={styles.TitleAppbar}>Assign Professors (Optional)</Text>
+      </View>
+      <View style={styles.BottomAppBar}>
+        <Text
           style={{
-            width: '100%',
-            height: 60,
-            backgroundColor: '#16247d',
-            flexDirection: 'row',
-            alignItems: 'center',
+            fontSize: 15,
+            fontWeight: 'bold',
+            color: 'black',
           }}>
-          <TouchableOpacity
-            activeOpacity={1}
-            onPress={() => {
-              navigation.goBack();
-            }}>
-            <AntDesign
-              name="arrowleft"
-              size={25}
-              style={{
-                color: 'white',
-                paddingLeft: '5%',
-              }}
-            />
-          </TouchableOpacity>
-          <Text
-            style={{
-              fontWeight: 'bold',
-              fontSize: 17,
-              color: 'white',
-              textAlign: 'center',
-              paddingLeft: '12%',
-            }}>
-            Assign Professors (Optional)
-          </Text>
-        </View>
-        <View
+          Select Professors
+        </Text>
+      </View>
+      <FlatList
+        style={{marginBottom: height * 0.1}}
+        data={data}
+        showsVerticalScrollIndicator={false}
+        numColumns={2}
+        renderItem={({item, index}) => {
+          return (
+            <TouchableOpacity
+              activeOpacity={0.8}
+              onPress={() => {
+                toggleState();
+                console.log('press');
+                if (icons === null) {
+                  setIcons(index);
+                  console.log(icons);
+                } else {
+                  setIcons(null);
+                }
+              }}>
+              <View
+                style={{
+                  width: width * 0.46,
+                  height: height * 0.22,
+                  borderWidth: 0.3,
+                  borderRadius: 10,
+                  flexDirection: 'column',
+                  marginLeft: 10,
+                  marginTop: 10,
+                  backgroundColor: 'white',
+                  paddingBottom: 15,
+                }}>
+                <View
+                  style={{
+                    flexDirection: 'row',
+                    justifyContent: 'center',
+                    alignContent: 'space-between',
+                  }}>
+                  <View
+                    style={{
+                      width: 60,
+                      height: 60,
+                      borderRadius: 60 / 2,
+                      marginTop: 20,
+                    }}>
+                    <Image
+                      style={{
+                        width: 60,
+                        height: 60,
+                        flex: 1,
+                        borderRadius: 60 / 2,
+                      }}
+                      source={require('../assets/image/man.png')}></Image>
+                  </View>
+
+                  {isStateTrue ? (
+                    icons === index ? (
+                      <AntDesign
+                        color={'grey'}
+                        name="checkcircle"
+                        size={25}
+                        style={{
+                          backgroundColor: Index === index ? 'grey' : 'white',
+                          position: 'absolute',
+                          right: 0,
+                          bottom: 35,
+                          marginRight: 13,
+                        }}></AntDesign>
+                    ) : (
+                      <Text></Text>
+                    )
+                  ) : (
+                    <FontAwesome
+                      color={'grey'}
+                      name="circle-thin"
+                      size={25}
+                      style={{
+                        backgroundColor: Index === index ? 'grey' : 'white',
+                        position: 'absolute',
+                        right: 0,
+                        bottom: 35,
+                        marginRight: 13,
+                      }}></FontAwesome>
+                  )}
+                </View>
+                <Text
+                  style={{
+                    textAlign: 'center',
+                    marginTop: 5,
+                    fontSize: 15,
+                    fontWeight: 'bold',
+                    color: '#16247d',
+                  }}>
+                  {item.title}
+                </Text>
+                <Text
+                  style={{
+                    textAlign: 'center',
+                    marginTop: 5,
+                    fontSize: 13,
+                    fontWeight: 'bold',
+                  }}>
+                  ⭐⭐⭐⭐⭐
+                </Text>
+                <Text
+                  style={{
+                    marginTop: 8,
+                    color: 'black',
+                    fontSize: 13,
+                    textAlign: 'center',
+                  }}>
+                  8 Credits / 2 Reviews
+                </Text>
+              </View>
+            </TouchableOpacity>
+          );
+        }}></FlatList>
+      <TouchableOpacity
+        activeOpacity={1}
+        style={styles.BtnButton}
+        onPress={() => {
+          navigation.push('ChooseService');
+        }}>
+        <Text
           style={{
-            backgroundColor: 'white',
-            height: 50,
-            width: '100%',
-            justifyContent: 'center',
-            borderBottomWidth: 0.3,
-            borderColor: 'black',
+            fontSize: 15,
+            fontWeight: 'bold',
+            color: 'white',
           }}>
-          <Text
-            style={{
-              marginLeft: 15,
-              color: 'black',
-              fontSize: 16,
-              fontWeight: 'bold',
-            }}>
-            Select Professors
-          </Text>
-        </View>
-        <View
-          style={{
-            flexDirection: 'row',
-            width: '90%',
-            marginTop: 15,
-            alignSelf: 'center',
-          }}>
-          <View
-            style={{
-              backgroundColor: 'white',
-              height: 200,
-              width: '48%',
-              borderRadius: 8,
-              alignItems: 'center',
-            }}>
-            <Image
-              source={require('../assets/image/man.png')}
-              style={{marginTop: 20}}></Image>
-            <Text
-              style={{
-                fontSize: 15,
-                fontWeight: 'bold',
-                color: '#16247d',
-                marginTop: 5,
-              }}>
-              Professor Sythan
-            </Text>
-            <Text style={{marginTop: 5}}>⭐⭐⭐⭐</Text>
-            <Text style={{color: 'black', marginTop: 10, fontSize: 12}}>
-              8 Credits / 2 Reviews
-            </Text>
-          </View>
-          <View
-            style={{
-              backgroundColor: 'white',
-              height: 200,
-              width: '48%',
-              marginLeft: '4%',
-              borderRadius: 8,
-              alignItems: 'center',
-            }}>
-            <Image
-              source={require('../assets/image/monk.png')}
-              style={{marginTop: 20}}></Image>
-            <Text
-              style={{
-                fontSize: 15,
-                fontWeight: 'bold',
-                color: '#16247d',
-                marginTop: 5,
-              }}>
-              ​ជាង​ គង់
-            </Text>
-            <Text style={{marginTop: 5}}>⭐⭐⭐⭐</Text>
-            <Text style={{color: 'black', marginTop: 10, fontSize: 12}}>
-              8 Credits / 2 Reviews
-            </Text>
-          </View>
-        </View>
-        <View
-          style={{
-            flexDirection: 'row',
-            width: '90%',
-            alignSelf: 'center',
-            marginTop: 15,
-          }}>
-          <View
-            style={{
-              backgroundColor: 'white',
-              height: 200,
-              width: '48%',
-              borderRadius: 8,
-              alignItems: 'center',
-            }}>
-            <Image
-              source={require('../assets/image/woman.png')}
-              style={{marginTop: 20}}></Image>
-            <Text
-              style={{
-                fontSize: 15,
-                fontWeight: 'bold',
-                color: '#16247d',
-                marginTop: 5,
-              }}>
-              មាស​ សុមាវត្តី
-            </Text>
-            <Text style={{marginTop: 5}}>⭐⭐⭐⭐</Text>
-            <Text style={{color: 'black', marginTop: 10, fontSize: 12}}>
-              8 Credits / 2 Reviews
-            </Text>
-          </View>
-          <View
-            style={{
-              backgroundColor: 'white',
-              height: 200,
-              width: '48%',
-              marginLeft: '4%',
-              borderRadius: 8,
-              alignItems: 'center',
-            }}>
-            <Image
-              source={require('../assets/image/man1.png')}
-              style={{marginTop: 20}}></Image>
-            <Text
-              style={{
-                fontSize: 15,
-                fontWeight: 'bold',
-                color: '#16247d',
-                marginTop: 5,
-              }}>
-              ​Phan Phorn
-            </Text>
-            <Text style={{marginTop: 5}}>⭐⭐⭐⭐</Text>
-            <Text style={{color: 'black', marginTop: 10, fontSize: 12}}>
-              8 Credits / 2 Reviews
-            </Text>
-          </View>
-        </View>
-        <View
-          style={{
-            flexDirection: 'row',
-            width: '90%',
-            alignSelf: 'center',
-            marginTop: 15,
-          }}>
-          <View
-            style={{
-              backgroundColor: 'white',
-              height: 200,
-              width: '48%',
-              borderRadius: 8,
-              alignItems: 'center',
-            }}>
-            <Image
-              source={require('../assets/image/man.png')}
-              style={{marginTop: 20}}></Image>
-            <Text
-              style={{
-                fontSize: 15,
-                fontWeight: 'bold',
-                color: '#16247d',
-                marginTop: 5,
-              }}>
-              Professor Sythan
-            </Text>
-            <Text style={{marginTop: 5}}>⭐⭐⭐⭐</Text>
-            <Text style={{color: 'black', marginTop: 10, fontSize: 12}}>
-              8 Credits / 2 Reviews
-            </Text>
-          </View>
-          <View
-            style={{
-              backgroundColor: 'white',
-              height: 200,
-              width: '48%',
-              marginLeft: '4%',
-              borderRadius: 8,
-              alignItems: 'center',
-            }}>
-            <Image
-              source={require('../assets/image/monk.png')}
-              style={{marginTop: 20}}></Image>
-            <Text
-              style={{
-                fontSize: 15,
-                fontWeight: 'bold',
-                color: '#16247d',
-                marginTop: 5,
-              }}>
-              ​ជាង​ គង់
-            </Text>
-            <Text style={{marginTop: 5}}>⭐⭐⭐⭐</Text>
-            <Text style={{color: 'black', marginTop: 10, fontSize: 12}}>
-              8 Credits / 2 Reviews
-            </Text>
-          </View>
-        </View>
-        <View
-          style={{
-            flexDirection: 'row',
-            width: '90%',
-            alignSelf: 'center',
-            marginTop: 15,
-          }}>
-          <View
-            style={{
-              backgroundColor: 'white',
-              height: 200,
-              width: '48%',
-              borderRadius: 8,
-              alignItems: 'center',
-            }}>
-            <Image
-              source={require('../assets/image/woman.png')}
-              style={{marginTop: 20}}></Image>
-            <Text
-              style={{
-                fontSize: 15,
-                fontWeight: 'bold',
-                color: '#16247d',
-                marginTop: 5,
-              }}>
-              មាស​ សុមាវត្តី
-            </Text>
-            <Text style={{marginTop: 5}}>⭐⭐⭐⭐</Text>
-            <Text style={{color: 'black', marginTop: 10, fontSize: 12}}>
-              8 Credits / 2 Reviews
-            </Text>
-          </View>
-          <View
-            style={{
-              backgroundColor: 'white',
-              height: 200,
-              width: '48%',
-              marginLeft: '4%',
-              borderRadius: 8,
-              alignItems: 'center',
-            }}>
-            <Image
-              source={require('../assets/image/man1.png')}
-              style={{marginTop: 20}}></Image>
-            <Text
-              style={{
-                fontSize: 15,
-                fontWeight: 'bold',
-                color: '#16247d',
-                marginTop: 5,
-              }}>
-              ​Phan Phorn
-            </Text>
-            <Text style={{marginTop: 5}}>⭐⭐⭐⭐</Text>
-            <Text style={{color: 'black', marginTop: 10, fontSize: 12}}>
-              8 Credits / 2 Reviews
-            </Text>
-          </View>
-        </View>
-        <View style={{marginTop: 70}}></View>
-        <View
-          style={{
-            height: 60,
-            width: '100%',
-            alignSelf: 'center',
-            justifyContent: 'center',
-            position: 'absolute',
-            bottom: 0,
-            backgroundColor: 'white',
-            borderTopWidth: 0.5,
-          }}>
-          <TouchableOpacity
-            onPress={() => {
-              navigation.push('ChooseService');
-            }}
-            style={{
-              backgroundColor: '#16247d',
-              justifyContent: 'center',
-              alignItems: 'center',
-              padding: 11,
-              borderRadius: 5,
-              width: '90%',
-              alignSelf: 'center',
-            }}>
-            <Text style={{color: 'white', fontSize: 16, fontWeight: 'bold'}}>
-              Skip
-            </Text>
-          </TouchableOpacity>
-        </View>
-      </ScrollView>
+          {icons !== null ? 'Next' : 'Skip'}
+        </Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  AppBar: {
+    paddingHorizontal: 10,
+    width: 'auto',
+    paddingVertical: 15,
+    backgroundColor: '#16247d',
+    // position: 'absolute',
+    justifyContent: 'space-between',
+    paddingTop: '3%',
+    flexDirection: 'row',
+    verticalAlign: 'middle',
+  },
+  SubText: {
+    fontSize: 14,
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  BottomAppBar: {
+    width: 'auto',
+    height: 50,
+    borderWidth: 0.3,
+    borderColor: '#ebebec',
+    // position: 'absolute',
+    alignContent: 'center',
+    verticalAlign: 'middle',
+    paddingLeft: 15,
+    paddingTop: 15,
+    backgroundColor: 'white',
+  },
+  BtnButton: {
+    marginBottom: 15,
+    bottom: 0,
+    position: 'absolute',
+    marginHorizontal: 15,
+    width: '90%',
+    alignSelf: 'center',
+    paddingVertical: 12,
+    borderRadius: 5,
+    backgroundColor: '#16247d',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  Role1: {
+    flexDirection: 'row',
+    marginTop: '5%',
+    alignItems: 'center',
+    alignContent: 'space-around',
+    marginHorizontal: 15,
+  },
+  Role2: {
+    flexDirection: 'row',
+    marginTop: 10,
+    alignItems: 'center',
+    alignContent: 'space-around',
+    marginHorizontal: 15,
+  },
+  Appbar: {
+    width: 'auto',
+    paddingVertical: 15,
+    backgroundColor: '#16247d',
+    flexDirection: 'row',
+    textAlign: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 16,
+    justifyContent: 'center',
+  },
+  TitleAppbar: {
+    fontSize: 17,
+    color: 'white',
+    fontWeight: 'bold',
+  },
+});
