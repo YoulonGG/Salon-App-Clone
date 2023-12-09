@@ -56,6 +56,7 @@ import Gel from '../Explore/Gel';
 import More from '../Explore/More';
 import OrderDetail2 from './Screens/OrderDetail2';
 import Receipt from './Screens/Receipt';
+import LoadingView from './Screens/LoadingView';
 
 const MainStack = () => {
   const Stack = createNativeStackNavigator();
@@ -66,6 +67,7 @@ const MainStack = () => {
         animation: 'fade_from_bottom',
       }}>
       {/* <Stack.Screen component={SplashScreen} name="SplashScreen" /> */}
+      <Stack.Screen component={LoadingView} name="LoadingView" />
       <Stack.Screen component={DrawerNavigate} name="MainDrawer" />
       <Stack.Screen component={App} name="IndexView" />
       <Stack.Screen component={HomeScreen} name="Home" />

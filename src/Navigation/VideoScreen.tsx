@@ -258,7 +258,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginBottom: 8,
     borderWidth: 0.5,
-    borderColor: 'grey',
+    borderColor: '#F5F5F5',
     flexDirection: 'row',
     borderRadius: 5,
     alignItems: 'center',

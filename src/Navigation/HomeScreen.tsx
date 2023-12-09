@@ -645,7 +645,7 @@ const HomeScreen = () => {
                   }}
                   style={{
                     width: 190,
-                    height: 205,
+                    height: 200,
                     marginHorizontal: 5,
                     marginVertical: 10,
                     backgroundColor: 'white',

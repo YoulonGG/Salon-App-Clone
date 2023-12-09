@@ -174,8 +174,9 @@ const ShopScreen = () => {
                   }}
                   style={{
                     width: 165,
-                    height: 160,
+                    height: 155,
                     marginLeft: 10,
+                    marginBottom: 5,
                     backgroundColor: 'white',
                     borderRadius: 5,
                     elevation: 3,
@@ -345,7 +346,7 @@ const ShopScreen = () => {
                       style={{
                         color: '#144389',
                         textAlign: 'center',
-                        fontSize: 16,
+                        fontSize: 14,
                         fontWeight: 'bold',
                       }}>
                       Booking
@@ -401,7 +402,7 @@ const ShopScreen = () => {
                         fontWeight: 'bold',
                         marginLeft: 5,
                       }}>
-                      Openning
+                      Opening
                     </Text>
                   </View>
                 </View>
@@ -444,7 +445,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     flexDirection: 'row',
     borderWidth: 0.5,
-    borderColor: 'grey',
+    borderColor: '#F5F5F5',
     borderRadius: 5,
     alignItems: 'center',
     color: 'D3D3D3',
