@@ -966,7 +966,7 @@ const HomeScreen = () => {
   return (
     <View style={{flex: 1}}>
       <GoogleMap />
-      {/* <BottomSheett /> */}
+
       <View style={styles.searchSection}>
         <FontAwesome
           onPress={() => {
@@ -1194,14 +1194,12 @@ const styles = StyleSheet.create({
     marginTop: 8,
     width: '95%',
     alignSelf: 'center',
-    marginBottom: 0,
     flexDirection: 'row',
-    borderWidth: 0.25,
     borderColor: ' #F5F5F5',
     borderRadius: 5,
     alignItems: 'center',
     backgroundColor: 'white',
-    elevation: 10,
+    elevation: 5,
     height: 47,
     zIndex: 1000,
   },
