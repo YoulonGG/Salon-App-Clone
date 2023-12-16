@@ -78,7 +78,7 @@ export const AssignProfessorView = () => {
 
   const [Index, SetIndex] = useState<any>(null);
 
-  const txtBtn: String = '';
+  // const txtBtn: String = '';
 
   useEffect(() => {
     if (icons !== null) {
@@ -93,7 +93,6 @@ export const AssignProfessorView = () => {
       <View style={styles.Appbar}>
         <AntDesign
           onPress={() => {
-            console.log('Back');
             navigation.goBack();
           }}
           name="arrowleft"

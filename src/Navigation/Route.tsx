@@ -20,25 +20,25 @@ const Route = () => {
     'fade' | 'slide' | 'none'
   >(TRANSITIONS[0]);
 
-  const changeStatusBarVisibility = () => setHidden(!hidden);
+  // const changeStatusBarVisibility = () => setHidden(!hidden);
 
-  const changeStatusBarStyle = () => {
-    const styleId = STYLES.indexOf(statusBarStyle) + 1;
-    if (styleId === STYLES.length) {
-      setStatusBarStyle(STYLES[0]);
-    } else {
-      setStatusBarStyle(STYLES[styleId]);
-    }
-  };
+  // const changeStatusBarStyle = () => {
+  //   const styleId = STYLES.indexOf(statusBarStyle) + 1;
+  //   if (styleId === STYLES.length) {
+  //     setStatusBarStyle(STYLES[0]);
+  //   } else {
+  //     setStatusBarStyle(STYLES[styleId]);
+  //   }
+  // };
 
-  const changeStatusBarTransition = () => {
-    const transition = TRANSITIONS.indexOf(statusBarTransition) + 1;
-    if (transition === TRANSITIONS.length) {
-      setStatusBarTransition(TRANSITIONS[0]);
-    } else {
-      setStatusBarTransition(TRANSITIONS[transition]);
-    }
-  };
+  // const changeStatusBarTransition = () => {
+  //   const transition = TRANSITIONS.indexOf(statusBarTransition) + 1;
+  //   if (transition === TRANSITIONS.length) {
+  //     setStatusBarTransition(TRANSITIONS[0]);
+  //   } else {
+  //     setStatusBarTransition(TRANSITIONS[transition]);
+  //   }
+  // };
 
   return (
     <NavigationContainer>
