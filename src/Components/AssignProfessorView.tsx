@@ -72,13 +72,12 @@ export const AssignProfessorView = () => {
   const [isStateTrue, setIsStateTrue] = useState(false);
   const [icons, setIcons] = useState<any>(null);
   const [idPro, setIdPro] = useState<any>(null);
+
   const toggleState = () => {
     setIsStateTrue(!isStateTrue);
   };
 
   const [Index, SetIndex] = useState<any>(null);
-
-  // const txtBtn: String = '';
 
   useEffect(() => {
     if (icons !== null) {
@@ -112,7 +111,7 @@ export const AssignProfessorView = () => {
         </Text>
       </View>
       <FlatList
-        style={{marginBottom: height * 0.1}}
+        // style={{marginBottom: height * 0.1}}
         data={data}
         showsVerticalScrollIndicator={false}
         numColumns={2}
@@ -122,7 +121,6 @@ export const AssignProfessorView = () => {
               activeOpacity={0.8}
               onPress={() => {
                 toggleState();
-                console.log('press');
                 if (icons === null) {
                   setIcons(index);
                   console.log(icons);
@@ -227,21 +225,43 @@ export const AssignProfessorView = () => {
             </TouchableOpacity>
           );
         }}></FlatList>
-      <TouchableOpacity
-        activeOpacity={1}
-        style={styles.BtnButton}
-        onPress={() => {
-          navigation.push('ChooseService');
+      <View style={{borderBottomWidth: 1, marginTop: 70}}></View>
+      <View
+        style={{
+          width: '100%',
+          height: 60,
+          bottom: 0,
+          justifyContent: 'center',
+          backgroundColor: 'white',
+          position: 'absolute',
+          alignItems: 'center',
+          borderTopWidth: 0.5,
+          borderBlockColor: 'grey',
         }}>
-        <Text
+        <TouchableOpacity
           style={{
-            fontSize: 15,
-            fontWeight: 'bold',
-            color: 'white',
+            backgroundColor: '#16247d',
+            paddingHorizontal: 25,
+            paddingVertical: 10,
+            borderRadius: 6,
+            alignSelf: 'center',
+            width: '95%',
+            height: 45,
+            alignItems: 'center',
+          }}
+          onPress={() => {
+            navigation.push('ChooseService');
           }}>
-          {icons !== null ? 'Next' : 'Skip'}
-        </Text>
-      </TouchableOpacity>
+          <Text
+            style={{
+              fontSize: 16,
+              fontWeight: 'bold',
+              color: 'white',
+            }}>
+            {icons !== null ? 'Next' : 'Skip'}
+          </Text>
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   );
 };
@@ -276,19 +296,7 @@ const styles = StyleSheet.create({
     paddingTop: 15,
     backgroundColor: 'white',
   },
-  BtnButton: {
-    marginBottom: 15,
-    bottom: 0,
-    position: 'absolute',
-    marginHorizontal: 15,
-    width: '90%',
-    alignSelf: 'center',
-    paddingVertical: 12,
-    borderRadius: 5,
-    backgroundColor: '#16247d',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
+  BtnButton: {},
   Role1: {
     flexDirection: 'row',
     marginTop: '5%',

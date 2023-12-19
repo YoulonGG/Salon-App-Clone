@@ -63,6 +63,7 @@ const Data = [
     Service: 'Make-up for Wedding',
   },
 ];
+
 const Approved = () => {
   const navigation: any = useNavigation();
   return (
@@ -73,7 +74,7 @@ const Approved = () => {
             <View
               style={{
                 backgroundColor: 'white',
-                width: '92%',
+                width: width * 0.95,
                 height: 200,
                 alignSelf: 'center',
                 marginTop: 10,
@@ -193,7 +194,7 @@ const Approved = () => {
             </View>
           );
         })}
-        <View style={{marginTop: 100, borderWidth: 2}}></View>
+        <View style={{marginTop: 130, borderWidth: 2}}></View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -299,8 +300,8 @@ const HistoryBooking = () => {
         <Text
           style={{
             color: focused ? '#16247d' : 'black',
-            margin: 4,
-            fontSize: 14,
+            margin: 2,
+            fontSize: 12,
             fontWeight: 'bold',
           }}>
           {route.title}
@@ -317,7 +318,8 @@ const HistoryBooking = () => {
           backgroundColor: '#16247d',
           flexDirection: 'row',
           alignItems: 'center',
-          paddingHorizontal: 17,
+          justifyContent: 'space-between',
+          paddingHorizontal: '5%',
         }}>
         <TouchableOpacity
           activeOpacity={1}
@@ -338,12 +340,18 @@ const HistoryBooking = () => {
             fontSize: 17,
             color: 'white',
             textAlign: 'center',
-            marginLeft: 70,
           }}>
           History Booking & Order
         </Text>
+        <AntDesign
+          name="arrowleft"
+          size={25}
+          style={{
+            color: '#16247d',
+          }}
+        />
       </View>
-      <View style={{width: 410, height: '100%'}}>
+      <View style={{width: '100%', height: '100%'}}>
         <TabView
           navigationState={{index, routes}}
           renderScene={renderScene}

@@ -70,6 +70,22 @@ const PopularSalonsData = [
       'បម្រើសេវាកម្មជូនអស់លោក លោកស្រីអោយកាន់តែមានប្រសិទ្ធភាព គុណភាព...',
     img: require('../assets/image/haircut5.jpg'),
   },
+  {
+    id: '6',
+    name: '007 haircut',
+    customer: '1',
+    description:
+      'បម្រើសេវាកម្មជូនអស់លោក លោកស្រីអោយកាន់តែមានប្រសិទ្ធភាព គុណភាព...',
+    img: require('../assets/image/haircut5.jpg'),
+  },
+  {
+    id: '7',
+    name: '007 haircut',
+    customer: '1',
+    description:
+      'បម្រើសេវាកម្មជូនអស់លោក លោកស្រីអោយកាន់តែមានប្រសិទ្ធភាព គុណភាព...',
+    img: require('../assets/image/haircut5.jpg'),
+  },
 ];
 
 const TopRatingProfessorData = [
@@ -90,6 +106,16 @@ const TopRatingProfessorData = [
   },
   {
     id: '4',
+    name: 'Master Lee',
+    img: require('../assets/image/monk.png'),
+  },
+  {
+    id: '5',
+    name: 'Master Lee',
+    img: require('../assets/image/monk.png'),
+  },
+  {
+    id: '6',
     name: 'Master Lee',
     img: require('../assets/image/monk.png'),
   },
@@ -126,6 +152,18 @@ const NewSalonData = [
     des: '',
     img: require('../assets/image/salon1.jpg'),
   },
+  {
+    id: '6',
+    name: 'Beauty Salon',
+    des: '',
+    img: require('../assets/image/salon1.jpg'),
+  },
+  {
+    id: '7',
+    name: 'Beauty Salon',
+    des: '',
+    img: require('../assets/image/salon1.jpg'),
+  },
 ];
 
 const PopularSalon = () => {
@@ -152,7 +190,7 @@ const HomeScreen = () => {
   const bottomSheetRef = useRef<BottomSheet>(null);
 
   // variables
-  const snapPoints = useMemo(() => ['11%', '41%', '71%', '92%'], []);
+  const snapPoints = useMemo(() => ['10.5%', '41%', '71%', '92%'], []);
 
   // callbacks
   const handleSheetChanges = useCallback((index: number) => {}, []);
@@ -647,11 +685,11 @@ const HomeScreen = () => {
                     width: 190,
                     height: 200,
                     marginHorizontal: 5,
+                    // marginRight: 10,
                     marginVertical: 10,
                     backgroundColor: 'white',
                     borderRadius: 5,
                     elevation: 3,
-                    flex: 1,
                   }}>
                   <Image
                     source={item.img}

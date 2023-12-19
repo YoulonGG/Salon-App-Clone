@@ -124,11 +124,11 @@ const MobileService = () => {
                   style={{
                     backgroundColor: 'skyblue',
                     width: '50%',
-                    padding: '2%',
+                    padding: '1%',
                     borderBottomEndRadius: 5,
                     borderTopStartRadius: 5,
                   }}>
-                  <Text style={{color: 'white', fontSize: 12}}>
+                  <Text style={{color: 'white', fontSize: 10}}>
                     {item.price}
                   </Text>
                 </View>
@@ -136,12 +136,12 @@ const MobileService = () => {
                   style={{
                     backgroundColor: 'skyblue',
                     width: '30%',
-                    padding: '2%',
+                    padding: '1%',
                     borderBottomEndRadius: 5,
                     marginTop: 2,
                     alignItems: 'center',
                   }}>
-                  <Text style={{color: 'white', fontSize: 12}}>
+                  <Text style={{color: 'white', fontSize: 10}}>
                     {item.points}
                   </Text>
                 </View>

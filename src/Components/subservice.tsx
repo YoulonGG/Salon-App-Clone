@@ -51,7 +51,7 @@ const Kid = () => {
                 height: 110,
                 width: '90%',
                 flexDirection: 'row',
-                marginTop: 10,
+                marginVertical: 10,
                 borderRadius: 5,
                 elevation: 5,
                 zIndex: 1000,
@@ -116,7 +116,7 @@ const Kid = () => {
                       justifyContent: 'center',
                       height: 30,
                       borderRadius: 6,
-                      paddingHorizontal: 10,
+                      paddingHorizontal: 5,
                     }}>
                     <Text
                       style={{
@@ -247,7 +247,7 @@ const Women = () => {
                     justifyContent: 'center',
                     height: 30,
                     borderRadius: 6,
-                    paddingHorizontal: 10,
+                    paddingHorizontal: 5,
                   }}>
                   <Text
                     style={{
@@ -377,7 +377,7 @@ const Men = () => {
                       justifyContent: 'center',
                       height: 30,
                       borderRadius: 6,
-                      paddingHorizontal: 10,
+                      paddingHorizontal: 5,
                     }}>
                     <Text
                       style={{
@@ -436,14 +436,14 @@ export const SubService = () => {
       tabStyle={{
         marginTop: 5,
         width: width / 3,
-        borderTopWidth: 0.3,
-        borderRightWidth: 0.3,
+        borderTopWidth: 0.2,
+        borderRightWidth: 0.2,
       }}
       renderLabel={({route, focused}) => (
         <Text
           style={{
             color: focused ? '#16247d' : 'black',
-            margin: 5,
+            margin: 0,
             fontSize: 14,
             fontWeight: 'bold',
           }}>
@@ -495,11 +495,7 @@ export const SubService = () => {
           name="hearto"
           size={22}
           color={'white'}
-          style={
-            {
-              // paddingLeft: '25%',
-            }
-          }></AntDesign>
+          style={{}}></AntDesign>
       </View>
       <View style={styles.Body}>
         <View style={styles.RowBodyI}>
@@ -611,7 +607,13 @@ export const SubService = () => {
             </Text>
           </View>
         </View>
-        <View style={{flexDirection: 'row', marginTop: 10, marginLeft: '10%'}}>
+        <View
+          style={{
+            flexDirection: 'row',
+            marginTop: 10,
+            marginLeft: '10%',
+            marginBottom: 5,
+          }}>
           <TouchableOpacity
             onPress={() => {
               naviation.push('GalleryView');
@@ -624,13 +626,13 @@ export const SubService = () => {
                 backgroundColor: 'white',
                 borderRadius: 20,
               }}>
-              <FontAwesome name="image" size={23} color={'grey'}></FontAwesome>
+              <FontAwesome name="image" size={20} color={'grey'}></FontAwesome>
               <Text
                 style={{
                   marginLeft: 10,
                   color: 'black',
                   fontWeight: 'bold',
-                  fontSize: 14,
+                  fontSize: 12,
                 }}>
                 Gallery
               </Text>
@@ -638,7 +640,6 @@ export const SubService = () => {
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => {
-              console.log('Make a Booking');
               naviation.push('MakeBookingView');
             }}>
             <View
@@ -650,13 +651,14 @@ export const SubService = () => {
                 marginLeft: 18,
                 borderRadius: 20,
               }}>
-              <AntDesign name="isv" size={23} color={'#16247d'}></AntDesign>
+              <AntDesign name="isv" size={20} color={'#16247d'}></AntDesign>
               <Text
                 style={{
                   marginLeft: 10,
                   color: '#16247d',
                   fontWeight: 'bold',
-                  fontSize: 14,
+                  fontSize: 12,
+                  alignItems: 'center',
                 }}>
                 MAKE A BOOKING
               </Text>

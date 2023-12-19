@@ -233,14 +233,13 @@ const OrderDetail = () => {
             width: '100%',
             height: 'auto',
             flexDirection: 'row',
-            marginTop: 15,
+            paddingHorizontal: '4%',
           }}>
           <Text
             style={{
               color: '#16247d',
               fontSize: 16,
               fontWeight: 'bold',
-              marginLeft: 15,
             }}>
             Selected Services
           </Text>
@@ -254,7 +253,6 @@ const OrderDetail = () => {
                 color: '#16247d',
                 fontSize: 16,
                 fontWeight: 'bold',
-                marginLeft: '45%',
                 textDecorationLine: 'underline',
               }}>
               Add Services +

@@ -54,15 +54,17 @@ const HelpAndFeedback = () => {
           borderWidth: 0.5,
           alignItems: 'center',
           flexDirection: 'row',
+          justifyContent: 'space-between',
+          paddingHorizontal: '5%',
         }}>
-        <Text style={{color: 'black', fontSize: 15, marginLeft: 15}}>
+        <Text style={{color: 'black', fontSize: 15}}>
           How to register account in app user
         </Text>
         <AntDesign
           name="right"
           size={20}
           color={'black'}
-          style={{marginLeft: '25%', fontWeight: 'bold'}}
+          style={{fontWeight: 'bold'}}
         />
       </TouchableOpacity>
     </SafeAreaView>

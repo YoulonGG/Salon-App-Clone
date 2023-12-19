@@ -25,6 +25,8 @@ const Profile = () => {
           backgroundColor: '#16247d',
           flexDirection: 'row',
           alignItems: 'center',
+          justifyContent: 'space-between',
+          paddingHorizontal: '5%',
         }}>
         <TouchableOpacity
           activeOpacity={1}
@@ -36,7 +38,6 @@ const Profile = () => {
             size={25}
             style={{
               color: 'white',
-              paddingLeft: '5%',
             }}
           />
         </TouchableOpacity>
@@ -46,10 +47,16 @@ const Profile = () => {
             fontSize: 17,
             color: 'white',
             textAlign: 'center',
-            paddingLeft: '33%',
           }}>
           Profile
         </Text>
+        <AntDesign
+          name="arrowleft"
+          size={25}
+          style={{
+            color: '#16247d',
+          }}
+        />
       </View>
       <View style={{flexDirection: 'row', width: '100%', height: 160}}>
         <Image

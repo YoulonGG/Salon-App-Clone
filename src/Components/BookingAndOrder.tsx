@@ -87,6 +87,8 @@ const BookingAndOrder = () => {
             backgroundColor: '#16247d',
             flexDirection: 'row',
             alignItems: 'center',
+            justifyContent: 'space-between',
+            paddingHorizontal: '5%',
           }}>
           <TouchableOpacity
             activeOpacity={1}
@@ -98,7 +100,6 @@ const BookingAndOrder = () => {
               size={25}
               style={{
                 color: 'white',
-                paddingLeft: '5%',
               }}
             />
           </TouchableOpacity>
@@ -108,10 +109,16 @@ const BookingAndOrder = () => {
               fontSize: 17,
               color: 'white',
               textAlign: 'center',
-              paddingLeft: '22%',
             }}>
             Booking & Order
           </Text>
+          <AntDesign
+            name="arrowleft"
+            size={25}
+            style={{
+              color: '#16247d',
+            }}
+          />
         </View>
         {Data.map((e, index) => {
           return (
@@ -273,6 +280,7 @@ const BookingAndOrder = () => {
             </View>
           );
         })}
+        <View style={{width: 1, marginTop: 20}}></View>
       </ScrollView>
     </SafeAreaView>
   );

@@ -19,20 +19,6 @@ import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import DatePicker from 'react-native-date-picker';
 export const MakeBookingView = () => {
-  // const [selectedDate, setSelectedDate] = useState(new Date());
-
-  // const showDatePicker = async () => {
-  //   try {
-  //     const { action, year, month, day } = await DatePickerAndroid.open({
-  //       date: selectedDate,
-  //     });
-  //     if (action !== DatePickerAndroid.dismissedAction) {
-  //       const newDate = new Date(year, month, day);
-  //       setSelectedDate(newDate);
-  //     }
-  //   } catch{}
-  // };
-
   const [date, setDate] = useState(new Date());
   const [open, setOpen] = useState(false);
 
@@ -49,11 +35,22 @@ export const MakeBookingView = () => {
             name="arrowleft"
             color={'white'}
             size={25}
-            style={{
-              paddingLeft: '5%',
-            }}></AntDesign>
+            style={{}}></AntDesign>
         </TouchableOpacity>
-        <Text style={styles.SubText}>MAKE A BOOKING</Text>
+        <Text
+          style={{
+            fontSize: 17,
+            color: 'white',
+            fontWeight: 'bold',
+            textAlign: 'center',
+          }}>
+          MAKE A BOOKING
+        </Text>
+        <AntDesign
+          name="arrowleft"
+          color={'#16247d'}
+          size={25}
+          style={{}}></AntDesign>
       </View>
       <Text
         style={{fontSize: 16, color: 'black', fontWeight: 'bold', margin: 10}}>
@@ -281,16 +278,8 @@ const styles = StyleSheet.create({
     height: 40,
     backgroundColor: '#16247d',
     alignItems: 'center',
-    // paddingTop: '4.5%',
-    // justifyContent: 'center',
+    justifyContent: 'space-between',
     flexDirection: 'row',
-    // verticalAlign: 'middle',
-  },
-  SubText: {
-    fontSize: 17,
-    color: 'white',
-    fontWeight: 'bold',
-    textAlign: 'center',
-    paddingLeft: '23%',
+    paddingHorizontal: '5%',
   },
 });

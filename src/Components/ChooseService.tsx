@@ -277,7 +277,7 @@ const ChooseService = () => {
       </ScrollView>
       <View
         style={{
-          height: 60,
+          height: 50,
           width: '100%',
           alignSelf: 'center',
           justifyContent: 'center',

@@ -129,6 +129,26 @@ const PersonData = [
     name: 'Yuth',
     img: require('../../src/assets/image/man1.png'),
   },
+  {
+    id: 13,
+    name: 'Yuth',
+    img: require('../../src/assets/image/man1.png'),
+  },
+  {
+    id: 14,
+    name: 'Yuth',
+    img: require('../../src/assets/image/man1.png'),
+  },
+  {
+    id: 15,
+    name: 'Yuth',
+    img: require('../../src/assets/image/man1.png'),
+  },
+  {
+    id: 16,
+    name: 'Yuth',
+    img: require('../../src/assets/image/man1.png'),
+  },
 ];
 
 const ProfessorScreen = () => {
@@ -162,7 +182,6 @@ const ProfessorScreen = () => {
   };
   const BodyRightBar = () => {
     if (id === 1) {
-      console.log('title: ', title);
       return (
         <FlatList
           style={{marginRight: 3, marginBottom: height * 0.17}}
@@ -283,7 +302,6 @@ const ProfessorScreen = () => {
           size={22}
           style={{
             color: 'white',
-            // paddingLeft: '5%',
           }}
         />
         <Text
@@ -291,17 +309,13 @@ const ProfessorScreen = () => {
             fontSize: 17,
             color: 'white',
             fontWeight: 'bold',
-            textAlign: 'center',
-            // paddingLeft: '25%',
           }}>
           All Professors
         </Text>
         <TouchableOpacity
           onPress={() => {
             navigation.push('SearchBar');
-          }}
-          // style={{marginLeft: '25%'}}
-        >
+          }}>
           <Feather
             name="search"
             size={22}
@@ -361,6 +375,7 @@ const ProfessorScreen = () => {
                 </TouchableOpacity>
               );
             }}></FlatList>
+          {/* <View style={{marginTop: 20}}></View> */}
         </View>
         <View style={styles.RightBar}>
           <BodyRightBar />
@@ -399,6 +414,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     marginTop: 7,
     marginLeft: 7,
+    marginBottom: 5,
     borderRadius: 8,
     elevation: 3,
     zIndex: 1000,

@@ -202,7 +202,7 @@ const ShopInformation = () => {
               marginTop: -50,
               color: 'black',
             }}>
-            បម្រើសេវាកម្មជូនអស់លោក លោកស្រីអោយកាន់តែមាន..
+            បម្រើសេវាកម្មជូនអស់លោក លោកស្រីអោយកាន់..
           </Text>
         </View>
         <View style={styles.form}>

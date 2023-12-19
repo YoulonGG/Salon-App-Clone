@@ -51,7 +51,7 @@ const VideoPlayer = () => {
         </Text>
       </View>
       <View style={{height: 280, width: '100%'}}>
-        <Video
+        {/* <Video
           // loop
           controls
           // autoPlay
@@ -62,7 +62,7 @@ const VideoPlayer = () => {
             width: '100%',
             height: '100%',
           }}
-        />
+        /> */}
       </View>
       <View style={{marginLeft: 10, marginTop: 10}}>
         <Text style={{fontSize: 15, color: 'black'}}>
