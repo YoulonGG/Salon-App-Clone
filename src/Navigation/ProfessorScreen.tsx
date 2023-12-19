@@ -184,7 +184,11 @@ const ProfessorScreen = () => {
     if (id === 1) {
       return (
         <FlatList
-          style={{marginRight: 3, marginBottom: height * 0.17}}
+          style={{
+            marginRight: 3,
+            marginBottom: height * 0.16,
+            // backgroundColor: 'white',
+          }}
           numColumns={2}
           showsVerticalScrollIndicator={false}
           data={PersonData}
@@ -328,7 +332,7 @@ const ProfessorScreen = () => {
       <View style={styles.Row}>
         <View style={styles.LeftBar}>
           <FlatList
-            style={{marginBottom: height * 0.18}}
+            style={{marginBottom: height * 0.12}}
             showsVerticalScrollIndicator={false}
             data={SideBarFilter}
             renderItem={({item, index}) => {
@@ -375,7 +379,6 @@ const ProfessorScreen = () => {
                 </TouchableOpacity>
               );
             }}></FlatList>
-          {/* <View style={{marginTop: 20}}></View> */}
         </View>
         <View style={styles.RightBar}>
           <BodyRightBar />

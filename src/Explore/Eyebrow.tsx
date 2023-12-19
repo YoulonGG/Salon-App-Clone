@@ -22,6 +22,8 @@ const EdgeUp = () => {
           backgroundColor: '#16247d',
           flexDirection: 'row',
           alignItems: 'center',
+          justifyContent: 'space-between',
+          paddingHorizontal: '5%',
         }}>
         <TouchableOpacity
           activeOpacity={1}
@@ -33,7 +35,6 @@ const EdgeUp = () => {
             size={25}
             style={{
               color: 'white',
-              paddingLeft: '5%',
             }}
           />
         </TouchableOpacity>
@@ -43,10 +44,16 @@ const EdgeUp = () => {
             fontSize: 17,
             color: 'white',
             textAlign: 'center',
-            paddingLeft: '19%',
           }}>
           Eyebrow Wax and Tint
         </Text>
+        <AntDesign
+          name="arrowleft"
+          size={25}
+          style={{
+            color: '#16247d',
+          }}
+        />
       </View>
       <View
         style={{justifyContent: 'center', alignItems: 'center', marginTop: 40}}>

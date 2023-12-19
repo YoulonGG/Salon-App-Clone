@@ -60,6 +60,8 @@ const Bleaching = () => {
           backgroundColor: '#16247d',
           flexDirection: 'row',
           alignItems: 'center',
+          justifyContent: 'space-between',
+          paddingHorizontal: '5%',
         }}>
         <TouchableOpacity
           activeOpacity={1}
@@ -71,7 +73,6 @@ const Bleaching = () => {
             size={25}
             style={{
               color: 'white',
-              paddingLeft: '5%',
             }}
           />
         </TouchableOpacity>
@@ -81,10 +82,16 @@ const Bleaching = () => {
             fontSize: 17,
             color: 'white',
             textAlign: 'center',
-            paddingLeft: '29%',
           }}>
           Bleaching
         </Text>
+        <AntDesign
+          name="arrowleft"
+          size={25}
+          style={{
+            color: '#16247d',
+          }}
+        />
       </View>
       <FlatList
         data={Data}
