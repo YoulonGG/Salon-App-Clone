@@ -6,7 +6,6 @@ import {Grid} from 'react-native-animated-spinkit';
 const LoadingView = () => {
   const navigation = useNavigation();
   useEffect(() => {
-    console.log('Start push screen');
     setTimeout(() => {
       navigation.reset({
         index: 0,
@@ -33,7 +32,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#16247d',
   },
   txtStyle: {
-    fontSize: 18,
+    fontSize: 17,
     color: 'white',
     fontWeight: 'bold',
   },

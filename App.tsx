@@ -25,7 +25,7 @@ const App = () => {
           right: 0,
           left: 0,
           elevation: 0,
-          height: 54,
+          height: 50,
           backgroundColor: '#fff',
         },
       }}>

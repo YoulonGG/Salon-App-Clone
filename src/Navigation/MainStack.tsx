@@ -57,6 +57,7 @@ import More from '../Explore/More';
 import OrderDetail2 from './Screens/OrderDetail2';
 import Receipt from './Screens/Receipt';
 import LoadingView from './Screens/LoadingView';
+import MobileServices2 from './Screens/MobileServices2';
 
 const MainStack = () => {
   const Stack = createNativeStackNavigator();
@@ -121,6 +122,7 @@ const MainStack = () => {
       <Stack.Screen component={More} name="More" />
       <Stack.Screen component={OrderDetail2} name="OrderDetail2" />
       <Stack.Screen component={Receipt} name="Receipt" />
+      <Stack.Screen component={MobileServices2} name="MobileServices2" />
       <Stack.Screen
         component={AssignProfessorView}
         name="AssignProfessorView"

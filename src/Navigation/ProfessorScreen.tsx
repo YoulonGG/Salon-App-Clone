@@ -332,7 +332,7 @@ const ProfessorScreen = () => {
       <View style={styles.Row}>
         <View style={styles.LeftBar}>
           <FlatList
-            style={{marginBottom: height * 0.12}}
+            style={{marginBottom: height * 0.13}}
             showsVerticalScrollIndicator={false}
             data={SideBarFilter}
             renderItem={({item, index}) => {
@@ -379,9 +379,11 @@ const ProfessorScreen = () => {
                 </TouchableOpacity>
               );
             }}></FlatList>
+          {/* <View style={{marginTop: 95}}></View> */}
         </View>
         <View style={styles.RightBar}>
           <BodyRightBar />
+          {/* <View style={{marginTop: -30}}></View> */}
         </View>
       </View>
     </SafeAreaView>
@@ -396,7 +398,7 @@ const styles = StyleSheet.create({
   },
   LeftBar: {
     height: height,
-    width: width * 0.3,
+    width: width * 0.25,
     backgroundColor: 'white',
     paddingHorizontal: 5,
   },
@@ -408,11 +410,12 @@ const styles = StyleSheet.create({
   },
   Column: {},
   RightBar: {
-    width: width * 0.69,
+    width: width * 0.75,
     height: 'auto',
+    marginBottom: height * 0.015,
   },
   Card: {
-    width: width * 0.319,
+    width: width * 0.35,
     height: height * 0.2,
     backgroundColor: 'white',
     marginTop: 7,

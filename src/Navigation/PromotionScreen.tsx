@@ -15,9 +15,6 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 import {useNavigation} from '@react-navigation/native';
 
-// import {createNativeStackNavigator} from '@react-navigation/native-stack';
-// import {Alert} from 'react-native';
-const CARD_BORDER_RADIUS = 10;
 const {width} = Dimensions.get('window');
 
 const Promotion = () => {

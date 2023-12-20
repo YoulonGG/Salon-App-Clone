@@ -190,7 +190,7 @@ const HomeScreen = () => {
   const bottomSheetRef = useRef<BottomSheet>(null);
 
   // variables
-  const snapPoints = useMemo(() => ['10.5%', '41%', '71%', '92%'], []);
+  const snapPoints = useMemo(() => ['10%', '41%', '71%', '92%'], []);
 
   // callbacks
   const handleSheetChanges = useCallback((index: number) => {}, []);
@@ -1094,6 +1094,9 @@ const HomeScreen = () => {
             <Text style={{color: 'black', fontSize: 15}}>All</Text>
           </TouchableOpacity>
           <TouchableOpacity
+            onPress={() => {
+              navigation.push('MobileServices2');
+            }}
             style={{
               marginTop: 12,
               alignItems: 'center',
