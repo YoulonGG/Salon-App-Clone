@@ -23,6 +23,8 @@ export const DetailPromotion = () => {
           backgroundColor: '#16247d',
           flexDirection: 'row',
           alignItems: 'center',
+          justifyContent: 'space-between',
+          paddingHorizontal: '5%',
         }}>
         <TouchableOpacity
           activeOpacity={1}
@@ -34,7 +36,6 @@ export const DetailPromotion = () => {
             size={25}
             style={{
               color: 'white',
-              paddingLeft: '5%',
             }}
           />
         </TouchableOpacity>
@@ -44,10 +45,16 @@ export const DetailPromotion = () => {
             fontSize: 17,
             color: 'white',
             textAlign: 'center',
-            paddingLeft: '28%',
           }}>
           កាត់សក់បុរស
         </Text>
+        <AntDesign
+          name="arrowleft"
+          size={25}
+          style={{
+            color: '#16247d',
+          }}
+        />
       </View>
       <TouchableOpacity
         activeOpacity={1}

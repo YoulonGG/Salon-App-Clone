@@ -49,11 +49,12 @@ const Kid = () => {
                 backgroundColor: 'white',
                 alignSelf: 'center',
                 height: 110,
-                width: '90%',
+                width: width * 0.95,
                 flexDirection: 'row',
                 marginVertical: 10,
+                paddingHorizontal: '3%',
                 borderRadius: 5,
-                elevation: 5,
+                elevation: 2,
                 zIndex: 1000,
               }}>
               <View
@@ -65,7 +66,6 @@ const Kid = () => {
                   <Image
                     source={item.image}
                     style={{
-                      marginLeft: 10,
                       width: 70,
                       height: 90,
                       marginTop: 5,
@@ -167,151 +167,35 @@ const womanData = [
     price: '$ 10.00',
     image: require('../assets/image/woman.png'),
   },
+  {
+    id: '5',
+    title: 'Popular Hairstyles',
+    description: 'Popular Hairstyles',
+    price: '$ 10.00',
+    image: require('../assets/image/woman.png'),
+  },
+  {
+    id: '6',
+    title: 'Popular Hairstyles',
+    description: 'Popular Hairstyles',
+    price: '$ 10.00',
+    image: require('../assets/image/woman.png'),
+  },
+  {
+    id: '7',
+    title: 'Popular Hairstyles',
+    description: 'Popular Hairstyles',
+    price: '$ 10.00',
+    image: require('../assets/image/woman.png'),
+  },
 ];
 
 const Women = () => {
   const navigation: any = useNavigation();
   return (
-    <FlatList
-      data={womanData}
-      renderItem={({item}) => {
-        return (
-          <View
-            style={{
-              backgroundColor: 'white',
-              alignSelf: 'center',
-              height: 110,
-              width: '90%',
-              flexDirection: 'row',
-              marginTop: 10,
-              borderRadius: 5,
-              elevation: 5,
-              zIndex: 1000,
-            }}>
-            <View
-              style={{
-                justifyContent: 'space-between',
-                flexDirection: 'row',
-              }}>
-              <View style={{flexDirection: 'row', width: '80%'}}>
-                <Image
-                  source={item.image}
-                  style={{
-                    marginLeft: 10,
-                    width: 70,
-                    height: 90,
-                    marginTop: 5,
-                  }}></Image>
-                <View
-                  style={{
-                    marginLeft: 10,
-                    flex: 1,
-                    justifyContent: 'space-between',
-                    marginVertical: 10,
-                  }}>
-                  <View>
-                    <Text
-                      style={{
-                        fontSize: 15,
-                        color: 'black',
-                        marginTop: 5,
-                        fontWeight: 'bold',
-                      }}>
-                      {item.title}
-                    </Text>
-                    <Text style={{fontSize: 12, color: 'black', marginTop: 4}}>
-                      {item.description}
-                    </Text>
-                  </View>
-                  <Text style={{color: 'red', fontSize: 16, marginTop: 10}}>
-                    {item.price}
-                  </Text>
-                </View>
-              </View>
-              <View style={{width: '20%', height: '100%'}}>
-                <View
-                  style={{
-                    width: '100%',
-                    height: '60%',
-                  }}></View>
-                <TouchableOpacity
-                  activeOpacity={1}
-                  onPress={() => {
-                    navigation.push('MakeBookingView');
-                  }}
-                  style={{
-                    backgroundColor: 'white',
-                    borderWidth: 2,
-                    borderColor: '#16247d',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    height: 30,
-                    borderRadius: 6,
-                    paddingHorizontal: 5,
-                  }}>
-                  <Text
-                    style={{
-                      textAlign: 'center',
-                      color: '#16247d',
-                      fontSize: 12,
-                    }}>
-                    Booking
-                  </Text>
-                </TouchableOpacity>
-              </View>
-            </View>
-          </View>
-        );
-      }}
-      keyExtractor={item => item.id}
-    />
-  );
-};
-
-const manData = [
-  {
-    id: '1',
-    title: 'កាត់សក់ម៉ូតទាន់សម័យ ធ្វើម៉ូតសក់...',
-    description: 'ពិន្ទុ: 0.5ដង ហ្រីកក់សក់ ធ្វើម៉ូតសក់ដោយអត់គិតថ្លៃ',
-    price: '$ 10.00',
-    image: require('../assets/image/man1.png'),
-  },
-  {
-    id: '2',
-    title: 'កាត់សក់ម៉ូតទាន់សម័យ ធ្វើម៉ូតសក់...',
-    description: 'ពិន្ទុ: 0.5ដង ហ្រីកក់សក់ ធ្វើម៉ូតសក់ដោយអត់គិតថ្លៃ',
-    price: '$ 10.00',
-    image: require('../assets/image/man1.png'),
-  },
-  {
-    id: '3',
-    title: 'កាត់សក់ម៉ូតទាន់សម័យ ធ្វើម៉ូតសក់...',
-    description: 'ពិន្ទុ: 0.5ដង ហ្រីកក់សក់ ធ្វើម៉ូតសក់ដោយអត់គិតថ្លៃ',
-    price: '$ 10.00',
-    image: require('../assets/image/man1.png'),
-  },
-  {
-    id: '4',
-    title: 'កាត់សក់ម៉ូតទាន់សម័យ ធ្វើម៉ូតសក់...',
-    description: 'ពិន្ទុ: 0.5ដង ហ្រីកក់សក់ ធ្វើម៉ូតសក់ដោយអត់គិតថ្លៃ',
-    price: '$ 10.00',
-    image: require('../assets/image/man1.png'),
-  },
-  {
-    id: '5',
-    title: 'កាត់សក់ម៉ូតទាន់សម័យ ធ្វើម៉ូតសក់...',
-    description: 'ពិន្ទុ: 0.5ដង ហ្រីកក់សក់ ធ្វើម៉ូតសក់ដោយអត់គិតថ្លៃ',
-    price: '$ 10.00',
-    image: require('../assets/image/man1.png'),
-  },
-];
-
-const Men = () => {
-  const navigation: any = useNavigation();
-  return (
-    <View style={{flexDirection: 'row'}}>
+    <ScrollView showsVerticalScrollIndicator={false}>
       <FlatList
-        data={manData}
+        data={womanData}
         renderItem={({item}) => {
           return (
             <View
@@ -319,12 +203,13 @@ const Men = () => {
                 backgroundColor: 'white',
                 alignSelf: 'center',
                 height: 110,
-                width: '90%',
+                width: width * 0.95,
                 flexDirection: 'row',
-                marginTop: 10,
+                marginVertical: 5,
                 borderRadius: 5,
-                elevation: 5,
+                elevation: 2,
                 zIndex: 1000,
+                paddingHorizontal: '3%',
               }}>
               <View
                 style={{
@@ -335,24 +220,32 @@ const Men = () => {
                   <Image
                     source={item.image}
                     style={{
-                      marginLeft: 10,
                       width: 70,
                       height: 90,
                       marginTop: 5,
                     }}></Image>
-                  <View style={{marginLeft: 10, flex: 1}}>
-                    <Text
-                      style={{
-                        fontSize: 15,
-                        color: 'black',
-                        marginTop: 5,
-                        fontWeight: 'bold',
-                      }}>
-                      {item.title}
-                    </Text>
-                    <Text style={{fontSize: 12, color: 'black', marginTop: 4}}>
-                      {item.description}
-                    </Text>
+                  <View
+                    style={{
+                      marginLeft: 10,
+                      flex: 1,
+                      justifyContent: 'space-between',
+                      marginVertical: 10,
+                    }}>
+                    <View>
+                      <Text
+                        style={{
+                          fontSize: 15,
+                          color: 'black',
+                          marginTop: 5,
+                          fontWeight: 'bold',
+                        }}>
+                        {item.title}
+                      </Text>
+                      <Text
+                        style={{fontSize: 12, color: 'black', marginTop: 4}}>
+                        {item.description}
+                      </Text>
+                    </View>
                     <Text style={{color: 'red', fontSize: 16, marginTop: 10}}>
                       {item.price}
                     </Text>
@@ -395,7 +288,162 @@ const Men = () => {
         }}
         keyExtractor={item => item.id}
       />
-    </View>
+      <View style={{marginTop: 80}}></View>
+    </ScrollView>
+  );
+};
+
+const manData = [
+  {
+    id: '1',
+    title: 'កាត់សក់ម៉ូតទាន់សម័យ ធ្វើម៉ូតសក់...',
+    description: 'ពិន្ទុ: 0.5ដង ហ្រីកក់សក់ ធ្វើម៉ូតសក់ដោយអត់គិតថ្លៃ',
+    price: '$ 10.00',
+    image: require('../assets/image/man1.png'),
+  },
+  {
+    id: '2',
+    title: 'កាត់សក់ម៉ូតទាន់សម័យ ធ្វើម៉ូតសក់...',
+    description: 'ពិន្ទុ: 0.5ដង ហ្រីកក់សក់ ធ្វើម៉ូតសក់ដោយអត់គិតថ្លៃ',
+    price: '$ 10.00',
+    image: require('../assets/image/man1.png'),
+  },
+  {
+    id: '3',
+    title: 'កាត់សក់ម៉ូតទាន់សម័យ ធ្វើម៉ូតសក់...',
+    description: 'ពិន្ទុ: 0.5ដង ហ្រីកក់សក់ ធ្វើម៉ូតសក់ដោយអត់គិតថ្លៃ',
+    price: '$ 10.00',
+    image: require('../assets/image/man1.png'),
+  },
+  {
+    id: '4',
+    title: 'កាត់សក់ម៉ូតទាន់សម័យ ធ្វើម៉ូតសក់...',
+    description: 'ពិន្ទុ: 0.5ដង ហ្រីកក់សក់ ធ្វើម៉ូតសក់ដោយអត់គិតថ្លៃ',
+    price: '$ 10.00',
+    image: require('../assets/image/man1.png'),
+  },
+  {
+    id: '5',
+    title: 'កាត់សក់ម៉ូតទាន់សម័យ ធ្វើម៉ូតសក់...',
+    description: 'ពិន្ទុ: 0.5ដង ហ្រីកក់សក់ ធ្វើម៉ូតសក់ដោយអត់គិតថ្លៃ',
+    price: '$ 10.00',
+    image: require('../assets/image/man1.png'),
+  },
+  {
+    id: '6',
+    title: 'កាត់សក់ម៉ូតទាន់សម័យ ធ្វើម៉ូតសក់...',
+    description: 'ពិន្ទុ: 0.5ដង ហ្រីកក់សក់ ធ្វើម៉ូតសក់ដោយអត់គិតថ្លៃ',
+    price: '$ 10.00',
+    image: require('../assets/image/man1.png'),
+  },
+  {
+    id: '7',
+    title: 'កាត់សក់ម៉ូតទាន់សម័យ ធ្វើម៉ូតសក់...',
+    description: 'ពិន្ទុ: 0.5ដង ហ្រីកក់សក់ ធ្វើម៉ូតសក់ដោយអត់គិតថ្លៃ',
+    price: '$ 10.00',
+    image: require('../assets/image/man1.png'),
+  },
+];
+
+const Men = () => {
+  const navigation: any = useNavigation();
+  return (
+    <ScrollView showsVerticalScrollIndicator={false}>
+      <FlatList
+        data={manData}
+        renderItem={({item}) => {
+          return (
+            <View
+              style={{
+                backgroundColor: 'white',
+                alignSelf: 'center',
+                height: 110,
+                width: width * 0.95,
+                flexDirection: 'row',
+                marginVertical: 5,
+                borderRadius: 5,
+                elevation: 2,
+                zIndex: 1000,
+                paddingHorizontal: '3%',
+              }}>
+              <View
+                style={{
+                  justifyContent: 'space-between',
+                  flexDirection: 'row',
+                }}>
+                <View style={{flexDirection: 'row', width: '80%'}}>
+                  <Image
+                    source={item.image}
+                    style={{
+                      width: 70,
+                      height: 90,
+                      marginTop: 5,
+                    }}></Image>
+                  <View
+                    style={{
+                      marginLeft: 10,
+                      justifyContent: 'space-between',
+                      paddingBottom: 10,
+                    }}>
+                    <View>
+                      <Text
+                        style={{
+                          fontSize: 16,
+                          color: 'black',
+                          marginTop: 5,
+                          fontWeight: 'bold',
+                        }}>
+                        {item.title}
+                      </Text>
+                      <Text
+                        style={{fontSize: 15, color: 'black', marginTop: 4}}>
+                        {item.description}
+                      </Text>
+                    </View>
+                    <Text style={{color: 'red', fontSize: 16, marginTop: 10}}>
+                      {item.price}
+                    </Text>
+                  </View>
+                </View>
+                <View style={{width: '20%', height: '100%'}}>
+                  <View
+                    style={{
+                      width: '100%',
+                      height: '60%',
+                    }}></View>
+                  <TouchableOpacity
+                    activeOpacity={1}
+                    onPress={() => {
+                      navigation.push('MakeBookingView');
+                    }}
+                    style={{
+                      backgroundColor: 'white',
+                      borderWidth: 2,
+                      borderColor: '#16247d',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      height: 30,
+                      borderRadius: 6,
+                      paddingHorizontal: 5,
+                    }}>
+                    <Text
+                      style={{
+                        textAlign: 'center',
+                        color: '#16247d',
+                        fontSize: 12,
+                      }}>
+                      Booking
+                    </Text>
+                  </TouchableOpacity>
+                </View>
+              </View>
+            </View>
+          );
+        }}
+        keyExtractor={item => item.id}
+      />
+      <View style={{marginTop: 80}}></View>
+    </ScrollView>
   );
 };
 
@@ -429,33 +477,63 @@ export const SubService = () => {
       scrollEnabled
       indicatorStyle={styles.indicator}
       style={{
-        backgroundColor: '#f2f2f2',
+        backgroundColor: 'white',
         width: '100%',
-        height: 'auto',
+        // height: 'auto',
+        borderTopWidth: 0.5,
       }}
       tabStyle={{
-        marginTop: 5,
+        marginTop: -5,
         width: width / 3,
-        borderTopWidth: 0.2,
-        borderRightWidth: 0.2,
       }}
       renderLabel={({route, focused}) => (
-        <Text
+        <View
           style={{
-            color: focused ? '#16247d' : 'black',
-            margin: 0,
-            fontSize: 14,
-            fontWeight: 'bold',
+            flexDirection: 'row',
+            justifyContent: 'center',
           }}>
-          {route.title}
-        </Text>
+          {/* <View style={{borderWidth: 0.5, height: 40}}></View> */}
+          <Text
+            style={{
+              color: focused ? '#16247d' : 'black',
+              margin: 5,
+              fontSize: 14,
+              fontWeight: 'bold',
+            }}>
+            {route.title}
+          </Text>
+          <View
+            style={
+              route.title == 'Women'
+                ? {
+                    width: 1.8,
+                    height: '100%',
+                    backgroundColor: 'gray',
+                    position: 'absolute',
+                    right: -45,
+                  }
+                : null
+            }></View>
+          <View
+            style={
+              route.title == 'Men'
+                ? {
+                    width: 1.8,
+                    height: '100%',
+                    backgroundColor: 'gray',
+                    position: 'absolute',
+                    right: -45,
+                  }
+                : null
+            }></View>
+        </View>
       )}></TabBar>
   );
 
   const naviation: any = useNavigation();
-
+  const {width, height} = Dimensions.get('window');
   return (
-    <SafeAreaView style={{}}>
+    <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
       <View
         style={{
           width: '100%',
@@ -475,11 +553,7 @@ export const SubService = () => {
             name="arrowleft"
             color={'white'}
             size={24}
-            style={
-              {
-                // paddingLeft: '5%',
-              }
-            }></AntDesign>
+            style={{}}></AntDesign>
         </TouchableOpacity>
         <Text
           style={{
@@ -487,7 +561,6 @@ export const SubService = () => {
             color: 'white',
             fontWeight: 'bold',
             textAlign: 'center',
-            // paddingLeft: '25%',
           }}>
           Sub Service
         </Text>
@@ -497,7 +570,16 @@ export const SubService = () => {
           color={'white'}
           style={{}}></AntDesign>
       </View>
-      <View style={styles.Body}>
+      <View
+        style={{
+          marginTop: 10,
+          width: '100%',
+          height: height * 0.32,
+          borderWidth: 1,
+          borderColor: 'white',
+          marginHorizontal: 15,
+          borderRadius: 10,
+        }}>
         <View style={styles.RowBodyI}>
           <View
             style={{
@@ -562,7 +644,7 @@ export const SubService = () => {
             <Text style={{fontSize: 14, paddingBottom: 5, marginTop: -5}}>
               ⭐⭐⭐⭐⭐ (3)
             </Text>
-            <Text style={{fontSize: 14, color: 'black', paddingBottom: 7}}>
+            <Text style={{fontSize: 14, color: 'black', paddingBottom: 5}}>
               ហាងយើងខ្ញុំផ្ដល់ជូនទាំងគុណភាព​ និង
             </Text>
             <Text style={{fontSize: 14, color: 'black'}}>
@@ -572,29 +654,29 @@ export const SubService = () => {
         </View>
         <View
           style={{
-            marginTop: 35,
+            marginTop: 30,
             alignContent: 'center',
             alignItems: 'center',
             flexDirection: 'row',
-            marginLeft: '40%',
+            marginLeft: '38%',
           }}>
           <View style={{flexDirection: 'row'}}>
             <FontAwesome6
               name="location-dot"
               color={'#16247d'}
               size={12}
-              style={{marginTop: 4}}></FontAwesome6>
+              style={{marginTop: 2}}></FontAwesome6>
             <Text
               style={{
                 color: '#16247d',
                 fontWeight: 'bold',
-                paddingLeft: 10,
+                paddingLeft: 5,
                 fontSize: 12,
               }}>
               None
             </Text>
           </View>
-          <View style={{flexDirection: 'row', marginLeft: 25}}>
+          <View style={{flexDirection: 'row', marginLeft: 20}}>
             <EvilIcons name="clock" color={'#16247d'} size={18}></EvilIcons>
             <Text
               style={{
@@ -610,9 +692,11 @@ export const SubService = () => {
         <View
           style={{
             flexDirection: 'row',
-            marginTop: 10,
-            marginLeft: '10%',
+            marginTop: 15,
+            // marginLeft: '25%',
             marginBottom: 5,
+            justifyContent: 'flex-end',
+            paddingHorizontal: '7%',
           }}>
           <TouchableOpacity
             onPress={() => {
@@ -621,9 +705,10 @@ export const SubService = () => {
             <View
               style={{
                 flexDirection: 'row',
-                paddingHorizontal: 10,
-                paddingVertical: 10,
-                backgroundColor: 'white',
+                paddingHorizontal: 15,
+                paddingVertical: 8,
+                alignItems: 'center',
+                backgroundColor: '#f5f5f5',
                 borderRadius: 20,
               }}>
               <FontAwesome name="image" size={20} color={'grey'}></FontAwesome>
@@ -632,7 +717,7 @@ export const SubService = () => {
                   marginLeft: 10,
                   color: 'black',
                   fontWeight: 'bold',
-                  fontSize: 12,
+                  fontSize: 13,
                 }}>
                 Gallery
               </Text>
@@ -646,10 +731,11 @@ export const SubService = () => {
               style={{
                 flexDirection: 'row',
                 paddingHorizontal: 15,
-                paddingVertical: 10,
-                backgroundColor: 'white',
+                paddingVertical: 8,
+                backgroundColor: '#f5f5f5',
                 marginLeft: 18,
                 borderRadius: 20,
+                alignItems: 'center',
               }}>
               <AntDesign name="isv" size={20} color={'#16247d'}></AntDesign>
               <Text
@@ -657,7 +743,7 @@ export const SubService = () => {
                   marginLeft: 10,
                   color: '#16247d',
                   fontWeight: 'bold',
-                  fontSize: 12,
+                  fontSize: 13,
                   alignItems: 'center',
                 }}>
                 MAKE A BOOKING
@@ -666,7 +752,138 @@ export const SubService = () => {
           </TouchableOpacity>
         </View>
       </View>
-      <View style={styles.TabBar}>
+      {/* <View
+        style={{
+          width: '100%',
+          height: height * 0.26,
+          paddingVertical: 10,
+          flexDirection: 'row',
+        }}>
+        <View
+          style={{
+            width: width * 0.35,
+
+            height: '100%',
+            marginHorizontal: 5,
+          }}>
+          <View
+            style={{
+              width: '100%',
+              height: 140,
+            }}>
+            <Image
+              source={require('../assets/image/haircut.jpg')}
+              style={{width: '100%', height: '100%'}}></Image>
+          </View>
+        </View>
+        <View
+          style={{
+            width: width * 0.61,
+            // backgroundColor: 'skyblue',
+            height: '100%',
+          }}>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+            <Text style={{fontSize: 14, color: 'black', fontWeight: 'bold'}}>
+              កាត់សក់បុរស
+            </Text>
+            <Text style={{color: 'red', fontSize: 14}}>$ 5.00</Text>
+          </View>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+            <Text
+              style={{
+                fontSize: 13,
+                color: '#16247d',
+                fontWeight: 'bold',
+                marginTop: 5,
+              }}>
+              មែនស្តាយ
+            </Text>
+            <Text style={{color: 'red', fontSize: 14, marginTop: 5}}>Up</Text>
+          </View>
+          <Text style={{fontSize: 13, marginTop: 5}}>⭐⭐⭐⭐⭐</Text>
+          <View>
+            <Text style={{marginTop: 5, fontSize: 14, color: 'black'}}>
+              ហាងយើងខ្ញុំផ្ដល់ជូនទាំងគុណភាព​ និងអនាម័យ ជូនបងប្អូន💈
+            </Text>
+            <View style={{flexDirection: 'row', marginTop: 10}}>
+              <View style={{flexDirection: 'row'}}>
+                <FontAwesome6
+                  name="location-dot"
+                  color={'#16247d'}
+                  size={12}
+                  style={{marginTop: 4}}></FontAwesome6>
+                <Text
+                  style={{
+                    color: '#16247d',
+                    fontWeight: 'bold',
+                    paddingLeft: 3,
+                    fontSize: 12,
+                    marginTop: 2,
+                  }}>
+                  None
+                </Text>
+              </View>
+              <View style={{flexDirection: 'row', marginLeft: 25}}>
+                <EvilIcons name="clock" color={'#16247d'} size={18}></EvilIcons>
+                <Text
+                  style={{
+                    color: '#16247d',
+                    fontWeight: 'bold',
+                    paddingLeft: 3,
+                    fontSize: 12,
+                  }}>
+                  Opening
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={{
+              flexDirection: 'row',
+              marginTop: 30,
+              justifyContent: 'space-between',
+            }}>
+            <TouchableOpacity
+              onPress={() => {
+                naviation.push('GalleryView');
+              }}
+              style={{
+                flexDirection: 'row',
+                height: 30,
+                width: 100,
+                justifyContent: 'center',
+                alignItems: 'center',
+                backgroundColor: '#dbd7d2',
+                borderRadius: 50,
+                marginLeft: -20,
+              }}>
+              <FontAwesome name="image" size={20} color={'grey'}></FontAwesome>
+              <Text style={{marginLeft: 5}}>Gallery</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                naviation.push('MakeBookingView');
+              }}
+              style={{
+                flexDirection: 'row',
+                height: 30,
+                width: 160,
+                justifyContent: 'center',
+                alignItems: 'center',
+                backgroundColor: '#dbd7d2',
+                borderRadius: 50,
+              }}>
+              <FontAwesome name="image" size={20} color={'grey'}></FontAwesome>
+              <Text style={{marginLeft: 5}}>MAKE A BOOKING</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View> */}
+      <View
+        style={{
+          width: '100%',
+          height: height * 0.68,
+        }}>
         <TabView
           navigationState={{index, routes}}
           renderScene={renderScene}
@@ -682,19 +899,12 @@ export const SubService = () => {
 };
 
 const styles = StyleSheet.create({
-  Body: {
-    marginTop: 10,
-    width: '100%',
-    height: '21%',
-    borderWidth: 1,
-    borderColor: '#eef2fa',
-    marginHorizontal: 15,
-    borderRadius: 10,
-  },
+  Body: {},
   RowBodyI: {
     width: '100%',
     height: '48%',
     flexDirection: 'row',
+    backgroundColor: 'white',
   },
   FixText: {
     paddingLeft: 10,
@@ -704,8 +914,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#16247d',
     height: 1,
   },
-  TabBar: {
-    width: '100%',
+  TabBar: {},
+  divider: {
+    width: 1.8,
     height: '100%',
+    backgroundColor: '#f5f5f5',
+    position: 'absolute',
+    right: 5,
   },
 });

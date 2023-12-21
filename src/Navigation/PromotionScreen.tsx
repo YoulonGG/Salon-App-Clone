@@ -7,6 +7,7 @@ import {
   Image,
   Dimensions,
   TouchableOpacity,
+  ImageBackground,
 } from 'react-native';
 import {StyleSheet} from 'react-native';
 import {TabView, SceneMap, TabBar} from 'react-native-tab-view';
@@ -23,7 +24,7 @@ const Promotion = () => {
     <View style={{width: 'auto', height: '94%', backgroundColor: '#f1f1f1'}}>
       <TouchableOpacity
         activeOpacity={1}
-        style={{width: 'auto', height: '94%', alignSelf: 'center'}}
+        style={{width: width * 0.95, height: '94%', alignSelf: 'center'}}
         onPress={() => {
           navigation.push('DetailPromotion');
         }}>
@@ -180,6 +181,8 @@ export const PromotionScreen = () => {
           backgroundColor: '#16247d',
           flexDirection: 'row',
           alignItems: 'center',
+          justifyContent: 'space-between',
+          paddingHorizontal: '5%',
         }}>
         <Feather
           onPress={() => {
@@ -189,7 +192,6 @@ export const PromotionScreen = () => {
           size={22}
           style={{
             color: 'white',
-            paddingLeft: '5%',
           }}
         />
         <Text
@@ -197,10 +199,19 @@ export const PromotionScreen = () => {
             fontSize: 17,
             color: 'white',
             fontWeight: 'bold',
-            paddingLeft: '28%',
           }}>
           Promotions
         </Text>
+        <Feather
+          onPress={() => {
+            navigationn.openDrawer();
+          }}
+          name="menu"
+          size={22}
+          style={{
+            color: '#16247d',
+          }}
+        />
       </View>
       <View style={styles.RibonReward}>
         <Ionicons
@@ -307,7 +318,7 @@ const styles = StyleSheet.create({
     height: '80%',
   },
   CardPromotion: {
-    width: '90%',
+    width: width * 0.95,
     height: 130,
     borderWidth: 0.5,
     borderColor: 'white',
@@ -317,6 +328,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingHorizontal: 10,
     elevation: 3,
+    alignSelf: 'center',
     zIndex: 1000,
   },
   TabBarView: {},

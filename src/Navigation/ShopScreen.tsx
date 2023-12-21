@@ -109,7 +109,16 @@ const ShopScreen = () => {
   return (
     <SafeAreaView style={{}}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.Appbar}>
+        <View
+          style={{
+            width: '100%',
+            height: 40,
+            backgroundColor: '#16247d',
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            paddingHorizontal: '5%',
+          }}>
           <Feather
             onPress={() => {
               navigation.openDrawer();
@@ -118,10 +127,23 @@ const ShopScreen = () => {
             size={22}
             style={{
               color: 'white',
-              paddingLeft: '5%',
             }}
           />
-          <Text style={styles.TitleAppbar}>Shops</Text>
+          <Text
+            style={{
+              fontSize: 17,
+              color: 'white',
+              fontWeight: 'bold',
+            }}>
+            Shops
+          </Text>
+          <Feather
+            name="menu"
+            size={22}
+            style={{
+              color: '#16247d',
+            }}
+          />
         </View>
         <View style={styles.searchSection}>
           <Feather
@@ -149,8 +171,8 @@ const ShopScreen = () => {
           style={{
             width: '100%',
             height: 0,
-            backgroundColor: '#ebebec',
-            borderWidth: 0.2,
+            borderColor: '#ebebec',
+            borderWidth: 1,
           }}></View>
         <Text
           style={{
@@ -174,7 +196,7 @@ const ShopScreen = () => {
                   }}
                   style={{
                     width: 165,
-                    height: 155,
+                    height: 160,
                     marginLeft: 10,
                     marginBottom: 5,
                     backgroundColor: 'white',
@@ -248,7 +270,7 @@ const ShopScreen = () => {
                       marginHorizontal: '3%',
                       backgroundColor: 'white',
                       borderColor: '#16247d',
-                      borderWidth: 2,
+                      borderWidth: 1,
                       justifyContent: 'center',
                       alignItems: 'center',
                       borderRadius: 5,
@@ -366,10 +388,10 @@ const ShopScreen = () => {
                   <View style={{flexDirection: 'row'}}>
                     <FontAwesome6
                       name="location-dot"
-                      size={1}
+                      size={11}
                       color={'#16247d'}
                       style={{
-                        marginTop: 2.5,
+                        marginTop: 3,
                       }}
                     />
                     <Text
@@ -423,20 +445,6 @@ const ShopScreen = () => {
 export default ShopScreen;
 
 const styles = StyleSheet.create({
-  Appbar: {
-    width: '100%',
-    height: 40,
-    backgroundColor: '#16247d',
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  TitleAppbar: {
-    fontSize: 17,
-    color: 'white',
-    paddingLeft: '33%',
-    fontWeight: 'bold',
-    // width: Dimensions.get('window').width - 20,
-  },
   searchSection: {
     marginTop: 8,
     width: '95%',

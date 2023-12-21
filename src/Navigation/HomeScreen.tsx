@@ -190,15 +190,19 @@ const HomeScreen = () => {
   const bottomSheetRef = useRef<BottomSheet>(null);
 
   // variables
-  const snapPoints = useMemo(() => ['10%', '41%', '71%', '92%'], []);
+  const snapPoints = useMemo(() => ['10.5%', '41%', '71%', '92%'], []);
 
   // callbacks
   const handleSheetChanges = useCallback((index: number) => {}, []);
 
   const renderInner = () => {
     return (
-      <View style={{backgroundColor: 'white', flex: 1}}>
-        <View style={{paddingHorizontal: 10, marginBottom: height * 0.075}}>
+      <View
+        style={{
+          backgroundColor: 'white',
+          width: '100%',
+        }}>
+        <View style={{marginBottom: height * 0.075}}>
           <Text
             style={{
               color: '#16247d',
@@ -212,7 +216,7 @@ const HomeScreen = () => {
           </Text>
           <View
             style={{
-              width: '95%',
+              width: width * 0.95,
               height: 200,
               marginTop: 0,
               backgroundColor: '#F4F5FA',
@@ -496,8 +500,8 @@ const HomeScreen = () => {
               color: '#16247d',
               fontSize: 15,
               fontWeight: 'bold',
-              paddingBottom: 15,
-              paddingLeft: '2%',
+              paddingBottom: 5,
+              paddingLeft: '3%',
               marginTop: 15,
             }}>
             Popular Salons
@@ -516,8 +520,9 @@ const HomeScreen = () => {
                   }}
                   style={{
                     width: 190,
-                    height: 200,
-                    margin: 5,
+                    height: 210,
+                    marginHorizontal: 5,
+                    marginVertical: 5,
                     backgroundColor: 'white',
                     borderRadius: 5,
                     elevation: 5,
@@ -610,7 +615,7 @@ const HomeScreen = () => {
                       margin: '2%',
                       backgroundColor: 'white',
                       borderColor: '#16247d',
-                      borderWidth: 2,
+                      borderWidth: 1,
                       justifyContent: 'center',
                       alignItems: 'center',
                       borderRadius: 5,
@@ -664,13 +669,14 @@ const HomeScreen = () => {
               color: '#16247d',
               fontSize: 16,
               fontWeight: 'bold',
-              paddingLeft: '2%',
+              paddingLeft: 10,
+              marginTop: 10,
             }}>
             Top Rating Salons
           </Text>
           <FlatList
             data={PopularSalonsData}
-            style={{width: width, marginTop: 15}}
+            style={{width: 'auto', marginTop: 5}}
             showsHorizontalScrollIndicator={false}
             horizontal={true}
             keyExtractor={item => item.id}
@@ -683,10 +689,9 @@ const HomeScreen = () => {
                   }}
                   style={{
                     width: 190,
-                    height: 200,
+                    height: 210,
+                    marginVertical: 5,
                     marginHorizontal: 5,
-                    // marginRight: 10,
-                    marginVertical: 10,
                     backgroundColor: 'white',
                     borderRadius: 5,
                     elevation: 3,
@@ -778,7 +783,7 @@ const HomeScreen = () => {
                       margin: '2%',
                       backgroundColor: 'white',
                       borderColor: '#16247d',
-                      borderWidth: 2,
+                      borderWidth: 1,
                       justifyContent: 'center',
                       alignItems: 'center',
                       borderRadius: 5,
@@ -799,7 +804,7 @@ const HomeScreen = () => {
           <Text
             style={{
               marginTop: 15,
-              paddingLeft: '2%',
+              paddingLeft: 10,
               fontWeight: 'bold',
               color: '#16247d',
               fontSize: 16,
@@ -809,6 +814,7 @@ const HomeScreen = () => {
           <FlatList
             scrollEnabled={false}
             numColumns={2}
+            style={{paddingHorizontal: 7}}
             columnWrapperStyle={{justifyContent: 'space-between'}}
             data={TopRatingProfessorData}
             renderItem={({item, index}) => {
@@ -819,12 +825,12 @@ const HomeScreen = () => {
                       width: width * 0.455,
                       height: height * 0.24,
                       borderWidth: 1,
-                      marginTop: 10,
+                      marginTop: 3,
                       borderRadius: 8,
                       borderColor: '#f2f2f2',
                       flexDirection: 'column',
                       justifyContent: 'center',
-                      marginLeft: '2%',
+                      marginHorizontal: 5,
                       alignItems: 'center',
                       backgroundColor: 'white',
                       elevation: 3,
@@ -888,13 +894,14 @@ const HomeScreen = () => {
               fontWeight: 'bold',
               marginTop: 10,
               fontSize: 16,
-              marginLeft: '2%',
+              paddingLeft: 15,
+              marginBottom: 5,
             }}>
             New Salons
           </Text>
           <FlatList
             data={NewSalonData}
-            style={{width: width}}
+            style={{width: 'auto'}}
             showsHorizontalScrollIndicator={false}
             horizontal={true}
             keyExtractor={item => item.id}
@@ -908,7 +915,7 @@ const HomeScreen = () => {
                   style={{
                     width: 190,
                     height: 200,
-                    marginVertical: 10,
+                    marginVertical: 5,
                     marginHorizontal: 5,
                     backgroundColor: 'white',
                     borderRadius: 5,
@@ -977,7 +984,7 @@ const HomeScreen = () => {
                       margin: '2%',
                       backgroundColor: 'white',
                       borderColor: '#16247d',
-                      borderWidth: 2,
+                      borderWidth: 1,
                       justifyContent: 'center',
                       alignItems: 'center',
                       borderRadius: 5,

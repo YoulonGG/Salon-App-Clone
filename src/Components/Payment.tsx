@@ -84,6 +84,7 @@ const Payment = () => {
           Payment
         </Text>
       </View>
+
       <FlatList
         data={DATA}
         renderItem={({item}) => {

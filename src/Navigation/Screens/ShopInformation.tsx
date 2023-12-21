@@ -125,8 +125,10 @@ const ShopInformation = () => {
         </TouchableOpacity>
         <View
           style={{
-            borderBottomWidth: 0.3,
+            borderBottomWidth: 1,
+            width: '100%',
             marginTop: 5,
+            borderColor: '#dbd7d2',
           }}></View>
         <Text
           style={{
@@ -331,8 +333,10 @@ const ShopInformation = () => {
         </View>
         <View
           style={{
-            borderBottomWidth: 0.3,
-            marginTop: 10,
+            borderBottomWidth: 1,
+            width: '100%',
+            marginTop: 5,
+            borderColor: '#dbd7d2',
           }}></View>
         <Text
           style={{
@@ -442,8 +446,10 @@ const ShopInformation = () => {
         </TouchableOpacity>
         <View
           style={{
-            borderBottomWidth: 0.3,
-            marginTop: 10,
+            borderBottomWidth: 1,
+            width: '100%',
+            marginTop: 5,
+            borderColor: '#dbd7d2',
           }}></View>
         <Text
           style={{
@@ -627,8 +633,10 @@ const ShopInformation = () => {
         </View>
         <View
           style={{
-            borderBottomWidth: 0.3,
+            borderBottomWidth: 1,
+            width: '100%',
             marginTop: 10,
+            borderColor: '#dbd7d2',
           }}></View>
         <Text
           style={{

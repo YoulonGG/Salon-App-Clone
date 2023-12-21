@@ -158,7 +158,8 @@ const ChooseService = () => {
             backgroundColor: '#16247d',
             flexDirection: 'row',
             alignItems: 'center',
-            paddingHorizontal: 17,
+            justifyContent: 'space-between',
+            paddingHorizontal: '5%',
           }}>
           <TouchableOpacity
             activeOpacity={1}
@@ -179,10 +180,16 @@ const ChooseService = () => {
               fontSize: 17,
               color: 'white',
               textAlign: 'center',
-              marginLeft: '28%',
             }}>
             Choose Services
           </Text>
+          <AntDesign
+            name="arrowleft"
+            size={25}
+            style={{
+              color: '#16247d',
+            }}
+          />
         </View>
         <View
           style={{

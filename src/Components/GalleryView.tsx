@@ -17,7 +17,17 @@ export const GalleryView = () => {
 
   return (
     <SafeAreaView>
-      <View style={styles.AppBar}>
+      <View
+        style={{
+          width: '100%',
+          height: 40,
+          backgroundColor: '#16247d',
+          position: 'absolute',
+          alignItems: 'center',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          paddingHorizontal: '5%',
+        }}>
         <TouchableOpacity
           activeOpacity={1}
           onPress={() => {
@@ -27,9 +37,22 @@ export const GalleryView = () => {
             name="arrowleft"
             color={'white'}
             size={25}
-            style={{paddingLeft: '5%'}}></AntDesign>
+            style={{}}></AntDesign>
         </TouchableOpacity>
-        <Text style={styles.SubText}>Gallery</Text>
+        <Text
+          style={{
+            fontSize: 17,
+            color: 'white',
+            fontWeight: 'bold',
+            textAlign: 'center',
+          }}>
+          Gallery
+        </Text>
+        <AntDesign
+          name="arrowleft"
+          color={'#16247d'}
+          size={25}
+          style={{}}></AntDesign>
       </View>
       <View style={{flexDirection: 'row', marginTop: '11%'}}>
         <TouchableOpacity
@@ -95,22 +118,6 @@ export const GalleryView = () => {
 };
 
 const styles = StyleSheet.create({
-  AppBar: {
-    width: '100%',
-    height: 40,
-    backgroundColor: '#16247d',
-    position: 'absolute',
-    alignItems: 'center',
-    flexDirection: 'row',
-    textAlign: 'center',
-  },
-  SubText: {
-    fontSize: 17,
-    color: 'white',
-    fontWeight: 'bold',
-    textAlign: 'center',
-    paddingLeft: '33%',
-  },
   gridItem: {
     flex: 1,
     justifyContent: 'center',

@@ -13,6 +13,7 @@ import Feather from 'react-native-vector-icons/Feather';
 import {useNavigation} from '@react-navigation/native';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Entypo from 'react-native-vector-icons/Entypo';
+import {ScrollView} from 'react-native-gesture-handler';
 
 const {width, height} = Dimensions.get('window');
 const SideBarFilter = [
@@ -203,12 +204,20 @@ const ProfessorScreen = () => {
                   });
                 }}>
                 <View style={styles.Card}>
-                  <View style={styles.Profile}>
+                  <View
+                    style={{
+                      width: 60,
+                      height: 60,
+                      borderRadius: 60 / 2,
+                      backgroundColor: '#eef1f6',
+                      alignSelf: 'center',
+                      justifyContent: 'center',
+                    }}>
                     <Image
                       style={{
                         flex: 1,
-                        height: 60,
-                        width: 60,
+                        height: '100%',
+                        width: '100%',
                         borderRadius: 60 / 2,
                       }}
                       source={item.img}></Image>
@@ -237,21 +246,20 @@ const ProfessorScreen = () => {
                     style={{
                       flexDirection: 'row',
                       justifyContent: 'center',
-                      marginTop: 5,
                     }}>
                     <Entypo
                       size={16}
                       color={'#16247d'}
                       name="location-pin"
                       style={{
-                        marginTop: 10,
+                        marginTop: 5,
                       }}></Entypo>
                     <Text
                       style={{
                         fontSize: 12,
                         color: '#16247d',
                         fontWeight: 'bold',
-                        marginTop: 10,
+                        marginTop: 4,
                       }}>
                       None
                     </Text>
@@ -331,59 +339,62 @@ const ProfessorScreen = () => {
       </View>
       <View style={styles.Row}>
         <View style={styles.LeftBar}>
-          <FlatList
-            style={{marginBottom: height * 0.13}}
-            showsVerticalScrollIndicator={false}
-            data={SideBarFilter}
-            renderItem={({item, index}) => {
-              return (
-                <TouchableOpacity
-                  activeOpacity={0.8}
-                  onPress={() => {
-                    SelectItem(index);
-                    SetTitle(item.title);
-                    CheckId(item.id);
-                  }}>
-                  <View
-                    key={index}
-                    style={{alignItems: 'center', marginTop: height * 0.03}}>
+          <ScrollView showsVerticalScrollIndicator={false}>
+            <FlatList
+              style={{marginBottom: height * 0.13}}
+              data={SideBarFilter}
+              renderItem={({item, index}) => {
+                return (
+                  <TouchableOpacity
+                    activeOpacity={0.8}
+                    onPress={() => {
+                      SelectItem(index);
+                      SetTitle(item.title);
+                      CheckId(item.id);
+                    }}>
                     <View
-                      style={{
-                        width: 50,
-                        height: 50,
-                        alignContent: 'center',
-                        paddingTop: 3,
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        borderRadius: 50 / 2,
-                        // backgroundColor: ItemSelecter(selectColor === index)
-                        backgroundColor:
-                          selectColor === index ? '#16247d' : '#DCDCDC',
-                      }}>
-                      <Image
-                        style={{width: 30, height: 30}}
-                        source={item.icon}
-                        tintColor={ItemSelecter(index)}></Image>
+                      key={index}
+                      style={{alignItems: 'center', marginTop: height * 0.03}}>
+                      <View
+                        style={{
+                          width: 50,
+                          height: 50,
+                          alignContent: 'center',
+                          paddingTop: 3,
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          borderRadius: 50 / 2,
+                          // backgroundColor: ItemSelecter(selectColor === index)
+                          backgroundColor:
+                            selectColor === index ? '#16247d' : '#DCDCDC',
+                        }}>
+                        <Image
+                          style={{width: 30, height: 30}}
+                          source={item.icon}
+                          tintColor={ItemSelecter(index)}></Image>
+                      </View>
+                      <Text
+                        style={{
+                          marginTop: 15,
+                          fontWeight: 'bold',
+                          color: 'grey',
+                          fontSize: 12,
+                          textAlign: 'center',
+                        }}>
+                        {item.title}
+                      </Text>
                     </View>
-                    <Text
-                      style={{
-                        marginTop: 15,
-                        fontWeight: 'bold',
-                        color: 'grey',
-                        fontSize: 12,
-                        textAlign: 'center',
-                      }}>
-                      {item.title}
-                    </Text>
-                  </View>
-                </TouchableOpacity>
-              );
-            }}></FlatList>
-          {/* <View style={{marginTop: 95}}></View> */}
+                  </TouchableOpacity>
+                );
+              }}></FlatList>
+            <View style={{marginTop: 50}}></View>
+          </ScrollView>
         </View>
         <View style={styles.RightBar}>
-          <BodyRightBar />
-          {/* <View style={{marginTop: -30}}></View> */}
+          <ScrollView showsVerticalScrollIndicator={false}>
+            <BodyRightBar />
+            <View style={{marginTop: 50}}></View>
+          </ScrollView>
         </View>
       </View>
     </SafeAreaView>
@@ -416,6 +427,7 @@ const styles = StyleSheet.create({
   },
   Card: {
     width: width * 0.35,
+    paddingVertical: 10,
     height: height * 0.2,
     backgroundColor: 'white',
     marginTop: 7,
@@ -424,13 +436,5 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     elevation: 3,
     zIndex: 1000,
-  },
-  Profile: {
-    width: 60,
-    height: 60,
-    borderRadius: 60 / 2,
-    backgroundColor: '#eef1f6',
-    alignSelf: 'center',
-    marginTop: 10,
   },
 });

@@ -341,7 +341,7 @@ const MobileServices2 = () => {
                             selectColor === index ? '#16247d' : '#DCDCDC',
                         }}>
                         <Image
-                          style={{width: 40, height: 40}}
+                          style={{width: '60%', height: '60%'}}
                           source={item.icon}
                           // tintColor={ItemSelecter(index)}
                         ></Image>
