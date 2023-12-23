@@ -190,7 +190,7 @@ const HomeScreen = () => {
   const bottomSheetRef = useRef<BottomSheet>(null);
 
   // variables
-  const snapPoints = useMemo(() => ['10.5%', '41%', '71%', '92%'], []);
+  const snapPoints = useMemo(() => ['10%', '41%', '71%', '92%'], []);
 
   // callbacks
   const handleSheetChanges = useCallback((index: number) => {}, []);

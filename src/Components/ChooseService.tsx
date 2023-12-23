@@ -210,16 +210,19 @@ const ChooseService = () => {
           </Text>
         </View>
         <FlatList
+          style={{marginHorizontal: 5}}
           data={DATA}
           numColumns={3}
           renderItem={({item}) => {
             return (
               <View
                 style={{
-                  width: width * 0.31,
-                  height: height * 0.19,
+                  width: width * 0.3,
+                  height: height * 0.21,
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
                   marginHorizontal: 5,
-                  marginVertical: 10,
+                  marginVertical: 5,
                 }}>
                 <View
                   style={{
@@ -241,7 +244,7 @@ const ChooseService = () => {
                         borderBottomEndRadius: 5,
                         borderTopStartRadius: 5,
                       }}>
-                      <Text style={{color: 'white', fontSize: 12}}>
+                      <Text style={{color: 'white', fontSize: 10}}>
                         {item.price}
                       </Text>
                     </View>
@@ -254,7 +257,7 @@ const ChooseService = () => {
                         marginTop: 2,
                         alignItems: 'center',
                       }}>
-                      <Text style={{color: 'white', fontSize: 12}}>
+                      <Text style={{color: 'white', fontSize: 10}}>
                         {item.points}
                       </Text>
                     </View>
@@ -293,6 +296,9 @@ const ChooseService = () => {
           backgroundColor: 'white',
         }}>
         <TouchableOpacity
+          onPress={() => {
+            navigation.push('OrderDetail');
+          }}
           style={{
             backgroundColor: '#16247d',
             justifyContent: 'center',

@@ -45,7 +45,7 @@ const OrderDetail = () => {
   const navigation: any = useNavigation();
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{backgroundColor: 'white'}}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View
           style={{
@@ -217,7 +217,7 @@ const OrderDetail = () => {
                 fontSize: 14,
                 fontWeight: 'bold',
               }}>
-              Order
+              Booking
             </Text>
           </View>
         </View>
@@ -505,7 +505,7 @@ const OrderDetail = () => {
       </ScrollView>
       <View
         style={{
-          height: 60,
+          height: 50,
           width: '100%',
           justifyContent: 'center',
           position: 'absolute',

@@ -102,14 +102,15 @@ const MobileService = () => {
         </Text>
       </View>
       <FlatList
+        style={{marginHorizontal: 10}}
         data={DATA}
         numColumns={3}
         renderItem={({item}) => {
           return (
             <View
               style={{
-                width: width * 0.31,
-                height: height * 0.19,
+                width: width * 0.3,
+                height: height * 0.2,
                 marginHorizontal: 5,
                 marginVertical: 10,
               }}>
@@ -172,7 +173,7 @@ const MobileService = () => {
       <View
         style={{
           backgroundColor: 'white',
-          height: 80,
+          height: 60,
           width: '100%',
           justifyContent: 'center',
           borderTopWidth: 0.5,

@@ -39,7 +39,7 @@ const kidData = [
 const Kid = () => {
   const naviation: any = useNavigation();
   return (
-    <SafeAreaView>
+    <ScrollView style={{backgroundColor: '#f5f5f5'}}>
       <FlatList
         data={kidData}
         renderItem={({item}) => {
@@ -134,7 +134,7 @@ const Kid = () => {
         }}
         keyExtractor={item => item.id}
       />
-    </SafeAreaView>
+    </ScrollView>
   );
 };
 
@@ -193,7 +193,9 @@ const womanData = [
 const Women = () => {
   const navigation: any = useNavigation();
   return (
-    <ScrollView showsVerticalScrollIndicator={false}>
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      style={{backgroundColor: '#f5f5f5'}}>
       <FlatList
         data={womanData}
         renderItem={({item}) => {
@@ -348,7 +350,9 @@ const manData = [
 const Men = () => {
   const navigation: any = useNavigation();
   return (
-    <ScrollView showsVerticalScrollIndicator={false}>
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      style={{backgroundColor: '#f5f5f5'}}>
       <FlatList
         data={manData}
         renderItem={({item}) => {
@@ -492,7 +496,6 @@ export const SubService = () => {
             flexDirection: 'row',
             justifyContent: 'center',
           }}>
-          {/* <View style={{borderWidth: 0.5, height: 40}}></View> */}
           <Text
             style={{
               color: focused ? '#16247d' : 'black',
@@ -574,7 +577,7 @@ export const SubService = () => {
         style={{
           marginTop: 10,
           width: '100%',
-          height: height * 0.32,
+          height: height * 0.31,
           borderWidth: 1,
           borderColor: 'white',
           marginHorizontal: 15,
@@ -882,7 +885,7 @@ export const SubService = () => {
       <View
         style={{
           width: '100%',
-          height: height * 0.68,
+          height: height * 0.69,
         }}>
         <TabView
           navigationState={{index, routes}}

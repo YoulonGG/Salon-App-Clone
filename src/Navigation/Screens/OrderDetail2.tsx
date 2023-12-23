@@ -45,7 +45,7 @@ const OrderDetail2 = () => {
   const navigation: any = useNavigation();
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{backgroundColor: 'white'}}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View
           style={{
@@ -54,6 +54,8 @@ const OrderDetail2 = () => {
             backgroundColor: '#16247d',
             flexDirection: 'row',
             alignItems: 'center',
+            justifyContent: 'space-between',
+            paddingHorizontal: '5%',
           }}>
           <TouchableOpacity
             activeOpacity={1}
@@ -65,7 +67,6 @@ const OrderDetail2 = () => {
               size={25}
               style={{
                 color: 'white',
-                paddingLeft: '5%',
               }}
             />
           </TouchableOpacity>
@@ -75,10 +76,16 @@ const OrderDetail2 = () => {
               fontSize: 17,
               color: 'white',
               textAlign: 'center',
-              marginLeft: '27%',
             }}>
-            Order Detail
+            Booking Detail
           </Text>
+          <AntDesign
+            name="arrowleft"
+            size={25}
+            style={{
+              color: '#16247d',
+            }}
+          />
         </View>
 
         <Text
@@ -167,7 +174,7 @@ const OrderDetail2 = () => {
             marginLeft: 15,
             marginTop: 15,
           }}>
-          Order Detail
+          Schedule Booking
         </Text>
         <View style={{flexDirection: 'row', marginLeft: 20}}>
           <Text
@@ -197,8 +204,30 @@ const OrderDetail2 = () => {
               color: 'black',
               fontSize: 14,
               fontWeight: 'bold',
+              marginLeft: 45,
+              marginTop: 10,
+            }}>
+            Time:
+          </Text>
+          <Text
+            style={{
+              color: 'black',
+              fontSize: 14,
+              fontWeight: 'bold',
+              marginLeft: 15,
+              marginTop: 10,
+            }}>
+            16:05 PM
+          </Text>
+        </View>
+        <View style={{flexDirection: 'row', marginLeft: 20}}>
+          <Text
+            style={{
+              color: 'black',
+              fontSize: 14,
+              fontWeight: 'bold',
               marginLeft: 33,
-              marginTop: 15,
+              marginTop: 10,
             }}>
             Status:
           </Text>
@@ -206,7 +235,7 @@ const OrderDetail2 = () => {
             style={{
               backgroundColor: 'green',
               marginLeft: 15,
-              marginTop: 15,
+              marginTop: 10,
               paddingLeft: 20,
               paddingRight: 20,
               borderRadius: 10,
@@ -217,7 +246,7 @@ const OrderDetail2 = () => {
                 fontSize: 14,
                 fontWeight: 'bold',
               }}>
-              Order
+              Approved
             </Text>
           </View>
         </View>
@@ -242,24 +271,8 @@ const OrderDetail2 = () => {
               fontWeight: 'bold',
               marginLeft: 15,
             }}>
-            Selected Services
+            Services Selection
           </Text>
-          <TouchableOpacity
-            activeOpacity={1}
-            onPress={() => {
-              navigation.push('MobileService');
-            }}>
-            <Text
-              style={{
-                color: '#16247d',
-                fontSize: 16,
-                fontWeight: 'bold',
-                marginLeft: '45%',
-                textDecorationLine: 'underline',
-              }}>
-              Add Services +
-            </Text>
-          </TouchableOpacity>
         </View>
         <FlatList
           data={DATA}
@@ -495,7 +508,7 @@ const OrderDetail2 = () => {
               marginLeft: 15,
               marginTop: 5,
             }}>
-            None
+            Cash
           </Text>
         </View>
         <View
@@ -507,7 +520,7 @@ const OrderDetail2 = () => {
       </ScrollView>
       <View
         style={{
-          height: 60,
+          height: 50,
           width: '100%',
           justifyContent: 'center',
           position: 'absolute',
@@ -523,7 +536,7 @@ const OrderDetail2 = () => {
             justifyContent: 'center',
             alignItems: 'center',
             padding: 11,
-            borderRadius: 2,
+            borderRadius: 5,
           }}>
           <Text style={{color: 'white', fontSize: 16, fontWeight: 'bold'}}>
             View Receipt

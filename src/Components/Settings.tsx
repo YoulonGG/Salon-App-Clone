@@ -16,7 +16,7 @@ const Settings = () => {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{backgroundColor: 'white', flex: 1}}>
       <View
         style={{
           width: '100%',
@@ -24,6 +24,8 @@ const Settings = () => {
           backgroundColor: '#16247d',
           flexDirection: 'row',
           alignItems: 'center',
+          justifyContent: 'space-between',
+          paddingHorizontal: '5%',
         }}>
         <TouchableOpacity
           activeOpacity={1}
@@ -35,7 +37,6 @@ const Settings = () => {
             size={25}
             style={{
               color: 'white',
-              paddingLeft: '5%',
             }}
           />
         </TouchableOpacity>
@@ -45,16 +46,24 @@ const Settings = () => {
             fontSize: 17,
             color: 'white',
             textAlign: 'center',
-            paddingLeft: '32%',
           }}>
           Settings
         </Text>
+        <AntDesign
+          name="arrowleft"
+          size={25}
+          style={{
+            color: '#16247d',
+          }}
+        />
       </View>
       <View
         style={{
           width: '100%',
           height: 40,
-          borderWidth: 0.5,
+          borderBottomWidth: 1,
+          borderColor: '#D5D5D5',
+
           alignItems: 'center',
           flexDirection: 'row',
           justifyContent: 'space-between',
@@ -79,7 +88,9 @@ const Settings = () => {
         style={{
           width: '100%',
           height: 40,
-          borderWidth: 0.5,
+          borderBottomWidth: 1,
+          borderColor: '#D5D5D5',
+
           alignItems: 'center',
           flexDirection: 'row',
           justifyContent: 'space-between',
@@ -102,7 +113,8 @@ const Settings = () => {
         style={{
           width: '100%',
           height: 40,
-          borderWidth: 0.5,
+          borderBottomWidth: 1,
+          borderColor: '#D5D5D5',
           alignItems: 'center',
           flexDirection: 'row',
           justifyContent: 'space-between',

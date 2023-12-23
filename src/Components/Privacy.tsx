@@ -244,7 +244,7 @@ const Privacy = () => {
             ខ្ញុំបានអាន និងយល់ព្រមគ្រប់លក្ខខណ្ឌដែលបានបញ្ជាក់ខាងលើនេះ។
           </Text>
         </View>
-        <View style={{marginTop: 15, borderWidth: 2}}></View>
+        <View style={{marginTop: 15}}></View>
       </ScrollView>
     </SafeAreaView>
   );

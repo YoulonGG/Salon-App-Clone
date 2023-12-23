@@ -231,16 +231,28 @@ const SERVICES = () => {
                     </View>
                   </View>
                 </View>
-                <View style={{width: '15%', height: '100%'}}>
+                <View
+                  style={{
+                    width: '15%',
+                    height: '100%',
+                  }}>
                   <View
                     style={{
                       width: '100%',
                       height: '35%',
+                      alignItems: 'flex-end',
                     }}>
                     <Text style={{fontSize: 15, color: 'red'}}>
                       {item.price}
                     </Text>
-                    <Text style={{fontSize: 13, color: 'red'}}>Up</Text>
+                    <Text
+                      style={{
+                        fontSize: 13,
+                        color: 'red',
+                        // paddingLeft: 35,
+                      }}>
+                      Up
+                    </Text>
                   </View>
                   <View style={{width: '100%', height: '45%'}}></View>
                   <View
